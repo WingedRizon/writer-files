@@ -1,0 +1,178 @@
+name: 'Koldori Council Concerns'
+unique-id: 9
+repeatable: false
+side-quest: false
+requirements:
+  level: 8
+  level-not-met: '&cYou should speak to Orsig first.'
+first-npc:
+  npc-id: 271
+  npc-name: 'Master of Coin'
+  speech:
+  - '*glances up from a coin he''s been polishing* The first human to ever enter the mines of Koldore!'
+  - 'Sorry about the heat, but we''re not known for our climate!'
+  - 'Well I''m glad to see you found your way, but tread lightly. The Masters of the Koldori Council are weary of your presence here.'
+  - 'We''ve heard you were helping a lot on the surface, but it''ll take a bit more to earn the trust of the council.'
+  - 'If I were you, I''d speak with the Master of the Forge and see what you can do to ease his frustrations.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-id: 272
+        npc-name: 'Master of the Forge'
+        speech:
+        - '*swearing under his breath*'
+        - 'GAHH! What do you want, human! ...you''re here to help? By my beard! I truly have seen it all.'
+        - 'Listen human, our ore shipments have been running behind of late, and I''m sure I know who to blame.'
+        - 'That lazy Lundret has yet to bring me A SINGLE ORE!'
+        - 'Find him, and make him get to work!'
+    goal-message: 'Speak with the Master of the Forge'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-id: 354
+        npc-name: 'Lundret'
+        speech:
+        - 'Uhh? Ummm hello. *he seems to be half asleep*'
+        - 'I''m extremely... tired...'
+        - 'Can ye please jus... *he falls asleep, and it doesn''t look like you''re able to shake him awake.*'
+        - 'Perhaps a nearby Koldori could help you wake him.'
+    goal-message: 'Find Lundret in the Koldori Mines'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-id: 363
+        npc-name: 'Boomton'
+        speech:
+        - 'Hey-hey!! You need some explosives? You''ve come to just the right pyromaniac!'
+        - 'I''m supposed to be using this to expand our walkway, but ''ooo I could go for a pint!'
+        - 'I tell you what, convince my friend at the inn to give me a pint of Koldori Brew, and I''ll see what I can do to wake Lundret.'
+    goal-message: 'Find Boomton and wake Lundret'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-id: 468
+        npc-name: 'Boomton''s "Friend"'
+        speech:
+        - 'Hello there, human. What brings to the Burly Boar Inn?'
+        - 'Boomton wants a free pint? Again?'
+        - 'Well, he''s always been a loyal accomplice--er--friend.'
+        - 'Let him know I''ll have the innkeeper give him one on the house!'
+    goal-message: 'Speak with the Boomton''s "Friend" at the inn'
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-id: 363
+        npc-name: 'Boomton'
+        speech:
+        - 'So... did ya get my pint??'
+        - 'Finally, SOMEONE around here shows some appreciation for ''ol Boomy boy.'
+        - 'Go ahead and take these explosives, and be careful! *winks*'
+    execute: 'mm items give -s %player% TNT'
+    goal-message: 'Tell Boomton about the news'
+  6:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'TNT'
+          item-name: '§6Boomton''s Explosives'' # Note that §6 is not needed
+          item-count: 1 
+      npc:
+        npc-id: 354
+        npc-name: 'Lundret'
+        speech:
+        - '*The explosives make a booming sound that echoes throughout the cavern*'
+        - 'AHH! WHAT THE HE-'
+        - 'Who in their right mind would do that!?'
+        - 'The Master of the Forge wants me to finish mining the rest of the ore for the shipment?'
+        - '*sighs* I guess I gotta keep my job somehow.'
+    goal-message: 'Wake up Lundret'
+  7:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-id: 272
+        npc-name: 'Master of the Forge'
+        speech:
+        - 'I HEARD THE EXPLOSION, NO NEED TO TELL ME. DO YOU HEAR A RINGING SOUND?'
+        - 'YOU BLEW HIM UP AND FOUND A REPLACEMENT, WELL DONE!!'
+        - 'Oh, you didn''t blow him up? *his eyebrows furrow*'
+        - 'Well, you''ve earned my trust, human. I''d speak to the Master of Crop next.'
+    goal-message: 'Return to the Master of the Forge'
+  8:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-id: 274
+        npc-name: 'Master of Crop'
+        speech:
+        - 'What can I do for ya, stranger?'
+        - '...here to help? I''ve got a job for you.'
+        - 'I need you to check on our farming progress on the surface.'
+        - 'Bring me &f15 &6wheat for inspection.'
+    goal-message: 'Speak to the Master of Crop'
+  9:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'WHEAT'
+          item-name: 'Wheat'
+          item-count: 15
+      npc:
+        npc-id: 274
+        npc-name: 'Master of Crop'
+        speech:
+        - 'Thank you! Looks like our harvest is healthy and bountiful.'
+        - 'Well I think that''s all from me, go and see what the Master of War wants of you.'
+    goal-message: 'Bring the Master of Crop 15 wheat'
+  10:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-id: 273
+        npc-name: 'Master of War'
+        speech: 
+        - '*hmph* It''s about time.'
+        - '*she squints her eyes and studies you briefly*'
+        - 'If you want me to trust you, you''re going to have to go scout an area for me.'
+        - 'I''ve been informed that there is some sort of Azana military presence in the forsaken city.'
+        - 'Go speak with Vostrik outside, and he''ll sail you to our nearby camp.'
+        - 'If you take the path back to the surface, you should see his boat right away.'
+    goal-message: 'Speak to the Master of War'
+  11:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-id: 365
+        npc-name: 'Vostrik'
+        speech:
+        - 'Hello human, why are you on my boat?'
+        - 'The Master of War needs me to help you?!'
+        - 'Alright, but only this once.'
+        - 'Prepare yourself, the waters ahead are rough.'
+    goal-message: 'Sail with Vostrik'
+    execute: 'travel fast %player% boat -445.5 24 -369.5 180 0'
+  12:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-id: 381
+        npc-name: 'Vostrik'
+        speech:
+        - 'How did you like the trip?'
+        - 'Anyway, this is the closest I can get.'
+        - 'To reach the ruins, take the North-Eastern path out of this camp.'
+        - 'If I remember from the last time I was in this area, the ruins are called "Dead Man''s Rest."'
+    goal-message: 'Speak with Vostrik'
+rewards:
+  money: 50
+  quest-points: 1
+  exp: 350

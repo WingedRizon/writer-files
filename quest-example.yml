@@ -1,0 +1,75 @@
+name: 'Example Quest'
+unique-id: 1
+repeatable: false
+side-quest: false
+requirements: # Everything here is optional, except the level requirement and level-not-met. If you only have 'level', then you only need level and level-not-met.
+  level: 10
+  #tailoring-level: 10 # Can be any profession (jeweling-level, leatherworking-level), also crafting-level for any profession level
+  #required-quests: 5 # This must be the unique ID of the required quest. This can have multiple quests, just make it a list (every new line with a '-')
+  level-not-met: 
+  - 'Eh? You aren''t strong enough yet'
+  - 'Come back when you are level 10'
+  #crafting-level-not-met: 'You gotta be better at making armor for me bro'
+  #required-quests-not-met: 'Em go help me fren with somthing'
+first-npc: 
+  npc-id: 0
+  npc-name: 'NPC1'
+  speech: 
+  - 'Hello, this is a test'
+  - 'oof'
+  - 'oof2'
+  - 'oof3'
+  - 'done'
+  quest-completed-message: 'um hello?' # This is the message that the NPC will say when you have completed the quest
+  deniable: true # This is required
+  denied-message: 'oof me sad now' # This are required if deniable is set to true
+  accepted-message: 
+  - 'yey thenk u' # This are required if deniable is set to true
+  - 'test'
+objectives:
+  1: 
+    requirement:
+      type: 'slay'
+      mob-name: 'SkeletalMinion' # From MythicMobs config
+      amount: 1
+    goal-message: 'slay mythic mobs'
+    execute: 'give %player% diamond' # %player% is replaced with the player name
+    completed-message: 'Nice!' # Completed message is optional. If your objective is of type talk then you dont need one (just use 'speech')
+  2: 
+    requirement:
+      type: 'talk'
+      requires: 
+        1: 
+          item-type: 'DIRT' # Must be the name of the material, for example, a diamond pickaxe is DIAMOND_PICKAXE
+          item-name: 'dirty dirt'
+          item-count: 5
+      npc:
+        npc-name: 'name2'
+        npc-id: 1
+        speech: 'wassup'
+        idle-message: # This message appears when you do not have the required quest item
+        - 'bring me an item for me to speak with you!'
+        - 'test'
+        quest-completed-message: '&4hope to see you around soon!' # this is NOT the same as completed-message. This is the message that the NPC will say when you have completed the quest
+    goal-message: 'talk to dude and give him item'
+  3: 
+    requirement:
+      type: 'tripwire'
+      tripwire-one: '-48,64,92'
+      tripwire-two: '-50,64,92'
+    goal-message: 'step on the wire (enter an area)'
+    completed-message: '&5break some grass'
+  4: 
+    requirement:
+      type: 'break'
+      block-type: 'GRASS'
+    goal-message: 'kill meh grass'
+rewards:
+  exp: 100
+  quest-points: 1
+  money: 100
+  execute: '/give %player% dirt'
+# NOTES:
+# firstNPC can contain 'execute' but other NPCs cannot (execute should be under each objective)
+# idle-message and execute are optional for NPCs. execute is optional for rewards
+# ANY message type (completed-message, speech, execute, goal-messsage...) can be multi-lined (using '-'s on every new line)

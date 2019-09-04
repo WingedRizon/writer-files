@@ -1,0 +1,65 @@
+name: 'Fresh off the Boat'
+unique-id: 1
+repeatable: false
+side-quest: false
+requirements:
+  level: 3
+  level-not-met: 
+  - '&cI need a stronger adventurer.'
+  - '&cCome back at level 3.'
+first-npc:
+  npc-id: 189
+  npc-name: 'First Mate Alice'
+  speech: 
+  - 'Aye! Welcome, stranger, to Azana, capital city of Alterra!'
+  - 'I heard from Captain Adams that the voyage went well.'
+  - 'He''s asked meto check on his brother, Captain Henry, at the inn.'
+  - 'We found his ship wrecked, and we want to make sure he''s alright.'
+  - 'Would you check on him for me? To find the inn, just follow the signposts with a hearthstone!'
+  deniable: false
+objectives: 
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Captain Henry'
+        npc-id: 302
+        speech:
+        - 'H-hey who are you?'
+        - 'My *hic* brother is asking for me?'
+        - 'Well, I haven''t spoken to him in years. Times have been tough, and things have gotten worse since my ship crashed.'
+        - 'Listen, *hic* I need more ale!'
+        - 'But I''ve run out of money... could you go to the bank for me? *hic*'
+        - 'Follow the signs with the gold coin!'
+    goal-message: 'Talk to Captain Henry at the Inn'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Captain Henry''s Accountant'
+        npc-id: 469
+        speech:
+        - 'Welcome to the Azana Bank. Need help with your finances?'
+        - 'Oh, you''re here for Captain Henry.. well..'
+        - 'His account is empty. I''m sorry, but I cannot help you.'
+        - 'Don''t forget to use our bank services, if you''d like. Banks can be found across the realm to store items!'
+    goal-message: 'Talk to Captain Henry''s Accountant'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Captain Henry'
+        npc-id: 302
+        speech:
+        - '*BURRRP* You''re back! How much money did you get?'
+        - 'I''M BROKE? I thought I still had some coin left!'
+        - 'Well, thanks for checking on me, stranger.'
+        - 'I can''t pay you, but here''s some lumber from the wreckage of my ship. I imagine you''ll need it.'
+    goal-message: 'Return to Captain Henry'
+rewards:
+  quest-points: 1
+  exp: 150
+  money: 0
+  commands:
+  - 'mm items give -s %player% SpruceWood 30'
+  - 'mm items give -s %player% OakWood 30'
