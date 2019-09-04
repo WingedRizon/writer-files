@@ -63,3 +63,4 @@ rewards:
   commands:
   - 'mm items give -s %player% SpruceWood 30'
   - 'mm items give -s %player% OakWood 30'
+
