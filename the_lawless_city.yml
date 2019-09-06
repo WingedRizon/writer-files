@@ -1,0 +1,78 @@
+name: 'The Lawless City'
+unique-id: 8
+repeatable: false
+side-quest: false
+requirements:
+  level: 10
+  level-not-met: '&cI need a seasoned fighter. Come back at level 12.'
+first-npc:
+  npc-id: 243
+  npc-name: 'Dispatched Captain'
+  speech:
+  - 'Hail, stranger. What is your business with the forsaken city?'
+  - '...you''ve traveled from Koldore? *grunts* Damned farmers.'
+  - 'This is no military conquest! We were dispatched from Azana to restore order to the lawless city.'
+  - 'Now, listen carefully. I need you to venture to the haunted cliffs and collect the tears of the damned.'
+  - 'Maybe we can learn something about what happened here.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'GHAST_TEAR'
+          item-name: 'Mournful Tear'
+          item-count: 8
+      npc:
+        npc-name: 'Dispatched Captain'
+        npc-id: 243
+        speech:
+        - 'You''ve brought them? Good work, stranger'
+        - 'Now let''s take a look... this is very troubling indeed.'
+        - 'I have all I need to inquire further. Why don''t you speak with my soldier on the staircase of the city?'
+    goal-message: 'Collect 8 mournful tears'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Dispatched Soldier'
+        npc-id: 244
+        speech: 
+        - 'Hail, stranger. The Captain informed me you would come.'
+        - 'He''s right, there is something very dark about this forsaken place!'
+        - 'I''ll need a sample of the wood here to know more.'
+        - 'Bring me &f20 &6dark logs.'
+    goal-message: 'Speak with the soldier on the staircase'
+  3:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'DARK_OAK_LOG'
+          item-name: 'Dark Oak Log'
+          item-count: 20
+      npc:
+        npc-name: 'Dispatched Soldier'
+        npc-id: 244
+        speech: 
+        - 'Hm... this is all very troubling indeed.'
+        - 'Head up the steps and speak with the general.'
+        - 'He''ll want to see this.'
+    goal-message: 'Bring the soldier 20 dark logs'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Dispatched General'
+        npc-id: 245
+        speech:
+        - 'Hail, stranger. What is it you''ve brought me?'
+        - '*he stares at the blackened wood*'
+        - 'Gods help us. This is worse than I feared. I must ask something dire of you, stranger.'
+        - 'Head into the library dungeon ahead and meet me there.'
+    goal-message: 'Speak with the Dispatched General'
+rewards:
+  money: 35
+  quest-points: 1
+  exp: 350
