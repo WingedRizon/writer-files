@@ -82,7 +82,7 @@ objectives:
       requires:
         1:
           item-type: 'TNT'
-          item-name: '&6Boomton''s Explosives' # Note that &6 is not needed
+          item-name: 'Boomton''s Explosives'
           item-count: 1 
       npc:
         npc-id: 354
