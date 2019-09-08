@@ -37,7 +37,7 @@ objectives:
   3:
     requirement:
       type: 'slay'
-      mob-name: 'forest_spider' # TODO
+      mob-names: 'ForestSpider'
       amount: 8
     completed-message:
     - '&7You've defeated the spiders!'

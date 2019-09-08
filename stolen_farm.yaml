@@ -1,0 +1,85 @@
+name: 'Stolen Farm'
+unique-id: 4
+repeatable: false
+side-quest: false
+requirements:
+  level: 4
+  level-not-met: '&cI need a stronger adventurer. Come back at level 4.'
+first-npc:
+  npc-name: 'Farmer Lawson'
+  npc-id: 322
+  speech:
+  - 'Oh... *coughs* Please help...'
+  - 'I was just finishing a hard day''s work when bandits ravaged my home! *coughs*'
+  - 'I managed to get away, but they''ve stolen my land and my pigs! I''m too weak to fight them off.'
+  - 'Could you please help me?'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'tripwire'
+      tripwire-one: '0,0,0' # TODO
+      tripwire-two: '0,0,0' # TODO
+    goal-message: 'Check on Farmer Lawson''s pigs in the nearby farm'
+    completed-message: 'Return to Farmer Lawson'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Farmer Lawson'
+        npc-id: 322
+        speech:
+        - 'So they didn''t kill any of my pigs! Oh, thank goodness!'
+        - 'But I need my farm back. This time, teach them not to screw with Farmer Lawson!'
+        - 'Defeat ten of those bandits, and we''ll see if they budge.'
+    goal-message: 'Return to Farmer Lawson'
+  3:
+    requirement:
+      type: 'slay'
+      mob-names:
+      - 'AzanaBanditRookie'
+      - 'AzanaBanditElite'
+      - 'AzanaBanditTough'
+      amount: 10
+    goal-message: 'Defeat 10 bandits'
+    completed-message:
+    - '&7You''ve defeated the bandits!'
+    - '&7Time to return to Farmer Lawson.'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Farmer Lawson'
+        npc-id: 322
+        speech:
+        - 'You''ve done it, you''ve beaten them back!'
+        - 'But the bandit leader remains.'
+        - 'Go talk to him in my house, and see if he''ll return my pigs and my farm.'
+    goal-message: 'Return to Farmer Lawson'
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Bandit Leader'
+        npc-id: 325
+        speech:
+        - 'Enough! You have slain enough of my people.'
+        - 'We will return the pigs to the farmer, but we will not yield this land.'
+    goal-message: 'Talk with the Bandit Leader'
+  6:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Farmer Lawson'
+        npc-id: 322
+        speech:
+        - 'Ah, so you''ve returned my pigs!'
+        - 'The bandits won''t return my land? Well, the pigs are a start. Thank you, stranger.'
+        - 'Listen, I''ve got a friend who lives on the other side of the forest who may be able to help me.'
+        - 'If you see him, tell him Lawson sent you.'
+    goal-message: 'Return to Farmer Lawson'
+rewards:
+  quest-points: 1
+  exp: 250
+  money: 0
+
