@@ -1,0 +1,103 @@
+name: 'Druidic Resurgence'
+unique-id: 6
+repeatable: false
+side-quest: false
+requirements:
+  level: 15
+  level-not-met: '&cI need a hardy adventurer. Come back at level 15.'
+first-npc:
+  npc-name: 'Kindroth'
+  npc-id: 410
+  speech:
+  - 'Psst, stranger! Come closer, I wish to look at you.'
+  - '**the druid seems to gaze through you**'
+  - 'Yes, you''ll do. I''ve been watching your endeavors with my farsight for quite some time.'
+  - 'This place isn''t the only city in need of aid.'
+  - 'See this road? Follow it, and speak with my ally, Venali.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Venali'
+        npc-id: 385
+        speech:
+        - 'Halt, human! What is your business here?'
+        - '...you''ve spoken with Kindroth? What purpose could he have for visiting the forsaken city...'
+        - '**the man''s eyes widen in realization** It cannot be! These are dire times indeed.'
+        - 'Listen to me very carefully, human. Swim up the waterfall, and the guards will tell you what to do.'
+    goal-message: 'Speak with Venali'
+  2:
+    requirement:
+      type: 'tripwire'
+      tripwire-one: '0,0,0' # TODO
+      tripwire-two: '0,0,0' # TODO
+    goal-message: 'Swim up the waterfall and enter the kingdom'
+    completed-message:
+    - '&7[1/4] &eIsfodari Guard: &6HALT! No outsider is permitted to enter the hidden kingdom!'
+    - '&7[2/4] &eIsfodari Guard: &6...Kindroth? Watching YOU with his farsight?'
+    - '&7[3/4] &eIsfodari Guard: &6Very well, the archdruid does not act lightly.'
+    - '&7[4/4] &eIsfodari Guard: &6Speak with Myriil inside, human. She will guide you.'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Myriil'
+        npc-id: 384
+        speech:
+        - 'Hello, human, no need to explain your presence. I was warned of your coming by the farsight.'
+        - 'I know of your meeting with Kindroth, and I can explain everything.'
+        - 'We''ve watched you bring order to Koldore and the forsaken city.'
+        - 'Now, we must ask you to help us with a new problem-- the resurgence of the feldruids.'
+        - 'Head down to the beach and speak with Vesryn.'
+    goal-message: 'Speak with Myriil'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Vesryn'
+        npc-id: 411
+        speech:
+        - 'Ah, the human Kindroth spoke of. I expect by now you''ve grown impatient.'
+        - 'You may have noticed the presence of enemies in our santuary. This is most unusual!'
+        - 'We druids keep the peace with our farsight, hidden from the view of others.'
+        - 'These... feldruids... have desecrated all we hold sacred.'
+        - 'Find their leader, and purge him from our lands!'
+    goal-message: 'Speak with Vesryn'
+  5:
+    requirement:
+      type: 'slay'
+      mob-name: 'vindicator' # TODO
+      amount: 1
+    goal-message: 'Defeat the Master Feldruid'
+    completed-message:
+    - '&7You''ve defeated the Master Feldruid!'
+    - '&7You think it''s time to return to Vesryn.'
+  6:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Vesryn'
+        npc-id: 411
+        speech:
+        - 'Welcome, human! I watched you complete your mission through the farsight.'
+        - 'We are forever in your debt, human. But alas! I must ask a favor of you once more.'
+        - 'A dear friend of mine, Aurora, lives in the city of Wintervale to the north.'
+        - 'Recently, I have not heard from her. Head down to the docks and board the ship for the vale.'
+        - 'You must find her! Speak with my contact by the docks.'
+    goal-message: 'Return to Vesryn'
+  7:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Vesryn''s Contact'
+        npc-id: 467
+        speech:
+        - 'Hello, human. You''ve been invaluable to us, but I must warn you. The political situation in Wintervale grows darker each day.'
+        - 'Good luck, and keep your guard.'
+rewards:
+  money: 50
+  quest-points: 1
+  exp: 550
+  execute: 'travel fast %player% boat -1656.5 31 -2808.5 0 0'
