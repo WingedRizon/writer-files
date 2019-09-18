@@ -1,0 +1,89 @@
+name: 'A Daughter''s Sorrow'
+unique-id: 10
+repeatable: false
+side-quest: true
+requirements:
+  level: 9
+  level-not-met: '&cI need a stronger adventurer. Come back at level 9.'
+first-npc:
+  npc-name: 'Maria Hewoak'
+  npc-id: 482
+  speech:
+  - 'Welcome to the Rest, stranger.'
+  - 'Hopefully you don’t find the place too unrefined for your tastes!'
+  - 'I’m not sure what you are doing with the Azanan military dogs, but be careful around them.'
+  - '…'
+  - 'A few months ago with the morning dense with mist, the ship I sailed on crashed into the Haunted Cliffs.'
+  - 'In the wreckage, I lost my family pendant.'
+  - 'Please, go retrieve my pendant from the wreck.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'tripwire'
+      tripwire-one: '0,0,0' # TODO
+      tripwire-two: '0,0,0' # TODO
+    goal-message: 'Recover Maria''s Pendant from the Haunted Cliffs shipwreck'
+    completed-message: '&7You lift Maria''s Familial Pendant from the water!'
+    execute: 'mm items give -s %player% MariasPendant'
+  2:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'OAK_BUTTON'
+          item-name: 'Maria''s Pendant'
+          item-count: 1
+      npc:
+        npc-name: 'Maria Hewoak'
+        npc-id: 482
+        speech:
+        - 'Never did I expect to see this again.'
+        - 'If I could ask another favor of you, travel to Azana and speak with Aaron Durweld. You''ll find him nearby the market district.'
+        - 'When you find him, show him the pendant.'
+        - 'Aaron will recognize the Hewoak crest.'
+    goal-message: 'Deliver the Familial Pendant back to Maria'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Aaron Durweld'
+        npc-id: 483
+        speech:
+        - 'Hello there, what can I do for you?'
+        - 'Why do you have that pendant?'
+        - 'Maria Hewoak gave it to you, eh?'
+        - 'The dictator has the Hewoaks working as his personal carpenters, but they seem to be allowed slightly more autonomy than the rest of us.'
+        - 'You should go talk to Bella Hewoak in the house by the inn.'
+    goal-message: 'Go talk to Aaron Durweld near the Azana Market District'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Bella Hewoak'
+        npc-id: 484
+        speech:
+        - 'Good day, offi- who are you?'
+        - 'Pleasure to meet you, stranger.'
+        - 'What brings you here?'
+        - 'You say Maria is doing fine in the Rest?'
+        - 'Bless you for bringing me this news!'
+        - 'I''m glad she''s taken care of herself since her flight.'
+        - 'Be a dear and tell Maria that we are getting along well enough, would you?'
+    goal-message: 'Meet Bella Hewoak in her home near the Azana Inn'
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Maria Hewoak'
+        npc-id: 482
+        speech:
+        - 'My family''s safe and well, stranger?'
+        - 'Now I can relax, secure in the knowledge that my family is safe.'
+        - 'Here, stranger. I can''t pay you, but I can give you what little I have.'
+    goal-message: 'Bring the news to Maria Hewoak'
+rewards:
+  quest-points: 1
+  exp: 100
+  money: 0
+  execute: 'gathertool give %player% rod 3'
