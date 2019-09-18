@@ -1,0 +1,101 @@
+name: 'The Origin of Magic'
+unique-id: 13
+repeatable: false
+side-quest: false
+requirements:
+  level: 20
+  level-not-met: '&cI need a seasoned adventurer. Come back at level 20.'
+first-npc:
+  npc-name: 'Aurora'
+  npc-id: 470
+  speech:
+  - 'Greetings, traveler. What brings you to the Vale?'
+  - '...Vesryn sent you to help us? Excellent, you''ve come at a moment of conflict, and we need an outsider.'
+  - 'You see, our people are governed by a great council, not unlike the quaint village of Koldore.'
+  - 'Recently the council hasn''t spoken to us, instead staying buried in their hall.'
+  - 'Will you talk to a councilman and see what''s happened?'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Councilman'
+        npc-id: 201
+        speech:
+        - 'I''m sorry outsider, but only council members are permitted to enter here.'
+        - 'What''s that? Aurora sent you to investigate us?'
+        - 'I''m sorry outsider, but we cannot discuss council matters with you. Maybe a nearby citizen of the Vale could be of help.'
+    goal-message: 'Speak with a councilman'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Ellaria'
+        npc-id: 473
+        speech:
+        - 'Hello and welcome, traveler.'
+        - 'You''re investigating the council? Well, let me tell you all I know.'
+        - 'Many years ago, this city was not the great haven it is today. Then, everything changed when the runes appeared.'
+        - 'Magic changed us forever, and the council hoards it.'
+        - 'I would ask the councilman about Pharindar. He''ll know what it means.'
+    goal-message: 'Speak with Ellaria nearby'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Councilman'
+        npc-id: 201
+        speech:
+        - 'Ah, outsider. You''ve returned. I''m sorry, but I cannot help you.'
+        - '...Pharindar? How did Ellaria know his name?!'
+        - 'Pharindar was once the head of the council, before he began hoarding magic for himself.'
+        - 'We attempted to arrest him, but he escaped into the woods nearby.'
+        - 'If you can find him, you must inform us.'
+    goal-message: 'Return to the Councilman and press him further'
+  4:
+    requirement:
+      type: 'tripwire'
+      tripwire-one: '0,0,0' # TODO
+      tripwire-two: '0,0,0' # TODO
+    goal-message: 'Search the nearby woods for Pharindar'
+    completed-message:
+    - '&7You''ve found the exiled council member!'
+    - '&7You notice he looks quite powerful, best to find allies before engaging him.'
+  5:
+    requirement:
+      type: 'slay'
+      mob-names: 'pharindar' # TODO
+      amount: 1
+    goal-message: 'Defeat Pharindar'
+    completed-message:
+    - '&7You''ve defeated Pharindar!'
+    - '&7Best inform the Councilman.'
+  6:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Councilman'
+        npc-id: 201
+        speech:
+        - 'So you found Pharindar! And you were able to defeat him?'
+        - 'Well traveler I must say, you are more formidable than I thought.'
+        - 'Whenever you''re ready, there''s a merchant from Zenyth who will take you to the city, free of charge.'
+        - 'Just tell her you have the support of the council.'
+    goal-message: 'Return to the Councilman'
+  7:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Zenyth Merchant'
+        npc-id: 474
+        speech:
+        - 'Eh? What is it? I''ve got wares to trade!'
+        - '...the council? Fine, fine! Come with me to the great gem of the desert!'
+    goal-message: 'Speak to the Zenyth Merchant when ready'
+
+rewards:
+  money: 50
+  quest-points: 1
+  exp: 600
+  execute: 'travel fast %player% wagon 1583 34 -199 0 0'
