@@ -68,7 +68,7 @@ objectives:
   5:
     requirement:
       type: 'slay'
-      mob-names: 'vindicator' # TODO
+      mob-names: 'Feldruid_Elite'
       amount: 1
     goal-message: 'Defeat the Master Feldruid'
     completed-message:

@@ -65,7 +65,7 @@ objectives:
   5:
     requirement:
       type: 'slay'
-      mob-names: 'pharindar' # TODO
+      mob-names: 'Pharindar'
       amount: 1
     goal-message: 'Defeat Pharindar'
     completed-message:
