@@ -1,0 +1,77 @@
+name: 'Traders and Traitors'
+unique-id: 12
+repeatable: false
+side-quest: false
+requirements:
+  level: 30
+  level-not-met: '&cYou don't seem to be that strong of an adventurer. Come back at level 30.'
+first-npc:
+  npc-name: 'Oscar'
+  npc-id: 387
+  speech:
+  - 'Greetings, adventurer.'
+  - 'You seem like you would be a valuable asset to me. How does helping out a rich trader sound to you?'
+  - 'Well you're in luck, because I can reward you handsomely.'
+  - 'Today has been a very slow trading day for salt. I want you to find out why.'
+  - 'Go check out the salt cave south of here. Just follow the path out the city to get there.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'tripwire'
+      tripwire-one: '0,0,0' # TODO
+      tripwire-two: '0,0,0' # TODO
+    goal-message: 'Go investigate the salt mine South of Zenyth'
+    completed-message: 'Something doesn't feel right...'
+    execute: 'mm m spawn HoodedFigure 1 Alterra,1725,45,100'
+  2:
+    requirement:
+      type: 'slay'
+      mob-names: 'HoodedFigure'
+      amount: 1
+    goal-message: 'Defeat the Hooded Figure'
+    completed-message: 
+    - '&7As you defeat the Hooded Figure, a piece of paper falls out of his pocket.'
+    - '&7It has a description of your name with instructions to attack you!'
+    - '&7It seems like Oscar set you up...'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Oscar'
+        npc-id: 387
+        speech:
+        - '**He doesn't seem happy as you approach him**'
+        - 'H-Hello, did you find out what the matter w-was?'
+        - 'Oh a bandit? My oh my. That sounds awful!'
+        - 'WHAT! I would never send someone to assassinate you!'
+        - 'This is an outrage! Do not speak with me again, and don't try to ask for help!'
+    goal-message: 'Return to Oscar'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Nuri'
+        npc-id: 443
+        speech:
+        - 'I saw everything that was going on with you and Oscar from here.'
+        - 'He's been shady ever since he arrived to Zenyth.'
+        - 'Supposedly he's some sort of trader, but I don't buy it.'
+        - 'I would tell the Sultan if I were you. Go up those big steps near the fountain to find him.'
+    goal-message: 'Speak with Nuri nearby'
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Sultan Abbas'
+        npc-id: 442
+        speech:
+        - 'How dare you speak with me, peasant!'
+        - 'Huh? Bandits? IN MY MINE!?'
+        - 'That is unnacceptable. Thank you for warning me stranger.'
+        - 'Now, I have important duties to attend to, take this and leave me be.'
+    goal-message: 'Speak with the Sultan'
+rewards:
+  money: 100
+  quest-points: 1
+  exp: 500
