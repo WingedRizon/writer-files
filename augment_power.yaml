@@ -1,0 +1,61 @@
+name: 'Augment Power'
+unique-id: 11
+repeatable: true
+side-quest: false
+requirements:
+  level: 20
+  level-not-met: '&cI need a more powerful adventurer. Come back at level 20.'
+first-npc:
+  npc-name: 'Spellpoint Mage'
+  npc-id: 471
+  speech:
+  - 'Greetings, adventurer. Are you ready to further your knowledge of magic and gain a spellpoint?'
+  - 'Excellent! First, I'll need &f25 &6uncut diamonds to begin the process.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'DIAMOND_ORE'
+          item-name: 'Uncut Diamond'
+          item-count: 25
+      npc:
+        npc-name: 'Spellpoint Mage'
+        npc-id: 471
+        speech:
+        - 'Great work! This should be enough.'
+        - 'Next, you'll need to defeat a Fire Elemental so I can harness its magic essence.'
+        - 'Speak to me when ready, and we'll begin.'
+        - 'Remember, if you fail the encounter, you can always quit my task and try again.'
+    goal-message: 'Collect 25 uncut diamonds'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Spellpoint Mage'
+        npc-id: 471
+        speech:
+        - 'Here we go, adventurer.'
+        - 'Hang on!!'
+    goal-message: 'Speak with the Spellpoint Mage to begin the encounter'
+    execute:
+    - 'tp %player% -1384.5 63.0 -2642.5'
+    - 'mm m spawn FireElemental 1 Alterra,-1386,65,-2645'
+  3:
+    requirement:
+      type: 'slay'
+      mob-names: 'FireElemental'
+      amount: 1
+    goal-message: 'Defeat the Fire Elemental'
+    completed-message:
+    - '&7[1/2] &eSpellpoint Mage: &6You made quick work of that elemental!'
+    - '&7[1/2] &eSpellpoint Mage: &6Here, take this spellpoint as a reward!'
+# planner: TODO
+# cooldown: 172800 TODO
+rewards:
+  exp: 0
+  money: 0
+  quest-points: 0
+  execute: 'spellpoint give %player%'
