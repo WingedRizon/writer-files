@@ -1,6 +1,7 @@
 name: 'Augment Power'
 unique-id: 11
 repeatable: true
+quest-cooldown: 127800
 side-quest: false
 requirements:
   level: 20
@@ -52,8 +53,6 @@ objectives:
     completed-message:
     - '&7[1/2] &eSpellpoint Mage: &6You made quick work of that elemental!'
     - '&7[1/2] &eSpellpoint Mage: &6Here, take this spellpoint as a reward!'
-# planner: TODO
-# cooldown: 172800 TODO
 rewards:
   exp: 0
   money: 0
