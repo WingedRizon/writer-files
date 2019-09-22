@@ -1,0 +1,42 @@
+name: 'The Black Rider'
+unique-id: 17
+repeatable: false
+side-quest: true
+requirements:
+  level: 5
+  level-not-met: '&cI need a more powerful adventurer. Come back at level 5.'
+first-npc:
+  npc-name: 'Azana Captain'
+  npc-id: 269
+  speech:
+  - 'Ah, an artifact wielder! You seem strong enough.. I need your help.'
+  - 'One of our best soldiers has betrayed us and taken up residence in the Eraenyan forest.'
+  - 'They call him... the Black Rider.'
+  - 'I need you to rid the forest of this filth! If you do this, I shall give you a shield worthy of a soldier.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'slay'
+      mob-names: 'BlackRider'
+      amount: 1
+    goal-message: 'Defeat the Black Rider'
+    completed-message: 
+    - '&7You defeat the Black Rider!'
+    - 'Time to report to the captain.'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Azana Captain'
+        npc-id: 269
+        speech:
+        - 'You actually did it? I never expected you to return.'
+        - 'Well, congratulations, artifact wielder.'
+        - 'Take this shield as proof of your victory!'
+    goal-message: 'Report to the Azana Captain'
+rewards:
+  quest-points: 1
+  exp: 50
+  money: 0
+  execute: 'runicgive item %player% shield'
