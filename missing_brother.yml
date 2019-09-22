@@ -10,7 +10,7 @@ first-npc:
   npc-id: 326
   speech:
   - 'Hey you, stranger! I must ask a favor of you.'
-  - 'You see, my brother and I have been camping in these woods, but he's gone missing.'
+  - 'You see, my brother and I have been camping in these woods, but he''s gone missing.'
   - 'I noticed you have a weapon with you... would you search these woods for my brother?'
   deniable: false
 objectives:
@@ -20,9 +20,9 @@ objectives:
       tripwire-one: '0,0,0' # TODO
       tripwire-two: '0,0,0' # TODO
     completed-message: 
-    - '&7You discover the body of Melisant's brother.'
+    - '&7You discover the body of Melisant''s brother.'
     - '&7Best to go back and tell her.'
-    goal-message: 'Search the woods for Melisant's brother'
+    goal-message: 'Search the woods for Melisant''s brother'
   2:
     requirement:
       type: 'talk'
@@ -30,8 +30,8 @@ objectives:
         npc-name: 'Melisant'
         npc-id: 326
         speech: 
-        - 'What's that? My brother... perished?'
-        - 'I can't believe it! Spiders, in these woods!'
+        - 'What''s that? My brother... perished?'
+        - 'I can''t believe it! Spiders, in these woods!'
         - 'Please, stranger, avenge my brother! Slay those nasty spiders!'
     goal-message: 'Retrun to Melisant'
   3:
@@ -40,7 +40,7 @@ objectives:
       mob-names: 'ForestSpider'
       amount: 8
     completed-message:
-    - '&7You've defeated the spiders!'
+    - '&7You''ve defeated the spiders!'
     - '&7Best return to Melisant.'
     goal-message: 'Slay 8 spiders in the Eraenyan Forest'
   4:
@@ -50,10 +50,10 @@ objectives:
         npc-name: 'Melisant'
         npc-id: 326
         speech:
-        - 'So you've defeated the cave mother?'
+        - 'So you''ve defeated the cave mother?'
         - 'Thank you, stranger, my brother deserved as much.'
-        - 'Things are changing in the realm, and it isn't for the better.'
-        - 'Well, at least now I've got closure. Good luck on your travels, stranger.'
+        - 'Things are changing in the realm, and it isn''t for the better.'
+        - 'Well, at least now I''ve got closure. Good luck on your travels, stranger.'
     goal-message: 'Return to Melisant'
     rewards:
       quest-points: 1
