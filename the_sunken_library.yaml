@@ -10,7 +10,7 @@ first-npc:
   npc-id: 424
   speech:
   - 'Hail, stranger! Glad to see you found your way.'
-  - 'As you know by now, Dead Man's Rest was once the beautiful city of Genesis Port.'
+  - 'As you know by now, Dead Man''s Rest was once the beautiful city of Genesis Port.'
   - 'We once thought outlaws destroyed the city, but I now suspect something more... sinister.'
   - 'Reach the very end of the library, and investigate the shrine of the librarian.'
   deniable: false
@@ -31,8 +31,8 @@ objectives:
         npc-id: 242
         npc-name: 'Dispatched General'
         speech:
-        - 'Gods among us, you've done it! What did you find?'
-        - '...green fire on the shrine? I had suspected this before, but now I'm sure of it.'
+        - 'Gods among us, you''ve done it! What did you find?'
+        - '...green fire on the shrine? I had suspected this before, but now I''m sure of it.'
         - 'The feldruids have returned.'
         - 'A druid in the Rest, Kindroth, should be able to tell you more.'
         - 'Here, take this as compensation for your work.'

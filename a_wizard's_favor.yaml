@@ -1,0 +1,49 @@
+name: 'A Wizard''s Favor'
+unique-id: 19
+repeatable: false
+side-quest: false
+requirements:
+  level: 4
+  level-not-met: '&cI need a more powerful adventurer. Come back at level 4.'
+first-npc:
+  npc-name: 'Apprentice Wizard'
+  npc-id: 503
+  speech:
+  - 'Many greetings, adventurer. I noticed you wield an artifact, so I was hoping you could help me!'
+  - 'What''s an artifact, you ask? Oh dear... let me illuminate you.'
+  - 'Your weapon is your artifact, and you can add spells to your artifact and rune with spell points.'
+  - 'Help me defeat the ogre in the forest ahead, and I''ll grant you a spell point!'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'tripwire'
+      tripwire-one: '0,0,0' # TODO
+      tripwire-two: '0,0,0' # TODO
+    goal-message: 'Reach the ogre camp in the Eraenyan Forest'
+    completed-message: '&7You enter the camp and notice a cave ahead!'
+  2:
+    requirement:
+      type: 'slay'
+      mob-names: 'CaveOgre'
+      amount: 1
+    goal-message: 'Defeat the Cave Ogre'
+    completed-message:
+    - '&7You witness the Cave Ogre fall to the floor, defeated!'
+    - '&7Better tell the wizard.'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Apprentice Wizard'
+        npc-id: 503
+        speech:
+        - 'You''ve done it! Phew, thank you adventurer!'
+        - 'As promised, I will grant you a spell point. Spend it on your artifact or rune, and unlock a spell!'
+        - 'Good luck on your travels, adventurer.'
+    goal-message: 'Return to the Apprentice Wizard'
+rewards:
+  quest-points: 1
+  exp: 75
+  money: 0
+  execute: 'spellpoint give %player%'

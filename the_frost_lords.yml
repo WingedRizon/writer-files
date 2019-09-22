@@ -10,10 +10,10 @@ first-npc:
   npc-id: 344
   speech:
   - 'What? An outsider? Here? You, traveler, are the first to venture here in an age.'
-  - 'We are the Frost Lords, and welcome to Frost's End!'
-  - 'Many years ago, when the runes appeared in Wintervale, we vikings lived in Hilstead, the Vale's sister city.'
+  - 'We are the Frost Lords, and welcome to Frost''s End!'
+  - 'Many years ago, when the runes appeared in Wintervale, we vikings lived in Hilstead, the Vale''s sister city.'
   - 'We few were able to gain magic, and for that we are banished.'
-  - 'Speak to Brynjar in the inn, and he'll tell you more.'
+  - 'Speak to Brynjar in the inn, and he''ll tell you more.'
   deniable: false
 objectives:
   1:
@@ -27,7 +27,7 @@ objectives:
         - 'We are a severely misunderstood people. Most of us simply desire magic to keep the realm safe, and for that we are feared.'
         - 'There is one of us, however, who betrayed us for power.'
         - 'Her name... is Eldrid. If you enter the fortress above, you will face her, and you must be prepared.'
-        - 'Speak to Ingrid, and she'll help you face our betrayer.'
+        - 'Speak to Ingrid, and she''ll help you face our betrayer.'
     goal-message: 'Speak With Brynjar inside'
     side: false
     npc-giver-id: 344
@@ -42,9 +42,9 @@ objectives:
         - 'Welcome, traveler! My name is Ingrid.'
         - '...'
         - 'You desire to face our great betrayer, Eldrid? I can help you defeat her, for she is my sister.'
-        - 'You'll need the best equipment possible, and for this we must create the Eternal Flame!'
+        - 'You''ll need the best equipment possible, and for this we must create the Eternal Flame!'
         - 'This is no easy task. We will need four ingredients, and the first you will find in Zenyth. Travel there, to the saltrock cave, and you will find a Primitive Rune.'
-        - 'Once you've found it, I will contact you through the farsight.'
+        - 'Once you''ve found it, I will contact you through the farsight.'
     goal-message: 'Speak with Ingrid'
   3:
     requirement:
@@ -53,7 +53,7 @@ objectives:
       tripwire-two: '0,0,0' # TODO
     goal-message: 'Travel to Saltrock Cave near Zenyth and recover a Primitive Rune'
     completed-message: 
-    - '&7[1/3] &eIngrid: &6You've discovered the first ingredient! Excellent.'
+    - '&7[1/3] &eIngrid: &6You''ve discovered the first ingredient! Excellent.'
     - '&7[2/3] &eIngrid: &6Next, we will need the essence of fire.'
     - '&7[3/3] &eIngrid: &6Climb the mage tower in Wintervale, and you will find it.'
     execute: 'mm items give -s %player% PrimitiveRune'
@@ -64,7 +64,7 @@ objectives:
       tripwire-two: '0,0,0' # TODO
     goal-message: 'Enter the mage tower in Wintervale and collect a Fire Essence'
     completed-message:
-    - '&7[1/2] &eIngrid: &6You've discovered the second ingredient! Two remain.'
+    - '&7[1/2] &eIngrid: &6You''ve discovered the second ingredient! Two remain.'
     - '&7[2/2] &eIngrid: &6Next, we will need the feather of a snowy owl. Slay one in the North, and we can progress.'
     execute: 'mm items give -s %player% FireEssence'
   5:
@@ -83,9 +83,9 @@ objectives:
       type: 'tripwire'
       tripwire-one: '0,0,0' # TODO
       tripwire-two: '0,0,0' # TODO
-    goal-message: 'Swim in the pond in Dead Man's Rest and collect a rotting bone'
+    goal-message: 'Swim in the pond in Dead Man''s Rest and collect a rotting bone'
     completed-message:
-    - '&7[1/2] &eIngrid: &6You've discovered the final ingredient! Return to Frost's End and climb the steps to the fortress.'
+    - '&7[1/2] &eIngrid: &6You''ve discovered the final ingredient! Return to Frost''s End and climb the steps to the fortress.'
     - '&7[2/2] &eIngrid: &6Our ally, Havardr, will meet you there and cast the spell.'
     execute: 'mm items give -s %player% RottingBone'
   7:

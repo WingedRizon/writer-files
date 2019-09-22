@@ -11,7 +11,7 @@ first-npc:
   npc-id: 471
   speech:
   - 'Greetings, adventurer. Are you ready to further your knowledge of magic and gain a spellpoint?'
-  - 'Excellent! First, I'll need &f25 &6uncut diamonds to begin the process.'
+  - 'Excellent! First, I''ll need &f25 &6uncut diamonds to begin the process.'
   deniable: false
 objectives:
   1:
@@ -27,8 +27,8 @@ objectives:
         npc-id: 471
         speech:
         - 'Great work! This should be enough.'
-        - 'Next, you'll need to defeat a Fire Elemental so I can harness its magic essence.'
-        - 'Speak to me when ready, and we'll begin.'
+        - 'Next, you''ll need to defeat a Fire Elemental so I can harness its magic essence.'
+        - 'Speak to me when ready, and we''ll begin.'
         - 'Remember, if you fail the encounter, you can always quit my task and try again.'
     goal-message: 'Collect 25 uncut diamonds'
   2:
