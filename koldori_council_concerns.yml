@@ -93,6 +93,7 @@ objectives:
         - 'Who in their right mind would do that!?'
         - 'The Master of the Forge wants me to finish mining the rest of the ore for the shipment?'
         - '*sighs* I guess I gotta keep my job somehow.'
+        idle-message: '*Use &fBoomton''s Explosives&6 to wake him up.'
     goal-message: 'Wake up Lundret'
   7:
     requirement:
@@ -132,6 +133,7 @@ objectives:
         speech:
         - 'Thank you! Looks like our harvest is healthy and bountiful.'
         - 'Well I think that''s all from me, go and see what the Master of War wants of you.'
+        idle-message: 'Please bring me &f15 Wheat&6.'
     goal-message: 'Bring the Master of Crop 15 wheat'
   10:
     requirement:

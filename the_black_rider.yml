@@ -23,7 +23,7 @@ objectives:
     goal-message: 'Defeat the Black Rider'
     completed-message: 
     - '&7You defeat the Black Rider!'
-    - 'Time to report to the captain.'
+    - '&7Time to report to the captain.'
   2:
     requirement:
       type: 'talk'

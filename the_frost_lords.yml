@@ -29,9 +29,6 @@ objectives:
         - 'Her name... is Eldrid. If you enter the fortress above, you will face her, and you must be prepared.'
         - 'Speak to Ingrid, and she''ll help you face our betrayer.'
     goal-message: 'Speak With Brynjar inside'
-    side: false
-    npc-giver-id: 344
-    ask-message: Torsen;;;;;
   2:
     requirement:
       type: 'talk'
@@ -101,8 +98,12 @@ objectives:
           item-name: 'Essence of Fire'
           item-count: 1
         3:
-          item-type: 'BONE'
+          item-type: 'FEATHER'
           item-name: 'Snowy Feather'
+          item-count: 1
+        4:
+          item-type: 'BONE'
+          item-name: 'Rotting Bone'
           item-count: 1
       npc:
         npc-name: 'Havardr'
@@ -113,6 +114,7 @@ objectives:
         - '...'
         - 'Perfect, now I can cast the spell and create the Eternal Flame!'
         - 'Beware of the fortress traveler, and good luck.'
+        idle-message: 'Please bring me the items needed for the Eternal Flame.'
     goal-message: 'Speak with Havardr outside the Frozen Fortress'
 rewards:
   quest-points: 1

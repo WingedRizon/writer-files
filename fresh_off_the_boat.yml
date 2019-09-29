@@ -13,7 +13,7 @@ first-npc:
   speech: 
   - 'Aye! Welcome, stranger, to Azana, capital city of Alterra!'
   - 'I heard from Captain Adams that the voyage went well.'
-  - 'He''s asked meto check on his brother, Captain Henry, at the inn.'
+  - 'He''s asked me to check on his brother, Captain Henry, at the inn.'
   - 'We found his ship wrecked, and we want to make sure he''s alright.'
   - 'Would you check on him for me? To find the inn, just follow the signposts with a hearthstone!'
   deniable: false

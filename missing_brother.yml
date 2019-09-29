@@ -55,7 +55,7 @@ objectives:
         - 'Things are changing in the realm, and it isn''t for the better.'
         - 'Well, at least now I''ve got closure. Good luck on your travels, stranger.'
     goal-message: 'Return to Melisant'
-    rewards:
-      quest-points: 1
-      exp: 200
-      money: 0
+rewards:
+  quest-points: 1
+  exp: 200
+  money: 0

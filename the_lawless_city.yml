@@ -31,6 +31,7 @@ objectives:
         - 'You''ve brought them? Good work, stranger'
         - 'Now let''s take a look... this is very troubling indeed.'
         - 'I have all I need to inquire further. Why don''t you speak with my soldier on the staircase of the city?'
+        idle-message: 'Please bring me &f8 Mournful Tears&6 from haunted cliffs.'
     goal-message: 'Collect 8 mournful tears'
   2:
     requirement:
@@ -59,6 +60,7 @@ objectives:
         - 'Hm... this is all very troubling indeed.'
         - 'Head up the steps and speak with the general.'
         - 'He''ll want to see this.'
+        idle-message: 'Please bring me &f20 Dark Oak Logs&6.'
     goal-message: 'Bring the soldier 20 dark logs'
   4:
     requirement:

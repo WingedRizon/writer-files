@@ -31,7 +31,7 @@ objectives:
       type: 'talk'
       requires:
         1:
-          item-type: 'OAK_BUTTON'
+          item-type: 'WOOD_BUTTON'
           item-name: 'Maria''s Pendant'
           item-count: 1
       npc:
@@ -42,6 +42,7 @@ objectives:
         - 'If I could ask another favor of you, travel to Azana and speak with Aaron Durweld. You''ll find him nearby the market district.'
         - 'When you find him, show him the pendant.'
         - 'Aaron will recognize the Hewoak crest.'
+        idle-message: 'Please retrieve my pendant from the shipwreck by the Haunted Cliffs.'
     goal-message: 'Deliver the Familial Pendant back to Maria'
   3:
     requirement:

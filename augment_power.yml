@@ -30,6 +30,7 @@ objectives:
         - 'Next, you''ll need to defeat a Fire Elemental so I can harness its magic essence.'
         - 'Speak to me when ready, and we''ll begin.'
         - 'Remember, if you fail the encounter, you can always quit my task and try again.'
+        idle-message: 'Please bring me &f25 Uncut Diamonds&6.'
     goal-message: 'Collect 25 uncut diamonds'
   2:
     requirement:
@@ -52,7 +53,7 @@ objectives:
     goal-message: 'Defeat the Fire Elemental'
     completed-message:
     - '&7[1/2] &eSpellpoint Mage: &6You made quick work of that elemental!'
-    - '&7[1/2] &eSpellpoint Mage: &6Here, take this spellpoint as a reward!'
+    - '&7[2/2] &eSpellpoint Mage: &6Here, take this spellpoint as a reward!'
 rewards:
   exp: 0
   money: 0

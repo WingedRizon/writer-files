@@ -22,7 +22,7 @@ objectives:
       tripwire-one: '0,0,0' # TODO
       tripwire-two: '0,0,0' # TODO
     goal-message: 'Go investigate the salt mine South of Zenyth'
-    completed-message: 'Something doesn''t feel right...'
+    completed-message: '&7Something doesn''t feel right...'
     execute: 'mm m spawn HoodedFigure 1 Alterra,1725,45,100'
   2:
     requirement:

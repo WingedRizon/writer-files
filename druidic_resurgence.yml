@@ -96,6 +96,7 @@ objectives:
         speech:
         - 'Hello, human. You''ve been invaluable to us, but I must warn you. The political situation in Wintervale grows darker each day.'
         - 'Good luck, and keep your guard.'
+    goal-message: 'Speak with Vesryn''s contact and travel to Wintervale'
 rewards:
   money: 50
   quest-points: 1

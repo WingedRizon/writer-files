@@ -28,7 +28,7 @@ objectives:
     requirement:
       type: 'talk'
       npc:
-        npc-id: 242
+        npc-id: 424
         npc-name: 'Dispatched General'
         speech:
         - 'Gods among us, you''ve done it! What did you find?'
