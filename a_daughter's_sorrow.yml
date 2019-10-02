@@ -31,7 +31,7 @@ objectives:
       type: 'talk'
       requires:
         1:
-          item-type: 'WOOD_BUTTON'
+          item-type: 'OAK_BUTTON'
           item-name: 'Maria''s Pendant'
           item-count: 1
       npc:
