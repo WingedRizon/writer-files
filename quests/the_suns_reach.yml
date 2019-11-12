@@ -1,0 +1,101 @@
+name: 'The Sun''s Reach'
+unique-id: na
+repeatable: false
+side-quest: false
+requirements:
+  level: 31
+  level-not-met: '&cI need somebody with more... talent than you have. Come back to me with... survival skills. Muscle. Come to me at level thirty-one.'
+first-npc:
+  npc-name: 'Horak'
+  npc-id: na
+  speech:
+  - 'Hello there, my name is Horak Mul. I work for the Sultanate of Zenyth. We’'re looking for recruits to join the colonies in the north.'
+  - 'What does it entail? Well, the expedition is to the new colony of Zemmek in the northern desert archipelago. The land is ancient and unexplored... all there is is tribes of savage natives and legends of untold wealth.'
+  - 'Some believe the land to be cursed... they are, of course, wrong. The seemingly endless, sun blessed dunes are also known as The Sun''s Reach, or Bek'’s Loss. But, err, we prefer not to talk about that. '
+  - 'Do you want to join?... You do? Excellent!'
+  - 'Just hop aboard the ship.'
+  execute: travel fast %player% boat 1440 23 -1120 180 0
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Horak'
+        npc-id: na
+        speech:
+        - 'Ah yes, you again!'
+        - 'Now that we''ve made it, I expect you have many questions. But first, we require some... assistance. This is our first colony on Bek''s Loss- I mean, Sun''s Reach. Our last ship came here just a few weeks ago to bring all the shelter supplies here, we’'re just missing some wood for the fires tonight.'
+        - 'If you wouldn’'t mind going up to the east of the island, there should be some wood available just to the east of here, go through the north exit of the camp.'
+        - 'Remember, there’s always savages lurking around these sandy lands. If you see any, kill them on sight. They''re barely human, anyways. The little devils...'
+        - 'Anyways, for the fires the next few nights, we'’ll need just a little bit of wood. Twenty Palm Logs should be more than sufficient.'
+    goal-message: 'Talk to Horak on the Zemmek colony'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Horak'
+        npc-id: na
+        speech:
+        - 'Ah yes, you again!'
+        - 'Now that we’ve made it, I expect you have many questions. But first, we require some... assistance. This is our first colony on Bek’s Loss- I mean, Sun’s Reach. Our last ship came here just a few weeks ago to bring all the shelter supplies here, we’re just missing some wood for the fires tonight.'
+        - 'If you wouldn’t mind going up to the east of the island, there should be some wood available just to the east of here, go through the north exit of the camp.'
+        - 'Remember, there’s always savages lurking around these sandy lands. If you see any, kill them on sight. They’re barely human, anyways. The little devils...'
+        - 'Anyways, for the fires the next few nights, we’ll need just a little bit of wood. Twenty Palm Logs should be more than sufficient.'
+    goal-message: 'Talk to Horak on the Zemmek colony'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: '???'
+        npc-id: na
+        speech:
+        - 'Psst. Psst!'
+        - 'Hey, you there! Come here. We don’t have much time.'
+        - 'You were sent by Horak to get Palm log, yes?'
+        - 'Alright. You need to know something. The real reason the Zenyth Sultanate is here.'
+        - 'There is an ancient power here. History hidden beneath the sands.'
+        - 'This is not the first time the Sultan has tried to expand into The Sun''s Reach - Or, by its previous, more deserved name - Bek''s Loss.'
+        - 'And I assure you, his intentions are not good.'
+        - 'I’'ve already gotten the wood chopped for you, it'’s down in the cave here. When you’ve gotten it, bring it to me to prove you’'re strong enough to take this on. It’'s in a large stack of crates, take only the lightest crate in color. Break it however you can, and bring it to me.'
+        - 'Hurry now. Time is of the essence.'
+    goal-message: 'Travel to the Palm Jungle'
+  4: 
+    requirement:
+      type: 'break'
+      block-type: 'BIRCH_PLANKS'
+      location: '1580,6,-1152'
+    goal-message: 'Gather the crate of Palm Logs'
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: '???'
+        npc-id: na
+        speech:
+        - 'If you want to learn more about this, travel to the southern part of this island, to the Qohaani tribal settlement.'
+        - 'It’’s on this island, though there are many on this archipelago. They tell few people, and only they trust few with this Island’’s true name: &oMorra.'
+        - 'To disrespectful outsiders, they do not give them the privilege of knowing this lands true name. For a desecrator, it is a grievous insult to say the Island’’s name.'
+        - 'Do not make me regret entrusting you with this knowledge.'
+        - 'Once you’’re safe, come to the Qohaani settlement just north of here, through the Oasis.'
+        - 'Go now, back to your colony.'
+        - 'Remember, you must go to northern Morra and seek out the Qohaani people. This is imperative. Let no one know of your actions. The Settlement is just over the totem hill.'
+    goal-message: 'Return to the stranger in the Palm Jungle'
+
+  6:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Horak'
+        npc-id: na
+        speech:
+        - '*pant* Did you get the *pant* logs?'
+        - 'What *pant* do you *pant* mean “what’s wrong?”? There’s nothing *pant* wrong with me *pant*.'
+        - '&oHorak is visibly tired & sweaty'
+        - 'Oh, *pant* great. I-I’ll just lay down for a second here. I’m very *pant* tired and out of *pant* breath. I’m sure you have *pant* something to *pant* do.'
+    goal-message: 'Return to Horak Mul in the Zemmek colony'
+rewards:
+  money: 50
+  quest-points: 1
+  exp: 550
+
