@@ -6,7 +6,7 @@ requirements:
   level: 31
   level-not-met: '&cI need somebody with more... talent than you have. Come back to me with... survival skills. Muscle. Come to me at level thirty-one.'
 first-npc:
-  npc-name: 'Horak Mul'
+  npc-name: 'Horak'
   npc-id: na
   speech:
   - 'Hello there, my name is Horak Mul. I work for the Sultanate of Zenyth. We’'re looking for recruits to join the colonies in the north.'
