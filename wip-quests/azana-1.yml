@@ -1,0 +1,17 @@
+name: 'Fresh off the Boat'
+unique-id: na
+repeatable: false
+side-quest: false
+requirements:
+  level: 3
+  level-not-met:
+  - '&cI need a stronger adventurer.'
+  - '&cCome back at level 3.'
+  level-not-met: ''
+first-npc:
+  npc-name: 'First Mate Alice'
+  npc-id: na
+  speech:
+  - 'Aye! Welcome %player%, to Azana, capital city of Alterra! I heard from Captain Adams that the voyage went well.'
+  - 'We have been having some.. er.. problems, in the city.'
+  - 'After gathering information, for quite some time, we discovered that a small group of citizens have formed a resistance against the '
