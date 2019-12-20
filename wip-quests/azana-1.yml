@@ -13,5 +13,19 @@ first-npc:
   npc-id: na
   speech:
   - 'Aye! Welcome %player%, to Azana, capital city of Alterra! I heard from Captain Adams that the voyage went well.'
-  - 'We have been having some.. er.. problems, in the city.'
-  - 'After gathering information, for quite some time, we discovered that a small group of citizens have formed a resistance against the '
+  - 'You may be new to alterra, but I think that you can carry out the task that I have in mind.'
+  - 'It isn''t a secret that the conditions are for most Azana citizens are very poor. A lot of them are even left without food.'
+  - 'The military guards inspire fear in the lower class to keep them in check.'
+  - 'It seems clear that this is not a problem that can be solved overnight, but I think have know a good place to start.'
+  - 'Talk to members of the lower class, and see what you can do to help.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Azana Citizens' # i am very uncreative you can change this
+        npc-id: na
+        speech:
+        - 'Please... stay away. I have so little left to lose.'
+        - 'The leadership hoards all of the food. We are beginning to starve...'
