@@ -57,11 +57,12 @@ objectives:
     goal-message: 'talk to dude and give him item'
   3: 
     requirement:
-      type: 'tripwire'
-      tripwires:
-        1:
-          corner-one: 'x,y,z'
-          corner-two: 'x,y,z'
+      type: 'location'
+      location-type: 'radius'
+      radius: 5 # If location-type is radius then this is required
+      location: '1,1,1' # If location-type is radius then this is required
+      # corner-one: '1,1,1' <- this is only if location-type is 'box'
+      # corner-two: '2,2,2' <- this is only if location-type is 'box'
     goal-message: 'step on the wire (enter an area)'
     completed-message: 'break some grass'
   4: 
@@ -76,9 +77,6 @@ rewards:
   quest-points: 1
   money: 100
   execute: '/give %player% dirt'
-completion-message: '&6nice job' # OPTIONAL. This message is run after the rewards are given
-use-last-npc-name-for-completion-speech: false # This works ONLY if: you have a completion-message and your last objective is of 
-                                               # type: 'talk', then it will display an NPC speech message using completion-message
 # NOTES:
 # firstNPC can contain 'execute' but other NPCs cannot (execute should be under each objective)
 # idle-message and execute are optional for NPCs. execute is optional for rewards
