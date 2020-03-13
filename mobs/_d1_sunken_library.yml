@@ -1,0 +1,157 @@
+TheLibrarian:
+  Type: EVOKER
+  Display: '&e[&6☠&e] &cThe Librarian'
+  Health: 3000
+  Faction: Boss
+  Modules:
+    ThreatTable: true
+  Damage: 20
+  BossBar:
+    Enabled: true
+    Title: '&c&lThe Librarian'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+  Equipment:
+  - WRITABLE_BOOK HAND
+  Options:
+    MovementSpeed: 0.24
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 5
+    Silent: true
+  Skills: 
+  - effect:sound{s=entity.ender_eye.death;volume=0.35;p=0.5} @PIR{r=35} ~onDamaged
+  - skill{s=summonBook} @self ~onTimer:60
+  - skill{s=summonBossBook} @self ~onTimer:100
+  - randomskill{skills=startHappyEnding} @self ~onTimer:600 =81%-100%
+  - randomskill{skills=startHappyEnding,startPlotTwist} @self ~onTimer:600 =66%-80%
+  - randomskill{skills=startFlashforward,startHappyEnding,startPlotTwist} @self ~onTimer:600 =51%-65%
+  - remove @MIR{r=100;t=LivingBook} ~onDeath
+  - command{c="runicgive exp <target.name> 500 <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor uncommon"} @target ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor uncommon"} @target ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor uncommon"} @target ~onDeath 1.0
+  - setstance{stance=normal} @self ~onSpawn
+  #- summon{type=obelisk_spawn;amount=1;radius=0;yr=0;os=true} @Forward{f=0;y=10.0} ~onEnterCombat
+  #- remove @MIR{r=100;t=obelisk_spawn} ~onDeath
+  #- remove @MIR{r=100;t=obelisk_spawn} ~onDespawn
+  #- signal{s=obelisk_spawn} @MIR{r=50;t=LivingBook} ~onTimer:60 #add a health mod here
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Haku
+
+LivingBook:
+  MobType: pigzombie
+  Display: '&e[&6✸&e] &cLiving Book'
+  Health: 25
+  Damage: 15
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    Silent: true
+    Angry: true
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - WRITABLE_BOOK HAND
+  Skills:
+  - potion{t=INVISIBILITY;d=2147483647;l=0;hasParticles=false} @self ~onSpawn
+  - effect:sound{s=block.stone.break;volume=1;p=0.5} @PIR{r=35} ~onDamaged
+  - effect:smoke @self ~onSpawn
+  - skill{s=happyEndingSignal} @self ~onSignal:happyEnding
+  - potion{t=SLOW;d=60;l=0;hasParticles=true} @target ~onAttack
+  - setstance{stance=normal} @self ~onSpawn
+  - setstance{stance=normal} @self ~onSignal:normal
+  - setstance{stance=doubleDamage} @self ~onSignal:doubleDamage
+  - setstance{stance=plotTwist} @self ~onSignal:plotTwist
+  - skill{s=doubleDamage} @self ~onAttack
+  - skill{s=plotTwistAffect} @self ~onDamaged
+
+obelisk_spawn: 
+  Type: armor_stand
+  Display: '&0' 
+  Health: 0
+  Damage: 0
+  Disguise:
+    Type: 'ender_crystal'
+  Skills:
+  - teleportto{location=158.500,34,-170.500;pitch=0;world=dungeons} @self ~onSpawn
+  - summon{type=LivingBook;amount=1;yr=0;os=true;radius=4} ~onSignal:spawnBook
+  Options:
+    HasGravity: false
+    Marker: true  
+################################################################################################################################################
+ForsakenLibrarian:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cForsaken Librarian'
+  Health: 100
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 2-4 0.3
+  - SilverKey 1 1.0
+  Damage: 10
+  Faction: Bandit
+  Equipment:
+  - GOLDEN_HOE HAND
+  Options:
+    MovementSpeed: 0.3
+    PreventOtherDrops: true
+    FollowRange: 30
+    NoDamageTicks: 5
+  Skills:
+  - skill{s=MeteorShot} @NearestPlayer{r=10} ~onTimer:120
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Webdoos
+    ModifyBoundingBox: true
+
+ForsakenSentry:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cForsaken Sentry'
+  Health: 135
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 2-4 0.3
+  - GoldKey 1 1.0
+  Damage: 20
+  Equipment:
+  - GOLDEN_AXE HAND
+  Options:
+    MovementSpeed: 0.3
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 5
+  Skills:
+  - skill{s=FireAuraSmall} @self ~onTimer:200
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: tower02

@@ -1,0 +1,16 @@
+SummonElite_Lizard:
+  Cooldown: 60
+  Skills:
+  - message{cooldown=60;m="§6§l✸ &c&lElite Lizard &e&lhas spawned!"} @PlayersInRadius{r=50}
+  - summon{mob=LizardElite;amount=1;noise=5;os=true} @Self
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+Arrow:
+  Skills:
+  - projectile{onTick=Arrow-Tick;onHit=Arrow-Hit;v=10;i=1;hR=1;vR=1;sfo=1.5}
+  - sound{s=block.slime_block.break} @self
+Arrow-Tick:
+  Skills:
+  - effect:particles{p=reddust;color=#7CFC00;amount=1;speed=0;hS=0.1;vS=0.1} @origin
+Arrow-Hit:
+  Skills:
+  - damage{a=50}

@@ -1,0 +1,32 @@
+HasgruilsPickaxe:
+  Id: GOLDEN_PICKAXE
+  Data: 0
+  Amount: 1
+  Display: '&6Hasgruil''s Pickaxe'
+  Lore:
+  - ''
+  - '&7I should return this to Hasgruil!'
+  - ''
+  - '&6Quest Item'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:1
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+TNT:
+  Id: TNT
+  Amount: 1
+  Display: '&6Boomton''s Explosives'
+  Lore:
+  - ''
+  - '&7Time to wake Lundret!'
+  - ''
+  - '&6Quest Item'
+DwarvenBattleaxe:
+  Id: WOODEN_AXE
+  Data: 1
+  Amount: 1
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+  Unbreakable: true

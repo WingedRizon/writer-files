@@ -1,0 +1,84 @@
+LeatherHelmetShears:
+  Id: SHEARS
+  Data: 10
+  Amount: 1
+Cod:
+  Id: COD
+  Amount: 1
+  Display: '&fCod'
+  Lore:
+  - '&7Crafting Reagent'
+Tropical:
+  Id: TROPICAL_FISH
+  Amount: 1
+  Display: '&fTropical Fish'
+  Lore:
+  - '&7Crafting Reagent'
+Pufferfish:
+  Id: PUFFERFISH
+  Amount: 1
+  Display: '&fPufferfish'
+  Lore:
+  - '&7Crafting Reagent'
+UncutSapphire:
+  Id: LAPIS_ORE
+  Amount: 1
+  Display: '&fUncut Sapphire'
+  Lore:
+  - '&7Raw Material'
+UncutOpal:
+  Id: NETHER_QUARTZ_ORE
+  Amount: 1
+  Display: '&fUncut Opal'
+  Lore:
+  - '&7Raw Material'
+UncutEmerald:
+  Id: EMERALD_ORE
+  Amount: 1
+  Display: '&fUncut Emderald'
+  Lore:
+  - '&7Raw Material'
+UncutDiamond:
+  Id: DIAMOND_ORE
+  Amount: 1
+  Display: '&fUncut Diamond'
+  Lore:
+  - '&7Raw Material'
+UncookedRabbit:
+  Id: RABBIT
+  Amount: 1
+  Display: '&fUncooked Rabbit'
+  Lore:
+  - '&7Crafting Reagent'
+ScryingOrb:
+  Id: 397
+  Data: 3
+  Display: '&fScrying Orb'
+  Lore:
+  - '&7'
+  - '&6&lRIGHT CLICK &aFarsight'
+  - '&7After specifying a player, learn'
+  - '&7all their combat stats!'
+  - '&7'
+  - '&7Consumable'
+  Options:
+    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGFhOGZjOGRlNjQxN2I0OGQ0OGM4MGI0NDNjZjUzMjZlM2Q5ZGE0ZGJlOWIyNWZjZDQ5NTQ5ZDk2MTY4ZmMwIn19fQ====
+TheWatcher:
+  Id: eye_of_ender
+  Data: 0
+  Amount: 1
+  Display: '&dThe Watcher'
+  Lore:
+  - ''
+  - '&7Given to players who find &r&4game breaking&r&7 bugs!'
+  - '&7Got to keep a close EYE!'
+  - '&7Oh god that wasnt funny...'
+  - ''
+  - '&dMythic'
+  Options:
+     Unbreakable: true
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:1
+  Hide:
+  - UNBREAKABLE
+  - ENCHANTS

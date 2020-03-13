@@ -1,0 +1,33 @@
+SummonElite_UndeadMiner:
+  Cooldown: 60
+  Skills:
+  - message{cooldown=60;m="§6§l✸ &c&lElite Undead Miner &e&lhas spawned!"} @PlayersInRadius{r=50}
+  - summon{mob=UndeadMinerElite;amount=1;noise=5;os=true} @Self
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+bashWarn:
+  Conditions:
+  - incombat{} true
+  Skills:
+  - sendtitle{title="&4&kooo&r&l&cBash&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=15}
+  - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=15}
+  - delay 20
+  - sendtitle{title="&4&kooo&r&l&cBash&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=15}
+  - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=15}
+  - delay 20
+  - sendtitle{title="&4&kooo&r&l&cBash&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=15}
+  - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=15}
+  - delay 20
+  - skill{s=bashAbility} @self
+bashAbility:
+  Skills:
+  - leap{velocity=200} @target
+  - delay 20
+  - skill{s=bashHit} @self
+bashHit:
+  Conditions:
+  - playerwithin{d=5} true
+  Skills:
+  - effect:sound{s=block.anvil.place;v=1;p=0.5} @PIR{r=25}
+  - effect:particles{p=crit;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+  - damage{amount=30} @PIR{r=5}
+  - throw{velocity=3;velocityY=0} @PIR{r=5}

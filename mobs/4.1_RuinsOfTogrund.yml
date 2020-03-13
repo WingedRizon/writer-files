@@ -1,0 +1,105 @@
+UndeadBarbarian:
+  Type: EVOKER
+  Display: '&e[&617&e] &cUndead Barbarian'
+  Health: 225
+  Damage: 35
+  Faction: Undead
+  Equipment:
+  - IRON_AXE HAND
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 2-4 0.3
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 215 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor uncommon <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.04
+  - command{c="giveweapon <trigger.name> uncommon <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.04
+  - skill{s=SummonElite_Barbarian} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: henrik172
+BarbarianElite:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cBarbarian Elite'
+  Health: 275
+  Damage: 45
+  Equipment:
+  - IRON_SWORD HAND
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 2-6 1.0
+  Options:
+    MovementSpeed: 0.3
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 425 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor uncommon <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.75
+  - command{c="giveweapon <trigger.name> uncommon <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.5
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Rajjip
+TogrundTheBlighted:
+  Type: EVOKER
+  Display: '&e[&6☠&e] &cTogrund the Blighted'
+  Health: 1500
+  Faction: Boss
+  Modules:
+    ThreatTable: true
+  Damage: 30
+  BossBar:
+    Enabled: true
+    Title: '&c&lTogrund'
+    Health: 1500
+    Range: 20
+    Color: RED
+    Style: SEGMENTED_10
+  Equipment:
+  - TogrundMace HAND
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 750 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="givescroll <trigger.name> fire bolt <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.3
+  - command{c="givescroll <trigger.name> water insanity <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.3
+  - command{c="givescroll <trigger.name> water siphon <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.3
+#  - skill{s=bashWarn} ~onTimer:300
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: adrix013

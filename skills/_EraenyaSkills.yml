@@ -1,0 +1,23 @@
+SummonElite_Crawler:
+  Cooldown: 60
+  Skills:
+  - message{cooldown=60;m="§6§l✸ &c&lElite Cave Crawler &e&lhas spawned!"} @PlayersInRadius{r=50}
+  - summon{mob=CaveCrawlerElite;amount=1;noise=5;os=true} @Self
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+RiderEnrage:
+  Cooldown: 160
+  Skills:
+   - effect:sound{s=entity.wither.spawn;volume=1;p=1} @PIR{r=10} 
+   - delay 20
+   - sendtitle{title="&4&kooo&r&l&cEnrage&r&4&kooo";subtitle="&e&lBlack Rider is now enraged!";d=40} @PlayersInRadius{r=15}
+   - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=15}
+   - equip{item=wither_skeleton_skull:4}
+   - effect:particles{particle=redstone;amount=7;vSpread=1;hSpread=1;Speed=.01;yOffset=1.5} @Self
+   - potion{type=DAMAGE_RESISTANCE;d=160;level=1} @Self
+   - potion{type=SPEED;d=160;level=1} @Self
+   - potion{type=SLOW;d=120;level=1} @PIR{r=10}
+#   - potion{type=BLINDNESS;d=100;level=0;} @PIR{r=10}
+   - delay 160 
+   - effect:sound{s=entity.wither.break_block;volume=1;p=1} @PIR{r=10} 
+   - sendtitle{title="&2&kooo&r&l&aEnrage&r&2&kooo";subtitle="&e&lBlack Rider is no longer enraged!";d=40} @PlayersInRadius{r=15}
+   - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=15}

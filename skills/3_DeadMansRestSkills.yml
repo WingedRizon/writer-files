@@ -1,0 +1,12 @@
+SummonElite_HauntingGhoul:
+  Cooldown: 60
+  Skills:
+  - message{cooldown=60;m="§6§l✸ &c&lElite Haunting Ghoul &e&lhas spawned!"} @PlayersInRadius{r=50}
+  - summon{mob=HauntingGhoulElite;amount=1;noise=5;os=true} @Self
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+SummonElite_RisenCorpse:
+  Cooldown: 60
+  Skills:
+  - message{cooldown=60;m="§6§l✸ &c&lElite Risen Corpse &e&lhas spawned!"} @PlayersInRadius{r=50}
+  - summon{mob=RisenCorpseElite;amount=1;noise=5;os=true} @Self
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self

@@ -1,0 +1,72 @@
+Bread:
+  Id: BREAD
+  Amount: 1
+  Display: '&fBread'
+  Lore:
+  - '&7Consumable'
+CaptainHead:
+  Id: 397
+  Data: 3
+  Amount: 1
+  Options:
+    Player: 'msu957'
+Coin:
+  Id: GOLD_NUGGET
+  Amount: 1
+  Display: '&6Gold Coin'
+  Lore:
+  - '&7Currency of Alterra'
+Wheat:
+  Id: WHEAT
+  Amount: 1
+  Display: '&fWheat'
+  Lore:
+  - '&7Raw Material'
+SpruceWood:
+  Id: SPRUCE_LOG
+  Amount: 1
+  Display: '&fSpruce Log'
+  Lore:
+  - '&7Raw Material'
+Thread:
+  Id: STRING
+  Amount: 1
+  Display: '&fThread'
+  Lore:
+  - '&7Crafting Reagent'
+AnimalHide:
+  Id: LEATHER
+  Amount: 1
+  Display: '&fAnimal Hide'
+  Lore:
+  - '&7Crafting Reagent'
+OakWood:
+  Id: OAK_LOG
+  Amount: 1
+  Display: '&fOak Log'
+  Lore:
+  - '&7Raw Material'
+UncutRuby:
+  Id: REDSTONE_ORE
+  Amount: 1
+  Display: '&fUncut Ruby'
+  Lore:
+  - '&7Raw Material'
+Bottle:
+  Id: GLASS_BOTTLE
+  Amount: 1
+  Display: '&fGlass Bottle'
+  Lore:
+  - '&7Crafting Reagent'
+Salmon:
+  Id: SALMON
+  Amount: 1
+  Display: '&fSalmon'
+  Lore:
+  - '&7Crafting Reagent'
+CookedSalmon:
+  Id: COOKED_SALMON
+  Amount: 1
+  Display: '&fCooked Salmon'
+  Lore:
+  - '&7Consumable'

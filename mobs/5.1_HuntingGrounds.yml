@@ -1,0 +1,54 @@
+Direwolf:
+  Type: WOLF
+  Display: '&e[&620&e] &cDirewolf'
+  Health: 250
+  Damage: 28
+#  Faction: Bandit
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 3-5 0.3
+  Options:
+    MovementSpeed: 0.3
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 250 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor uncommon <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.04
+  - command{c="giveweapon <trigger.name> uncommon <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.04
+  - skill{s=SummonElite_Direwolf} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+DirewolfElite:
+  Type: POLAR_BEAR
+  Display: '&e[&6✸&e] &cMother Bear'
+  Health: 325
+  Damage: 35
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 4-6 1.0
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 500 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor uncommon <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.75
+  - command{c="giveweapon <trigger.name> uncommon <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.5
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget

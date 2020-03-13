@@ -1,0 +1,165 @@
+NaheenCitizen:
+  Type: EVOKER
+  Display: '&e[&61&e] &aNaheen Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aNaheen Citizen<&co> &fThe goddess looks upon us this day.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Sabrisalim
+NaheenCitizen2:
+  Type: EVOKER
+  Display: '&e[&61&e] &aNaheen Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aNaheen Citizen<&co> &fThe goddess looks upon us this day.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: pingpong1010
+NaheenGuard:
+  Type: EVOKER
+  Display: '&e[&650&e] &aNaheen Guard'
+  Health: 5000
+  Damage: 0
+  Equipment:
+  - IRON_SWORD HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 gotolocation 1897,43,229
+  - 2 lookatplayers
+  - 3 randomlookaround
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aNaheen Guard<&co> &fBlessings upon you, stranger.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: No_Name
+NaheenLlama:
+  Type: Rabbit
+  Display: '&e[&61&e] &aDesert Rabbit'
+  Health: 25
+  Damage: 0
+  Drops:
+  - UncookedRabbit 1 0.3
+  Options:
+    RabbitType: Gold
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 fleeplayers
+  - 3 float
+Bug:
+  Type: EVOKER
+  Display: '&e[&632&e] &cToxic Wasp'
+  Health: 150
+  Modules:
+    ThreatTable: true
+  Damage: 50
+  Drops:
+  - Coin 4-8 0.3
+  Options:
+    MovementSpeed: 0.25
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 5
+  Skills:
+  - skill{s=Sting} @target ~onTimer:140
+  - command{c="runicgive exp <target.name> 30 <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor rare <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 0.04
+  - skill{s=SummonElite_Bug} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Lacaille
+BugElite:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cRuins Necromancer'
+  Health: 175
+  Damage: 60
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - GOLDEN_HOE HAND
+  Drops:
+  - Coin 5-10 1.0
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 5
+  Skills:
+  - skill{s=SandAura} @self ~onTimer:200
+  - command{c="runicgive exp <target.name> 45 <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor rare <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 0.75
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: flyer609
+BugAmbient:
+  Type: bat
+  Display: '&e[&61&e] &aWasp'
+  Health: 20
+  Disguise:
+   Type: babyzombie
+  Skills:
+  - potion{t=INVISIBILITY;d=2147483647;l=1} @self ~onSpawn
+  - equip{i=wasphead:4} ~onSpawn
+  Options:
+    PreventRandomEquipment: true
+    PreventOtherDrops: true
+    Silent: true
+    PreventRenaming: false
+    MovementSpeed: 0.05
+  AIGoalSelectors:
+  - 0 clear
+  AITargetSelectors:
+  - 0 clear

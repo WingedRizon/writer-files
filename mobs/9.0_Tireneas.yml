@@ -1,0 +1,238 @@
+ZenythCitizen:
+  Type: EVOKER
+  Display: '&e[&61&e] &aZenyth Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aZenyth Citizen<&co> &fThe sun shines brightly.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: plavic
+ZenythCitizen2:
+  Type: EVOKER
+  Display: '&e[&61&e] &aZenyth Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aZenyth Citizen<&co> &fThe sun shines brightly.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Baysonqor
+ZenythCitizen3:
+  Type: EVOKER
+  Display: '&e[&61&e] &aZenyth Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aZenyth Citizen<&co> &fThe sun shines brightly.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Sevennemesis
+ZenythCat:
+  Type: OCELOT
+  Display: '&e[&61&e] &aDesert Cat'
+  Health: 50
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+ZenythGuard1:
+  Type: EVOKER
+  Display: '&e[&650&e] &aZenyth Guard'
+  Health: 5000
+  Damage: 0
+  Equipment:
+  - GOLDEN_SWORD HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 gotolocation 1610,38,-57
+  - 2 lookatplayers
+  - 3 randomlookaround
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aZenyth Guard<&co> &fWelcome to the jewel of the desert.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Diarrhoea
+ZenythGuard2:
+  Type: EVOKER
+  Display: '&e[&650&e] &aZenyth Guard'
+  Health: 5000
+  Damage: 0
+  Equipment:
+  - GOLDEN_SWORD HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 gotolocation 1617,38,-64
+  - 2 lookatplayers
+  - 3 randomlookaround
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aZenyth Guard<&co> &fWelcome to the jewel of the desert.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Diarrhoea
+Mummy:
+  Type: HUSK
+  Display: '&e[&627&e] &cAncient Mummy'
+  Health: 140
+  Modules:
+    ThreatTable: true
+  Damage: 35
+  Drops:
+  - Coin 4-8 0.3
+  Options:
+    MovementSpeed: 0.25
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 5
+    PreventItemPickup: true
+  Skills:
+  - command{c="runicgive exp <target.name> 25 <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor rare <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 0.04
+  - skill{s=SummonElite_Mummy} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+MummyElite:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cSand Sorcerer'
+  Health: 180
+  Damage: 40
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - GOLDEN_HOE HAND
+  Drops:
+  - Coin 5-10 1.0
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 5
+  Skills:
+  - skill{s=SandAura} @self ~onTimer:200
+  - command{c="runicgive exp <target.name> 40 <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor rare <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 0.75
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: S0llux
+SaltBandit:
+  Type: EVOKER
+  Display: '&e[&624&e] &cSalt Bandit'
+  Health: 130
+  Damage: 50
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - GOLDEN_SWORD HAND
+  Drops:
+  - Coin 6-12 0.4
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 5
+  Skills:
+  - command{c="runicgive exp <target.name> 15 <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 1.0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Krxlion
+HoodedFigure:
+  Type: VINDICATOR
+  Display: '&e[&6✸&e] &cHooded Figure'
+  Health: 250
+  Damage: 20
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - IRON_SWORD HAND
+  Options:
+    MovementSpeed: 0.3
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 5
+    Persistent: true
+    Despawn: false
+  Skills:
+  - command{c="runicgive exp <target.name> 15 <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 1.0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Yorick

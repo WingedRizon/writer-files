@@ -1,0 +1,34 @@
+SummonElite_Feldruid:
+  Cooldown: 60
+  Skills:
+  - message{cooldown=60;m="§6§l✸ &c&lCorrupted Ent &e&lhas spawned!"} @PlayersInRadius{r=50}
+  - summon{mob=FeldruidElite;amount=1;noise=5;os=true} @Self
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+SummonElite_Archdruid:
+  Cooldown: 60
+  Skills:
+  - message{cooldown=60;m="§6§l✸ &c&lElite Archdruid &e&lhas spawned!"} @PlayersInRadius{r=50}
+  - summon{mob=ArchdruidElite;amount=1;noise=5;os=true} @Self
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+
+DruidShot:
+  Skills:
+  - effect:sound{s=entity.firework_rocket.launch;v=0.8;p=0.01} @self
+  - effect:particles{p=reddust;color=#458B00;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+  - projectile{type=METEOR;onTick=DruidShot-Tick;onEnd=DruidShot-Hit;onHit=DruidShot-Hit;v=7;i=1;hR=1;vR=1;mr=100;g=1.5;hfs=20} @RLNTE{amount=1;radius=3;spacing=1;minradius=0}
+  
+DruidShot3:
+  Skills:
+  - effect:sound{s=entity.firework_rocket.launch;v=0.8;p=0.01} @self
+  - effect:particles{p=reddust;color=#458B00;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+  - projectile{type=METEOR;onTick=DruidShot-Tick;onEnd=DruidShot-Hit;onHit=DruidShot-Hit;v=7;i=1;hR=1;vR=1;mr=100;g=1.5;hfs=20} @RLNTE{amount=3;radius=5;spacing=1;minradius=0}
+
+DruidShot-Tick:
+  Skills:
+  - effect:particles{p=reddust;color=#458B00;amount=10;speed=0.00001;hS=0.1;vS=0.5} @origin
+
+DruidShot-Hit:
+  Skills:
+  - damage{a=25} @PlayersNearOrigin{r=2}
+  - effect:sound{s=entity.generic.explode;v=0.2;p=0}
+  - effect:particles{p=crit_magic;amount=15;speed=0.2;hS=0.1;vS=1} @origin

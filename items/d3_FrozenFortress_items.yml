@@ -1,0 +1,59 @@
+BaneFrostLords:
+  Id: WOODEN_SWORD
+  Data: 5
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+healingrunehead:
+  Id: 397
+  Data: 3
+  Options:
+    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDVlZDVjNzMyNGMxNjNiZGI4NWQ1ZmVmNWNiYjMzODZkOTM0NzI3YTU0MWViYzExMDFkNDljZDg5NjAzNDhlYiJ9fX0===
+HolmgeirKey:
+  Id: PRISMARINE_CRYSTALS
+  Data: 0
+  Amount: 1
+  Display: '&rHolmgeir''s Key'
+  Lore:
+  - ''
+  - '&7I can use this to enter the next room!'
+  - ''
+  - '&6Dungeon Item'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:1
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+AlkyrKey:
+  Id: PRISMARINE_SHARD
+  Data: 0
+  Amount: 1
+  Display: '&6Alkyr''s Key'
+  Lore:
+  - ''
+  - '&7I can use this to enter the next room!'
+  - ''
+  - '&6Dungeon Item'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:1
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+AmbrosiaRoot:
+  Id: GOLDEN_CARROT
+  Amount: 1
+  Display: '&fAmbrosia Root'
+  Lore:
+  - '&7Crafting Reagent'
+TokenOfValor:
+  Id: NETHER_STAR
+  Amount: 1
+  Display: '&6Token of Valor'
+  Lore:
+  - ''
+  - '&7A badge of honor and pride!'
+  - ''
+  - '&6Legendary'

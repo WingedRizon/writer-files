@@ -1,0 +1,20 @@
+SilverKey:
+  Id: PRISMARINE_CRYSTALS
+  Data: 0
+  Amount: 1
+  Display: '&rSilver Dungeon Key'
+  Lore:
+  - ''
+  - '&7I can use this to enter the next room!'
+  - ''
+  - '&6Dungeon Item'
+GoldKey:
+  Id: PRISMARINE_SHARD
+  Data: 0
+  Amount: 1
+  Display: '&6Gold Dungeon Key'
+  Lore:
+  - ''
+  - '&7I can use this to enter the next room!'
+  - ''
+  - '&6Dungeon Item'

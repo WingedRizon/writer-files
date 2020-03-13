@@ -1,0 +1,149 @@
+BrutishSoldier:
+  Type: EVOKER
+  Display: '&e[&650&e] &aResistance Soldier'
+  Health: 5000
+  Damage: 0
+  Equipment:
+  - IRON_AXE HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aResistance Soldier<&co> &fHey! Watch it, recruit!} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Cosmin
+Cleric:
+  Type: EVOKER
+  Display: '&e[&650&e] &aCleric'
+  Health: 5000
+  Damage: 0
+  Equipment:
+  - IRON_SHOVEL HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aCleric<&co> &fKindness is a virtue!} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: JokePlay
+EnemyCaptain:
+  Type: EVOKER
+  Display: '&e[&61&e] &cCaptain'
+  Health: 50
+  Damage: 1
+  Equipment:
+  - WOODEN_SWORD HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: msu957
+Livestock:
+  Type: Cow
+  Display: '&e[&61&e] &aLivestock'
+  Health: 25
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+LivestockPig:
+  Type: Pig
+  Display: '&e[&61&e] &aLivestock'
+  Health: 15
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+LivestockParrot:
+  Type: Parrot
+  Display: '&e[&61&e] &aParrot'
+  Health: 5
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+    Color: RED
+VillageCitizenMale:
+  Type: EVOKER
+  Display: '&e[&61&e] &aVillage Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aVillage Citizen<&co> &f<trigger.name>? You're back! What are you doing?} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Bato
+VillageCitizenFemale:
+  Type: EVOKER
+  Display: '&e[&61&e] &aVillage Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aVillage Citizen<&co> &f<trigger.name>? You're back! What are you doing?} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: LilyPx
+VillageSheep:
+  Type: Sheep
+  Display: '&e[&61&e] &aSheep'
+  Health: 10
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true

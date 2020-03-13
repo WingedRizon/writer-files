@@ -1,0 +1,169 @@
+NazmoraCitizen:
+  Type: EVOKER
+  Display: '&e[&61&e] &aNaz''mora Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aNaz<&sq>mora Citizen<&co> &fOur kind never run from war.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Originary
+NazmoraCitizen2:
+  Type: EVOKER
+  Display: '&e[&61&e] &aNaz''mora Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aNaz<&sq>mora Citizen<&co> &fOur kind never run from war.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: nassegrisen
+LizardSoldier:
+  Type: EVOKER
+  Display: '&e[&643&e] &cLizard Soldier'
+  Health: 300
+  Modules:
+    ThreatTable: true
+  Damage: 60
+  Drops:
+  - Coin 4-8 0.3
+  Faction: Bandit
+  Equipment:
+  - STONE_AXE HAND
+  Options:
+    MovementSpeed: 0.26
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 5
+  Skills:
+  - command{c="runicgive exp <target.name> 30 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor epic <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 0.02
+  - skill{s=SummonElite_Lizard} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: ElectricRyan
+    ModifyBoundingBox: true
+LizardArcher:
+  Type: EVOKER
+  Display: '&e[&641&e] &cLizard Archer'
+  Health: 250
+  Damage: 30
+  Drops:
+  - Coin 4-8 0.3
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - BOW HAND
+  Options:
+    MovementSpeed: 0.26
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 5
+  Skills:
+  - skill{s=Arrow} @NearestPlayer{r=40} ~onTimer:40
+  - command{c="runicgive exp <target.name> 30 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor epic <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 0.02
+  - skill{s=SummonElite_Lizard} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers	
+  - 2 randomlookaround
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: ElectricRyan
+LizardElite:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cElite Lizard'
+  Health: 350
+  Modules:
+    ThreatTable: true
+  Damage: 80
+  Drops:
+  - Coin 4-8 0.3
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 5
+  Skills:
+  - command{c="runicgive exp <target.name> 45 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor epic <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 0.3
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: bedek
+Exile:
+  Type: EVOKER
+  Display: '&e[&635&e] &cExiled Naz''moran'
+  Health: 190
+  Damage: 60
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - STONE_AXE HAND
+  Drops:
+  - Coin 4-8 0.3
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 5
+  Skills:
+  - command{c="runicgive exp <target.name> 15 <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 1.0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Goblin

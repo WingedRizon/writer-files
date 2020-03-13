@@ -1,0 +1,9 @@
+TogrundMace:
+  Id: WOODEN_SHOVEL
+  Data: 3
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
