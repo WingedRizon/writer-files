@@ -1,0 +1,48 @@
+name: 'The Hidden Koldore'
+unique-id: 102
+repeatable: false
+side-quest: false
+requirements:
+  level: 8
+  level-not-met: '&c'
+first-npc:
+  npc-name: 'Koldorian Blacksmith'
+  npc-id: 999
+  speech:
+  - 'What are ya standing here for?'
+  - 'Go talk the Mine Operator already!'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Mine Operator'
+        npc-id: 999
+        speech:
+        - 'Hmm this does look like a Koldorian Pickaxe.'
+        - 'How did you get your hands on this, Alzanian?'
+        - 'Fine. For now, you may pass.'
+        - 'We will see what Durimund Ironback has to say about this.'
+    goal-message: 'Speak to the Mine Operator'
+    completed-message:
+    - '&7You have entered Hidden Koldore'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Durimund Ironback'
+        npc-id: 999
+        speech:
+        - 'I have to say, it's not every day you have an Alzanian bring you a Koldorian Pickaxe, especially of this quality.'
+        - 'Although...something about this craftsmanship...does seem familiar.'
+        - 'Well, regardless. Welcome to Koldore %player%! I hope you enjoy your stay here.'
+        - 'I will now appoint you an honorary Koldorian. You are welcome inside the mountain anytime.'
+        - 'Please do not hesistate to ask me any questions.'
+    goal-message: 'Speak to Durimund Ironback'
+    completed-message:
+    - '&7Quest Complete: The Hidden Koldore'
+rewards:
+  quest-points: 1
+  exp: 50
+  money: 0

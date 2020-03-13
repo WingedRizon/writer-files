@@ -1,0 +1,93 @@
+name: 'The Koldorian Pickaxe'
+unique-id: 101
+repeatable: false
+side-quest: false
+requirements:
+  level: 8
+  level-not-met: '&c'
+first-npc:
+  npc-name: 'Eraenyan Forest NPC'
+  npc-id: 999
+  speech:
+  - 'Although you have defeated the Black Rider, there are still bandits along the forest all the way to Koldore.'
+  - 'Make your way to Koldore and help the people there.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'location'
+        location-type: 'radius'
+        location: 'world,x,y,z'
+        radius: 20
+    goal-message: 'Head to Koldore'
+    completed-message:
+    - '&7You have arrived at Koldore'
+  2:
+    requirement:
+      type: 'slay'
+      mob-names: 'Stone Golem'
+      amount: 3
+    goal-message: 'Protect the dwarf'
+    completed-message:
+    - '&7You have defeated the Stone Golems!'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Dwarf'
+        npc-id: 999
+        speech:
+        - 'Thank you, stranger. I was certain this would be my end.'
+        - 'So you came here to protect us from bandits?'
+        - 'In that case, and I really shouldn't be telling you this, but this is not the real Koldore.'
+        - 'This is just a town we show to the Azanian soldiers so they don't get suspicious. The real Koldore is underground.'
+        - 'However, we are very strict about not letting Azanians in. You will need a Koldorian pickaxe to get inside.'
+        - 'Go talk to the blacksmith inside the town. Tell him I sent'ya and he will help you make it.'
+        - 'I hope I see you around, I owe you one.'
+    goal-message: 'Talk to the dwarf.'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Koldorian Blacksmith'
+        npc-id: 999
+        speech:
+        - 'Ah so the dwarf sent ya?'
+        - 'He wants me to teach ya how to make a Koldorian pickaxe? An Alazanian?! Is he out of his mind, that bloomin' dwarf!'
+        - 'I don't know what ya did for him but it must've been huge.'
+        - 'Fine, I'll help ya.'
+        - 'First thing ya need to do is to get me some true iron. Five pieces should do.'
+    goal-message: 'Talk to the Koldorian Blacksmith.'
+  5:
+    requirement:
+      type: 'talk'
+      requires:
+        item-type: 'True Iron'
+        item-name: 'True Iron'
+        item-count: 5
+      npc:
+        npc-name: 'Koldorian Blacksmith'
+        npc-id: 999
+        speech:
+        - 'Very good. This really be True Iron.'
+        - 'Now I just need some wood for the handle.'
+    goal-message: 'Gather 5 True Iron from Blackrail Burrow Mine and bring it to the Koldorian Blacksmith.'
+  6:
+    requirement:
+      type: 'talk'
+      requires:
+        item-type: 'Spruce Wood'
+        item-name: 'Spruce Wood'
+        item-count: 15
+      npc:
+        npc-name: 'Koldorian Blacksmith'
+        npc-id: 999
+        speech:
+        - 'Alright I'll get'ya pickaxe done in a jiffy.'
+        - 'But listen, if anyone asks, I had nothing to do with ya.'
+    goal-message: 'Gather 15 Spruce Wood and bring it to the Koldorian Blacksmith.'
+rewards:
+  quest-points: 1
+  exp: 50
+  money: 0
+  execute: 'Give %player% Koldorian Pickaxe 1'
