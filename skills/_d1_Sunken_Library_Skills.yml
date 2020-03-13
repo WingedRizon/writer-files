@@ -5,6 +5,13 @@ summonBook:
  - stance normal
  Skills:
  - summon{type=LivingBook;amount=1;yr=0;os=true;radius=3} @PlayersInRadius{r=25;limit=1;sort=FURTHEST}
+
+chooseSkill_sunkenNormal:
+ Conditions:
+ - incombat{} true
+ - stance normal
+ Skills:
+ - randomskill{skills=startFlashforward,startHappyEnding,startPlotTwist} @self
  
 summonBossBook:
  Conditions:
@@ -143,9 +150,145 @@ plotTwist:
 
 plotTwistAffect:
  Conditions:
+ - incombat{} true
  - stance plotTwist
  Skills:
  - potion{t=BLINDNESS;d=100;l=99;hasParticles=false;force=true} @target
+
+lavaPoolPassive:
+ Conditions:
+ - stance flame
+ Skills:
+ - signal{s=lavaPool} @MIR{r=50;t=flamePool1,flamePool2,flamePool3,flamePool4,flamePool5,flamePool6,flamePool7,flamePool8,flamePool9,flamePool10}
+
+lavaPoolSpawn:
+ Skills:
+ - summon{type=flamePool1;amount=1;yr=0;os=true;radius=0} @self
+ - summon{type=flamePool2;amount=1;yr=0;os=true;radius=0} @self
+ - summon{type=flamePool3;amount=1;yr=0;os=true;radius=0} @self
+ - summon{type=flamePool4;amount=1;yr=0;os=true;radius=0} @self
+ - summon{type=flamePool5;amount=1;yr=0;os=true;radius=0} @self
+ - summon{type=flamePool6;amount=1;yr=0;os=true;radius=0} @self
+ - summon{type=flamePool7;amount=1;yr=0;os=true;radius=0} @self
+ - summon{type=flamePool8;amount=1;yr=0;os=true;radius=0} @self
+ - summon{type=flamePool9;amount=1;yr=0;os=true;radius=0} @self
+ - summon{type=flamePool10;amount=1;yr=0;os=true;radius=0} @self
+
+removePools:
+ Skills:
+ - remove @MIR{r=45;t=flamePool1,flamePool2,flamePool3,flamePool4,flamePool5,flamePool6,flamePool7,flamePool8,flamePool9,flamePool10}
+
+lavaPoolPassiveAffect:
+ Skills:
+ - effect:particlering{particle=flame;radius=6;points=32;amount=1;hS=1;vS=0} @self
+ - damage{a=22} @PIR{r=6}
+ - ignite{ticks=80} @PIR{r=6}
+ - heal{amount=8} @MobsInRadius{r=6;types=TheLibrarian}
+
+chooseSkill_sunkenFlame:
+ Conditions:
+ - incombat{} true
+ - stance flame
+ Skills:
+ - randomskill{skills=startflameAura,startcombustion} @self
+
+flameEffect:
+ Conditions:
+ - stance flame
+ Skills:
+ - effect:particles{particle=flame;amount=12;hS=.5;vS=1;speed=1} @self
+
+startcombustion:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=25}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=25}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=25}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=25}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=25}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - skill{s=combustion}
+
+combustion:
+ Skills:
+ - damage{a=12} @PIR{r=30}
+ - ignite{ticks=20} @PIR{r=30}
+ - effect:particles{p=lava;amount=10;speed=1} @PIR{r=30}
+ - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - damage{a=12} @PIR{r=30}
+ - ignite{ticks=20} @PIR{r=30}
+ - effect:particles{p=lava;amount=10;speed=1} @PIR{r=30}
+ - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - damage{a=12} @PIR{r=30}
+ - ignite{ticks=20} @PIR{r=30}
+ - effect:particles{p=lava;amount=10;speed=1} @PIR{r=30}
+ - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - damage{a=12} @PIR{r=30}
+ - ignite{ticks=20} @PIR{r=30}
+ - effect:particles{p=lava;amount=10;speed=1} @PIR{r=30}
+ - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - damage{a=12} @PIR{r=30}
+ - ignite{ticks=20} @PIR{r=30}
+ - effect:particles{p=lava;amount=10;speed=1} @PIR{r=30}
+ - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=25}
+
+startflameAura:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=25}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=25}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=25}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=25}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=25}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - delay 20
+ - skill{s=flameAura}
+
+flameAura:
+ Skills:
+ - damage{amount=105;i=true;preventknockback=false} @PlayersInRadius{r=6}
+ - effect:particlesphere{particle=flame;amount=100;radius=1} @self
+ - ignite{ticks=80} @PIR{r=6}
+ - delay 10
+ - damage{amount=85;i=true;preventknockback=false} @PlayersInRadius{r=8}
+ - effect:particlesphere{particle=flame;amount=200;radius=2} @self
+ - ignite{ticks=80} @PIR{r=8}
+ - delay 10
+ - damage{amount=65;i=true;preventknockback=false} @PlayersInRadius{r=10}
+ - effect:particlesphere{particle=flame;amount=250;radius=3} @self
+ - ignite{ticks=80} @PIR{r=10}
+ - delay 10
+ - damage{amount=45;i=true;preventknockback=false} @PlayersInRadius{r=12}
+ - effect:particlesphere{particle=flame;amount=300;radius=4} @self
+ - ignite{ticks=80} @PIR{r=12}
+ - delay 10
+ - damage{amount=25;i=true;preventknockback=false} @PlayersInRadius{r=14}
+ - effect:particlesphere{particle=flame;amount=350;radius=5} @self
+ - ignite{ticks=80} @PIR{r=14}
+
 #############################################################################################################################
 FireAuraSmall:
   Skills:
