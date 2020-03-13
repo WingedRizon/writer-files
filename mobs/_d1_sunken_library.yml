@@ -21,22 +21,24 @@ TheLibrarian:
     NoDamageTicks: 5
     Silent: true
   Skills: 
+  - setstance{stance=normal} @self ~onSpawn
   - effect:sound{s=entity.ender_eye.death;volume=0.35;p=0.5} @PIR{r=35} ~onDamaged
   - skill{s=summonBook} @self ~onTimer:60
+  - skill{s=lavaPoolSpawn} @self ~onSpawn
+  - skill{s=flameEffect} @self ~onTimer:60
+  - skill{s=lavaPoolPassive} @self ~onTimer:20
+  - skill{s=chooseSkill_sunkenNormal} @self ~onTimer:600 =51%-100%
+  - skill{s=chooseSkill_sunkenFlame} @self ~onTimer:600 <51%
+  - setstance{stance=flame} @self ~onDamaged =1%-50% #flame stage
   - skill{s=summonBossBook} @self ~onTimer:100
-  - randomskill{skills=startHappyEnding} @self ~onTimer:600 =81%-100%
-  - randomskill{skills=startHappyEnding,startPlotTwist} @self ~onTimer:600 =66%-80%
-  - randomskill{skills=startFlashforward,startHappyEnding,startPlotTwist} @self ~onTimer:600 =51%-65%
-  - remove @MIR{r=100;t=LivingBook} ~onDeath
+  - remove @MIR{r=35;t=LivingBook} ~onTimer:60 <51%
+  - skill{s=removePools} @self ~onDeath
+  - skill{s=removePools} @self ~onDespawn
+  # DROPS BELOW HERE
   - command{c="runicgive exp <target.name> 500 <caster.l.x> <caster.l.y> <caster.l.z>"} @target ~onDeath 1.0
   - command{c="runicgive item <target.name> armor uncommon"} @target ~onDeath 1.0
   - command{c="runicgive item <target.name> armor uncommon"} @target ~onDeath 1.0
   - command{c="runicgive item <target.name> armor uncommon"} @target ~onDeath 1.0
-  - setstance{stance=normal} @self ~onSpawn
-  #- summon{type=obelisk_spawn;amount=1;radius=0;yr=0;os=true} @Forward{f=0;y=10.0} ~onEnterCombat
-  #- remove @MIR{r=100;t=obelisk_spawn} ~onDeath
-  #- remove @MIR{r=100;t=obelisk_spawn} ~onDespawn
-  #- signal{s=obelisk_spawn} @MIR{r=50;t=LivingBook} ~onTimer:60 #add a health mod here
   AIGoalSelectors:
   - 0 clear
   - 1 meleeattack
@@ -76,19 +78,126 @@ LivingBook:
   - skill{s=doubleDamage} @self ~onAttack
   - skill{s=plotTwistAffect} @self ~onDamaged
 
-obelisk_spawn: 
+flamePool1: #done
   Type: armor_stand
   Display: '&0' 
   Health: 0
   Damage: 0
-  Disguise:
-    Type: 'ender_crystal'
   Skills:
-  - teleportto{location=158.500,34,-170.500;pitch=0;world=dungeons} @self ~onSpawn
-  - summon{type=LivingBook;amount=1;yr=0;os=true;radius=4} ~onSignal:spawnBook
+  - skill{s=lavaPoolPassiveAffect} @self ~onSignal:lavaPool
+  - teleportto{location=175.500,34,-146.500;pitch=0;world=dungeons} @self ~onSpawn
   Options:
+    Invisible: false #change to true later
     HasGravity: false
-    Marker: true  
+    Marker: true
+flamePool2: #done
+  Type: armor_stand
+  Display: '&0' 
+  Health: 0
+  Damage: 0
+  Skills:
+  - skill{s=lavaPoolPassiveAffect} @self ~onSignal:lavaPool
+  - teleportto{location=167.500,34,-154.500;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: false #change to true later
+    HasGravity: false
+    Marker: true
+flamePool3: #done
+  Type: armor_stand
+  Display: '&0' 
+  Health: 0
+  Damage: 0
+  Skills:
+  - skill{s=lavaPoolPassiveAffect} @self ~onSignal:lavaPool
+  - teleportto{location=183.500,34,-154.500;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: false #change to true later
+    HasGravity: false
+    Marker: true
+flamePool4: #done
+  Type: armor_stand
+  Display: '&0' 
+  Health: 0
+  Damage: 0
+  Skills:
+  - skill{s=lavaPoolPassiveAffect} @self ~onSignal:lavaPool
+  - teleportto{location=175.500,34,-162.500;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: false #change to true later
+    HasGravity: false
+    Marker: true
+flamePool5: #done
+  Type: armor_stand
+  Display: '&0' 
+  Health: 0
+  Damage: 0
+  Skills:
+  - skill{s=lavaPoolPassiveAffect} @self ~onSignal:lavaPool
+  - teleportto{location=167.500,34,-170.500;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: false #change to true later
+    HasGravity: false
+    Marker: true
+flamePool6: #done
+  Type: armor_stand
+  Display: '&0' 
+  Health: 0
+  Damage: 0
+  Skills:
+  - skill{s=lavaPoolPassiveAffect} @self ~onSignal:lavaPool
+  - teleportto{location=183.500,34,-170.500;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: false #change to true later
+    HasGravity: false
+    Marker: true
+flamePool7: #done
+  Type: armor_stand
+  Display: '&0' 
+  Health: 0
+  Damage: 0
+  Skills:
+  - skill{s=lavaPoolPassiveAffect} @self ~onSignal:lavaPool
+  - teleportto{location=175.500,34,-178.500;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: false #change to true later
+    HasGravity: false
+    Marker: true
+flamePool8: #done 
+  Type: armor_stand
+  Display: '&0' 
+  Health: 0
+  Damage: 0
+  Skills:
+  - skill{s=lavaPoolPassiveAffect} @self ~onSignal:lavaPool
+  - teleportto{location=167.500,34,-186.500;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: false #change to true later
+    HasGravity: false
+    Marker: true
+flamePool9: #done
+  Type: armor_stand
+  Display: '&0' 
+  Health: 0
+  Damage: 0
+  Skills:
+  - skill{s=lavaPoolPassiveAffect} @self ~onSignal:lavaPool
+  - teleportto{location=183.500,34,-186.500;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: false #change to true later
+    HasGravity: false
+    Marker: true
+flamePool10: #done
+  Type: armor_stand
+  Display: '&0' 
+  Health: 0
+  Damage: 0
+  Skills:
+  - skill{s=lavaPoolPassiveAffect} @self ~onSignal:lavaPool
+  - teleportto{location=175.500,34,-194.500;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: false #change to true later
+    HasGravity: false
+    Marker: true
 ################################################################################################################################################
 ForsakenLibrarian:
   Type: EVOKER
