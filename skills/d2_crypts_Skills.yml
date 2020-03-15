@@ -1,0 +1,161 @@
+Derabeam:
+ Conditions:
+ - stance aggro
+ Skills:
+ - projectile{onTick=Derabeam-Tick;onHit=Derabeam-Hit;v=20;i=1;hR=1;vR=1;mr=100;sE=false} @PlayersInRadius{r=85;limit=1;sort=RANDOM}
+Derabeam-Tick:
+ Skills:
+ - effect:particles{p=flame;amount=1;speed=0;hS=0.1;vS=0.1} @origin
+Derabeam-Hit:
+ Skills:
+ - damage{a=8;ia=true}
+ - ignite{ticks=60}
+
+setAggro:
+ Conditions:
+ - varEquals{var=caster.oneOrZero;value=0}
+ Skills:
+ - signal{s=aggro} @MIR{r=100;t=DeraPharaoh_beam}
+ - setvariable{var=caster.oneOrZero;value=1} @self
+
+chooseSkill_crypt:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - randomskill{skills=startDerasBlessing,startDerasMight,startAncientPower} @self
+
+startDerasBlessing:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - sendtitle{title="&4&kooo&r&l&cDera<&sq>s Blessing&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cDera<&sq>s Blessing&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cDera<&sq>s Blessing&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cDera<&sq>s Blessing&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cDera<&sq>s Blessing&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - skill{s=derasBlessing}
+
+derasBlessing:
+ Skills:
+ - potion{t=SLOW;d=100;l=998;hasParticles=true} @self
+ - effect:particles{p=HAPPY_VILLAGER;amount=10;vSpread=1;hSpread=.5;Speed=0;yOffset=0} @self
+ - effect:sound{s=entity.experience_orb.pickup;volume=1.0;pitch=0.5} @PlayersInRadius{r=80}
+ - heal{amount=100} @self
+ - damage{a=0} @self
+ - delay 20
+ - effect:particles{p=HAPPY_VILLAGER;amount=10;vSpread=1;hSpread=.5;Speed=0;yOffset=0} @self
+ - effect:sound{s=entity.experience_orb.pickup;volume=1.0;pitch=0.5} @PlayersInRadius{r=80}
+ - heal{amount=100} @self
+ - damage{a=0} @self
+ - delay 20
+ - effect:particles{p=HAPPY_VILLAGER;amount=10;vSpread=1;hSpread=.5;Speed=0;yOffset=0} @self
+ - effect:sound{s=entity.experience_orb.pickup;volume=1.0;pitch=0.5} @PlayersInRadius{r=80}
+ - heal{amount=100} @self
+ - damage{a=0} @self
+ - delay 20
+ - effect:particles{p=HAPPY_VILLAGER;amount=10;vSpread=1;hSpread=.5;Speed=0;yOffset=0} @self
+ - effect:sound{s=entity.experience_orb.pickup;volume=1.0;pitch=0.5} @PlayersInRadius{r=80}
+ - heal{amount=100} @self
+ - damage{a=0} @self
+ - delay 20
+ - effect:particles{p=HAPPY_VILLAGER;amount=10;vSpread=1;hSpread=.5;Speed=0;yOffset=0} @self
+ - effect:sound{s=entity.experience_orb.pickup;volume=1.0;pitch=0.5} @PlayersInRadius{r=80}
+ - heal{amount=100} @self
+ - damage{a=0} @self
+
+startDerasMight:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - sendtitle{title="&4&kooo&r&l&cDera<&sq>s Might&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cDera<&sq>s Might&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cDera<&sq>s Might&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cDera<&sq>s Might&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cDera<&sq>s Might&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - skill{s=derasMight}
+
+derasMight:
+ Skills:
+ - potion{t=SPEED;d=200;l=2;hasParticles=true} @self
+ - effect:sound{s=entity.wither.ambient;volume=0.7;pitch=0.5} @PlayersInRadius{r=80}
+ - message{m="&r&7The ability wears off in<&co> 10"} @PIR{r=80}
+ - delay 100
+ - message{m="&r&75"} @PIR{r=80}
+ - delay 20
+ - message{m="&r&74"} @PIR{r=80}
+ - delay 20
+ - message{m="&r&73"} @PIR{r=80}
+ - delay 20
+ - message{m="&r&72"} @PIR{r=80}
+ - delay 20
+ - message{m="&r&71"} @PIR{r=80}
+
+startAncientPower:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - sendtitle{title="&4&kooo&r&l&cAncient Power&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cAncient Power&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cAncient Power&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cAncient Power&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cAncient Power&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - skill{s=ancientPower}
+
+ancientPower:
+ Skills:
+ - signal{s=upgrade} @MIR{r=100;t=DeraPharaoh_beam}
+ - effect:sound{s=entity.wither.spawn;volume=0.7;pitch=0.5} @PlayersInRadius{r=80}
+ - message{m="&r&7The ability wears off in<&co> 15"} @PIR{r=80}
+ - delay 200
+ - message{m="&r&75"} @PIR{r=80}
+ - delay 20
+ - message{m="&r&74"} @PIR{r=80}
+ - delay 20
+ - message{m="&r&73"} @PIR{r=80}
+ - delay 20
+ - message{m="&r&72"} @PIR{r=80}
+ - delay 20
+ - message{m="&r&71"} @PIR{r=80}
+ - delay 20
+ - signal{s=aggro} @MIR{r=100;t=DeraPharaoh_beam}
+
+Derabeam_upgrade:
+ Conditions:
+ - stance upgrade
+ Skills:
+ - projectile{onTick=Derabeam-Tick;onHit=Derabeam-Hit_upgrade;v=20;i=1;hR=1;vR=1;mr=100;sE=false} @PlayersInRadius{r=85;limit=1;sort=RANDOM}
+ - projectile{onTick=Derabeam-Tick;onHit=Derabeam-Hit_upgrade;v=20;i=1;hR=1;vR=1;mr=100;sE=false} @PlayersInRadius{r=85;limit=1;sort=RANDOM}
+Derabeam-Hit_upgrade:
+ Skills:
+ - damage{a=6;ia=true}
+ - ignite{ticks=60}

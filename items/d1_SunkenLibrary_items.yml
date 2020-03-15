@@ -18,3 +18,12 @@ GoldKey:
   - '&7I can use this to enter the next room!'
   - ''
   - '&6Dungeon Item'
+AncientStaff:
+  Id: WOODEN_HOE
+  Data: 2
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS

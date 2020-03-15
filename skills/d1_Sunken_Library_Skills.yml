@@ -11,7 +11,7 @@ chooseSkill_sunkenNormal:
  - incombat{} true
  - stance normal
  Skills:
- - randomskill{skills=startFlashforward,startHappyEnding,startPlotTwist} @self
+ - randomskill{skills=startHappyEnding,startPlotTwist} @self
  
 summonBossBook:
  Conditions:
@@ -20,47 +20,6 @@ summonBossBook:
  - stance normal
  Skills:
  - summon{type=LivingBook;amount=3;yr=0;os=true;radius=4} @Target
-
-startFlashforward:
- Conditions:
- - incombat{} true
- Skills:
- - setstance{stance=queue}
- - sendtitle{title="&4&kooo&r&l&cFlashforward&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
- - delay 20
- - sendtitle{title="&4&kooo&r&l&cFlashforward&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
- - delay 20
- - sendtitle{title="&4&kooo&r&l&cFlashforward&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
- - delay 20
- - sendtitle{title="&4&kooo&r&l&cFlashforward&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
- - delay 20
- - sendtitle{title="&4&kooo&r&l&cFlashforward&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
- - delay 20
- - skill{s=flashforward}
-
-flashforward:
- Skills:
- - setstance{stance=normal}
- - potion{t=SPEED;d=100;l=2;hasParticles=false} @MIR{r=50;t=LivingBook}
- - signal{s=doubleDamage} @MIR{r=50;t=LivingBook}
- - effect:particles{particle=reddust;color=#A176AC;amount=6;hS=.5;vS=1;speed=1} @MIR{r=50;t=LivingBook}
- - effect:sound{s=block.fire.extinguish;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
- - message{m="&r&7The ability wears off in<&co> 5"} @PIR{r=50}
- - delay 20
- - message{m="&r&74"} @PIR{r=50}
- - delay 20
- - message{m="&r&73"} @PIR{r=50}
- - delay 20
- - message{m="&r&72"} @PIR{r=50}
- - delay 20
- - message{m="&r&71"} @PIR{r=50}
- - delay 20
- - signal{s=normal} @MIR{r=50;t=LivingBook}
 
 doubleDamage:
  Conditions:
@@ -73,20 +32,20 @@ startHappyEnding:
  - incombat{} true
  Skills:
  - setstance{stance=queue}
- - sendtitle{title="&4&kooo&r&l&cHappy Ending&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cHappy Ending&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cHappy Ending&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cHappy Ending&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cHappy Ending&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cHappy Ending&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cHappy Ending&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cHappy Ending&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cHappy Ending&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cHappy Ending&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
  - skill{s=happyEnding}
 
@@ -111,20 +70,20 @@ startPlotTwist:
  - incombat{} true
  Skills:
  - setstance{stance=queue}
- - sendtitle{title="&4&kooo&r&l&cPlot Twist&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cPlot Twist&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cPlot Twist&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cPlot Twist&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cPlot Twist&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cPlot Twist&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cPlot Twist&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cPlot Twist&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cPlot Twist&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cPlot Twist&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
  - skill{s=plotTwist}
 
@@ -153,13 +112,20 @@ plotTwistAffect:
  - incombat{} true
  - stance plotTwist
  Skills:
- - potion{t=BLINDNESS;d=100;l=99;hasParticles=false;force=true} @target
+ - potion{t=BLINDNESS;d=100;l=99;hasParticles=true;force=true} @target
 
 lavaPoolPassive:
  Conditions:
  - stance flame
  Skills:
- - signal{s=lavaPool} @MIR{r=50;t=flamePool1,flamePool2,flamePool3,flamePool4,flamePool5,flamePool6,flamePool7,flamePool8,flamePool9,flamePool10}
+ - signal{s=lavaPool} @MIR{r=85;t=flamePool1,flamePool2,flamePool3,flamePool4,flamePool5,flamePool6,flamePool7,flamePool8,flamePool9,flamePool10}
+
+libHeal:
+ Skills:
+ - effect:particles{p=HAPPY_VILLAGER;amount=10;vSpread=1;hSpread=.5;Speed=0;yOffset=0} @self
+ - effect:sound{s=entity.experience_orb.pickup;volume=1.0;pitch=0.5} @PlayersInRadius{r=80}
+ - heal{amount=8} @self
+ - damage{a=0} @self
 
 lavaPoolSpawn:
  Skills:
@@ -176,14 +142,16 @@ lavaPoolSpawn:
 
 removePools:
  Skills:
- - remove @MIR{r=45;t=flamePool1,flamePool2,flamePool3,flamePool4,flamePool5,flamePool6,flamePool7,flamePool8,flamePool9,flamePool10}
+ - remove @MIR{r=85;t=flamePool1,flamePool2,flamePool3,flamePool4,flamePool5,flamePool6,flamePool7,flamePool8,flamePool9,flamePool10}
 
 lavaPoolPassiveAffect:
  Skills:
- - effect:particlering{particle=flame;radius=6;points=32;amount=1;hS=1;vS=0} @self
- - damage{a=22} @PIR{r=6}
- - ignite{ticks=80} @PIR{r=6}
- - heal{amount=8} @MobsInRadius{r=6;types=TheLibrarian}
+ - effect:particlering{particle=flame;radius=3;points=32;amount=1;hS=1;vS=0} @self
+ - effect:particlering{particle=flame;radius=3.1;points=32;amount=1;hS=1;vS=0} @self
+ - effect:particlering{particle=flame;radius=2.9;points=32;amount=1;hS=1;vS=0} @self
+ - damage{a=22} @PIR{r=3}
+ - ignite{ticks=80} @PIR{r=3}
+ - signal{s=heal} @MIR{r=3;t=TheLibrarian}
 
 chooseSkill_sunkenFlame:
  Conditions:
@@ -196,98 +164,98 @@ flameEffect:
  Conditions:
  - stance flame
  Skills:
- - effect:particles{particle=flame;amount=12;hS=.5;vS=1;speed=1} @self
+ - effect:particles{particle=flame;amount=12;hS=.5;vS=1;speed=0} @self
 
 startcombustion:
  Conditions:
  - incombat{} true
  Skills:
- - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cCombustion&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
  - skill{s=combustion}
 
 combustion:
  Skills:
- - damage{a=12} @PIR{r=30}
- - ignite{ticks=20} @PIR{r=30}
- - effect:particles{p=lava;amount=10;speed=1} @PIR{r=30}
- - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=25}
+ - damage{a=12} @PIR{r=80}
+ - ignite{ticks=20} @PIR{r=80}
+ - effect:particles{p=lava;amount=10;speed=1} @PIR{r=80}
+ - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=80}
  - delay 20
- - damage{a=12} @PIR{r=30}
- - ignite{ticks=20} @PIR{r=30}
- - effect:particles{p=lava;amount=10;speed=1} @PIR{r=30}
- - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=25}
+ - damage{a=12} @PIR{r=80}
+ - ignite{ticks=20} @PIR{r=80}
+ - effect:particles{p=lava;amount=10;speed=1} @PIR{r=80}
+ - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=80}
  - delay 20
- - damage{a=12} @PIR{r=30}
- - ignite{ticks=20} @PIR{r=30}
- - effect:particles{p=lava;amount=10;speed=1} @PIR{r=30}
- - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=25}
+ - damage{a=12} @PIR{r=80}
+ - ignite{ticks=20} @PIR{r=80}
+ - effect:particles{p=lava;amount=10;speed=1} @PIR{r=80}
+ - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=80}
  - delay 20
- - damage{a=12} @PIR{r=30}
- - ignite{ticks=20} @PIR{r=30}
- - effect:particles{p=lava;amount=10;speed=1} @PIR{r=30}
- - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=25}
+ - damage{a=12} @PIR{r=80}
+ - ignite{ticks=20} @PIR{r=80}
+ - effect:particles{p=lava;amount=10;speed=1} @PIR{r=80}
+ - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=80}
  - delay 20
- - damage{a=12} @PIR{r=30}
- - ignite{ticks=20} @PIR{r=30}
- - effect:particles{p=lava;amount=10;speed=1} @PIR{r=30}
- - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=25}
+ - damage{a=12} @PIR{r=80}
+ - ignite{ticks=20} @PIR{r=80}
+ - effect:particles{p=lava;amount=10;speed=1} @PIR{r=80}
+ - effect:sound{s=entity.wither.shoot;volume=0.5;pitch=0.5} @PlayersInRadius{r=80}
 
 startflameAura:
  Conditions:
  - incombat{} true
  Skills:
- - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
- - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=25}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=25}
+ - sendtitle{title="&4&kooo&r&l&cFlame Aura&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
  - delay 20
  - skill{s=flameAura}
 
 flameAura:
  Skills:
  - damage{amount=105;i=true;preventknockback=false} @PlayersInRadius{r=6}
- - effect:particlesphere{particle=flame;amount=100;radius=1} @self
+ - effect:particlesphere{particle=flame;amount=100;radius=6} @self
  - ignite{ticks=80} @PIR{r=6}
- - delay 10
- - damage{amount=85;i=true;preventknockback=false} @PlayersInRadius{r=8}
- - effect:particlesphere{particle=flame;amount=200;radius=2} @self
- - ignite{ticks=80} @PIR{r=8}
- - delay 10
- - damage{amount=65;i=true;preventknockback=false} @PlayersInRadius{r=10}
- - effect:particlesphere{particle=flame;amount=250;radius=3} @self
- - ignite{ticks=80} @PIR{r=10}
- - delay 10
- - damage{amount=45;i=true;preventknockback=false} @PlayersInRadius{r=12}
- - effect:particlesphere{particle=flame;amount=300;radius=4} @self
+ - delay 40
+ - damage{amount=85;i=true;preventknockback=false} @PlayersInRadius{r=12}
+ - effect:particlesphere{particle=flame;amount=200;radius=12} @self
  - ignite{ticks=80} @PIR{r=12}
- - delay 10
- - damage{amount=25;i=true;preventknockback=false} @PlayersInRadius{r=14}
- - effect:particlesphere{particle=flame;amount=350;radius=5} @self
- - ignite{ticks=80} @PIR{r=14}
+ - delay 40
+ - damage{amount=65;i=true;preventknockback=false} @PlayersInRadius{r=24}
+ - effect:particlesphere{particle=flame;amount=400;radius=24} @self
+ - ignite{ticks=80} @PIR{r=24}
+ - delay 40
+ - damage{amount=45;i=true;preventknockback=false} @PlayersInRadius{r=48}
+ - effect:particlesphere{particle=flame;amount=800;radius=48} @self
+ - ignite{ticks=80} @PIR{r=48}
+ - delay 40
+ - damage{amount=25;i=true;preventknockback=false} @PlayersInRadius{r=85}
+ - effect:particlesphere{particle=flame;amount=1600;radius=85} @self
+ - ignite{ticks=80} @PIR{r=85}
 
 #############################################################################################################################
 FireAuraSmall:
@@ -326,7 +294,7 @@ MeteorShot-Tick:
 
 MeteorShot-Hit:
   Skills:
-  - damage{a=28} @PlayersNearOrigin{r=2}
+  - damage{a=35} @PlayersNearOrigin{r=2}
   - effect:sound{s=entity.generic.explode;v=0.2;p=0}
   - effect:particles{p=lava;amount=15;speed=0.2;hS=0.1;vS=1} @origin
   
@@ -346,4 +314,4 @@ FireAura:
   - effect:particlering{p=flame;a=100;vs=0.5;hs=0.5;s=0;y=0;points=20;radius=3}
   - effect:particlering{p=flame;a=100;vs=0.5;hs=0.5;s=0;y=0;points=20;radius=5}
   - effect:sound{s=entity.blaze.shoot;v=0.8;p=0.01} @self
-  - damage{a=30} @PlayersInRadius{r=4}
+  - damage{a=25} @PlayersInRadius{r=3}
