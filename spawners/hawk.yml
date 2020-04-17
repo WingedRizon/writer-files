@@ -1,0 +1,25 @@
+hawk:
+  MobName: VillageHawk
+  World: Alterra
+  X: -1940
+  Y: 39
+  Z: 1970
+  Radius: 10
+  UseTimer: true
+  MaxMobs: '4'
+  MobLevel: '1'
+  MobsPerSpawn: 4
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 2
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 15
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

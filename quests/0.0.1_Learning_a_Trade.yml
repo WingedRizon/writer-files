@@ -1,0 +1,203 @@
+name: 'Learning a Trade'
+unique-id: 1
+repeatable: false
+side-quest: false
+requirements:
+  level: 3
+  level-not-met: '&cYou must be at least level 3 to start this quest.'
+first-npc:
+  npc-name: 'Farmer'
+  npc-id: 79
+  speech:
+  - 'Hail, friend. Here to learn a trade? Let''s begin!'
+  - 'There are two kinds of professions in our world: gathering and crafting.'
+  - 'You must choose one crafting profession, but you can gather any material!'
+  - 'Let''s start with gathering. Take this tool and gather §f[3 Wheat] §6in the farm.'
+  execute: 'gathertool give %player% hoe 2'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'WHEAT'
+          item-name: 'Wheat'
+          item-count: 3
+      npc:
+        npc-name: 'Farmer'
+        npc-id: 79
+        speech:
+        - 'Good work! You''ve just completed a gathering activity.'
+        - 'You can always gather reagents, no matter which crafting profession you choose.'
+        - 'Now, try making some §f[bread] §6on that fire! You''ll need wood-- I''ll give you some.'       
+    goal-message: 'Deliver 3 Wheat to the Farmer'
+    execute:
+    - 'mm items give -s %player% Wheat 15'
+    - 'mm items give -s %player% SpruceWood 5'
+  2:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'BREAD'
+          item-name: 'Bread'
+          item-count: 1
+      npc:
+        npc-name: 'Farmer'
+        npc-id: 79
+        speech:
+        - 'Cooked to perfection! You''re a natural!'
+        - 'Now it''s time for you to learn about crafting.'
+        - 'Speak to the enchanter in the building just ahead.'      
+    goal-message: 'Deliver 1 Bread to the Farmer'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Enchanter'
+        npc-id: 234
+        speech:
+        - 'Welcome! I''ll teach you about the profession of enchanting.'
+        - 'Enchanters craft scrolls of magic through ancient power.'
+        - 'You''ll need wood from an ancient elder tree.'
+        - 'Take this axe and collect §f[3 Elder Log] §6from the tree outside.'   
+    goal-message: 'Speak with the Enchanter'
+    execute:
+    - 'gathertool give %player% axe 2'
+  4:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'BIRCH_LOG'
+          item-name: 'Elder Log'
+          item-count: 3
+      npc:
+        npc-name: 'Enchanter'
+        npc-id: 234
+        speech:
+        - 'Excellent! Want to enchant your item? Enchanter may be the profession for you.'
+        - 'Goodbye, stranger. Best visit the hunter next.'   
+    goal-message: 'Deliver 3 Elder Logs to the Enchanter'
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Hunter'
+        npc-id: 216
+        speech:
+        - 'Welcome, stranger! Hunters are renowned trackers!'
+        - 'If you complete hunter tasks, you''ll earn points to spend in the hunter shop!'
+        - 'These items are especially useful in player versus player combat!'
+        - 'Try hunting a village hawk.'
+    goal-message: 'Speak with the Hunter'
+  6:
+    requirement:
+      type: 'slay'
+      mob-names:
+      - 'VillageHawk'
+      amount: 1
+    goal-message: 'Hunt a Village Hawk'
+    completed-message:
+    - '&aYou''ve hunted a hawk! Return to the hunter.'
+  7:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Hunter'
+        npc-id: 216
+        speech:
+        - 'Excellent work. Fancy slaying other players? Hunter may be the profession for you.'
+        - 'I''d speak to the blacksmith next.'
+    goal-message: 'Speak with the Hunter'
+  8:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Blacksmith'
+        npc-id: 84
+        speech:
+        - 'Welcome! Blacksmiths are excellent at forging armor and weapons.'
+        - 'We blacksmiths are skilled in shield items, which offer defensive stats.'
+        - 'Take this pick and collect some iron from the mine.'
+    goal-message: 'Speak with the Blacksmith'
+    execute:
+    - 'gathertool give %player% pickaxe 1'
+  9:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'IRON_ORE'
+          item-name: 'Iron Ore'
+          item-count: 3
+      npc:
+        npc-name: 'Blacksmith'
+        npc-id: 84
+        speech:
+        - 'Excellent! You''ll find iron scattered across the realm.'
+        - 'Goodbye, stranger. Head to the jeweler in the bank next.'   
+    goal-message: 'Deliver 3 Iron Ore to the Blacksmith'
+  10:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Jeweler'
+        npc-id: 393
+        speech:
+        - 'Aye! Jewelers craft gemstones, which you can add to armor to increase your stats!'
+        - 'We can increase health, mana, even damage!'
+        - 'Take this pick and mine some rubies for me!'
+    goal-message: 'Speak with the Jeweler'
+    execute:
+    - 'gathertool give %player% pickaxe 1'
+  11:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'REDSTONE_ORE'
+          item-name: 'Uncut Ruby'
+          item-count: 3
+      npc:
+        npc-name: 'Jeweler'
+        npc-id: 393
+        speech:
+        - 'Good job. You''ll need to find unique gems in the world.'  
+        - 'Talk to the alchemist... he''s the last of us!'
+    goal-message: 'Deliver 3 Rubies to the Jeweler'
+  12:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Alchemist'
+        npc-id: 394
+        speech:
+        - 'Good health, stranger! Alchemists brew potions to aid you during your journey.'
+        - 'You''ll need many materials, from rare ores to fish.'
+        - 'Take this rod and catch me a salmon!'
+    goal-message: 'Speak with the Alchemist'
+    execute:
+    - 'gathertool give %player% rod 2'
+  13:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'SALMON'
+          item-name: 'Salmon'
+          item-count: 1
+      npc:
+        npc-name: 'Alchemist'
+        npc-id: 394
+        speech:
+        - 'A fine catch indeed!'
+        - 'Now, follow the road outside the city. You''ll find tutors who can teach you a profession!'
+        - 'Be careful stranger, as they will only teach you once.'
+    goal-message: 'Deliver 1 Salmon to the Alchemist'
+    completed-message:
+    - '&7Quest Complete: Learning a Trade'
+rewards:
+  quest-points: 1
+  exp: 0
+  money: 0

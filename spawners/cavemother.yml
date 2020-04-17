@@ -1,0 +1,25 @@
+cavemother:
+  MobName: CaveMother
+  World: Alterra
+  X: -1361
+  Y: 20
+  Z: 100
+  Radius: 0
+  UseTimer: true
+  MaxMobs: '1'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 10
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 16
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

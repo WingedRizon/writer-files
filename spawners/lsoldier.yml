@@ -1,0 +1,25 @@
+lsoldier:
+  MobName: LizardSoldier
+  World: Alterra
+  X: 2486
+  Y: 21
+  Z: 940
+  Radius: 25
+  UseTimer: true
+  MaxMobs: '3'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 30
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 25
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

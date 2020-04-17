@@ -1,0 +1,52 @@
+name: 'Rabbit Refuge'
+unique-id: 17
+repeatable: false
+side-quest: false
+requirements:
+  level: 33
+  level-not-met: '&cCome back when you are level 33'
+  required-quests: 16
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Rhalik Redbeard'
+  npc-id: 625
+  speech:
+  - 'Nice to see you again! How has the journey been?'
+  - 'A what?! A Pyromancer?'
+  - 'Well I''m sure it''s nothing we can''t overcome!'
+  - 'Where are we heading to next?'
+  - 'Zenyth? Well, before you leave, you have to try some rabbit stew! This region is famous for it.'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Allaster Perin'
+        npc-id: 626
+        speech:
+        - 'It''s fine. I was also going to suggest some rest.'
+        - 'Why don''t you explore the area and hunt us some rabbits.'
+        - 'We''ll set out again once we''re fed and rested.'
+    goal-message: 'Speak to Allaster'
+    #location: 'Inn Tireneas'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'rabbit_stew'
+          item-name: 'Rabbit Stew'
+          item-count: 3
+      npc:
+        npc-name: 'Rhalik Redbeard'
+        npc-id: 625
+        speech:
+        - 'Thank you. This looks delicious.'
+    goal-message: 'Make 3 portions of Rabbit Stew and bring them to Rhalik.'
+    #location: 'Inn Tireneas'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 6000
+  money: 8

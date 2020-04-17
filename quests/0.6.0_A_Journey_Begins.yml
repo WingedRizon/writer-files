@@ -1,0 +1,145 @@
+name: 'A Journey Begins'
+unique-id: 12
+repeatable: false
+side-quest: false
+requirements:
+  level: 25
+  level-not-met: '&cYou do not meet the level requirements!'
+  required-quests: 11
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Allaster Farseer'
+  npc-id: 605
+  speech:
+  - 'Well, if you think you are ready, we will set sail.'
+  - 'Just remember...there is no turning back now.'
+  - 'Onwards. To Dawnshire Inn!'
+  execute: 'tp %player% -436 24 -371'
+objectives:
+  1:
+    requirement:
+      type: 'slay'
+      mob-names: 'ForestBandit'
+      amount: 8
+    goal-message: 'Protect the civilians! Defeat 8 Bandits!'
+    #location: 'Near the dock of Dawnshire'
+    completed-message: 'Head up the path towards the inn.'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Helga'
+        npc-id: 611
+        speech:
+        - 'Welcome to Dawnshire Inn. I''m Helga, I''d like to call myself the brains behind this place, haha.'
+        - 'I apologise for all the chaos outside. This area has been a battlefield recently.'
+        - 'Although, it''s still safer than most of the surroundings...'
+        - 'Hard to run a business here with all the commotion all of the-'
+        - 'Well what am I rambling for! I heard you saved a few people out there!'
+        - 'We need more of your kind around here! Especially in Dead Man''s Rest... that place is really in trouble.'
+        - 'Actually, since you''re here... In all the chaos, it appears that three of my guests have disappeared.'
+        - 'As caring as I seem, I really just want their room keys back. Could you recover them for me?'
+        - 'They can''t have gotten too far. Search in and around the inn for me, would you?'
+    goal-message: 'Talk to the Helga the Innkeeper''s Wife.'
+    #location: 'Dawnshire Inn'
+    #completed-message:
+  3:
+    #In the well
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Tybalt'
+        npc-id: 592
+        speech:
+        - 'Oh? A room key?'
+        - 'Good heavens, I completely forgot!'
+        - 'Here. Please give me apologies to the innkeeper.'
+    goal-message: 'Find Tybalt'
+    #location: 'Dawnshire'
+    #completed-message:
+    execute: '/mm i give %player% RoomKey'
+  4:
+    #In the basement.
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Marc'
+        npc-id: 596
+        speech:
+        - 'Oh my I thought I was completely gone!'
+        - 'Thank you for saving me, stranger!'
+        - 'My room key... of course! Here you go.'
+        - 'I was planning to return it... I was...'
+    goal-message: 'Find Marc'
+    #location: 'Dawnshire'
+    #completed-message:
+    execute: '/mm i give %player% RoomKey'
+  5:
+    #On top of the inn
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Bruce'
+        npc-id: 597
+        speech:
+        - 'Aaah! Stay back!'
+        - 'Oh... you''re not a bandit?'
+        - 'Thank the gods!'
+        - 'My room key? Please, take it.'
+        idle-messages:
+          1:
+            speech: 'Oh you lost my room key? Good thing I made a spare!//mm i give %player% RoomKey'
+            condition:
+              quest:
+                started: true
+                completed: false
+              objectives:
+                1: true
+                2: true
+                3: true
+                4: true
+                5: true
+                6: false
+                7: false
+    goal-message: 'Find Bruce'
+    #location: 'Dawnshire'
+    execute: '/mm i give %player% RoomKey'
+    #completed-message:
+  6:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'tripwire_hook'
+          item-name: 'Room Key'
+          item-count: 3
+      npc:
+        npc-name: 'Helga'
+        npc-id: 611
+        speech:
+        - 'You found them all! Thank you.'
+        - 'On top of the inn? She must have been REALLY scared, hah!'
+        - 'Well that solves most of my problems.'
+        - 'But if you want to help more, venture to Dead Man''s Rest. It''s very close to here.'
+        - 'The Azana military have been poking their heads there recently so you know something is up.'
+    goal-message: 'Bring the room keys to Helga'
+    #location: 'Dawnshire Inn'
+    #completed-message:
+  7:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Allaster Farseer'
+        npc-id: 610
+        speech:
+        - 'I know we have just begun this adventure, but go by yourself for now.'
+        - 'There are things I must take care of.'
+        - 'Besides, I would cause more trouble than it''s worth in Dead Man''s Rest.'
+        - 'We will meet back up in Isfodar. Find me there.'
+    goal-message: 'Talk to Allaster Farseer'
+    goal-location: 'Dawnshire Docks'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 7500
+  money: 10

@@ -1,0 +1,72 @@
+ElvenArcher:
+  Type: EVOKER
+  Display: '&e[&630&e] &cElven Archer'
+  Health: 300
+  Damage: 30
+#  Faction: Elf
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - ElvenBow HAND
+  Drops:
+  - Coin 2-3 0.3
+  Options:
+    MovementSpeed: 0.3
+    PreventOtherDrops: true
+    FollowRange: 25
+    NoDamageTicks: 0
+  Skills:
+  - skill{s=ElfArrow} @NearestPlayer{r=40} ~onTimer:40
+  - command{c="runicgive exp <trigger.name> 230 <mob.l.x> <mob.l.y> <mob.l.z> 30"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor rare <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  - command{c="giveweapon <trigger.name> rare <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  - skill{s=SummonElite_ElvenArcher} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers	
+  - 2 randomlookaround
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Arslan_
+    ModifyBoundingBox: true
+ElvenArcherElite:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cElite Elven Archer'
+  Health: 350
+  Damage: 35
+#  Faction: Elf
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - ElvenBow HAND
+  Drops:
+  - Coin 2-4 1.0
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 25
+    NoDamageTicks: 0
+  Skills:
+  - skill{s=ElfArrow} @NearestPlayer{r=40} ~onTimer:40
+  - command{c="runicgive exp <trigger.name> 390 <mob.l.x> <mob.l.y> <mob.l.z> 30"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor rare <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.75
+  - command{c="giveweapon <trigger.name> rare <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.5
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers	
+  - 2 randomlookaround
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Nymphadorable

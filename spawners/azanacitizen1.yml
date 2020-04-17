@@ -1,0 +1,26 @@
+azanacitizen1:
+  SpawnerGroup: azanacitizen
+  MobName: AzanaCitizen
+  World: Alterra
+  X: -741
+  Y: 34
+  Z: 150
+  Radius: 30
+  UseTimer: true
+  MaxMobs: '3'
+  MobLevel: '1'
+  MobsPerSpawn: 3
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 0
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 32
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

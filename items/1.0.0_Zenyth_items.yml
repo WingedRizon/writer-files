@@ -1,0 +1,37 @@
+ShamanTear:
+  Id: GHAST_TEAR
+  Amount: 1
+  Display: '&6Shaman Tear'
+  Lore:
+  - ''
+  - '&7The Tear of a Shaman'
+  - ''
+  - '&6Quest Item'
+FruitOfMetamorphosis:
+  Id: APPLE
+  Amount: 1
+  Display: '&6Fruit of Metamorphosis'
+  Lore:
+  - ''
+  - '&7For, uh, ... reshaping things!'
+  - ''
+  - '&6Quest Item'
+PotionOfMetamorphosis:
+  Id: POTION
+  Data: 0
+  Amount: 1
+  Display: '&6Potion of Metamorphosis'
+  Lore:
+  - ''
+  - '&7With this, I can change the shape of servants!'
+  - ''
+  - '&6Quest Item'
+PixieTear:
+  Id: GHAST_TEAR
+  Amount: 1
+  Display: '&6Pixie Tear'
+  Lore:
+  - ''
+  - '&7The Tear of a Pixie'
+  - ''
+  - '&6Quest Item'

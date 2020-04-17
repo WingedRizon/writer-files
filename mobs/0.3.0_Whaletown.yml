@@ -1,0 +1,42 @@
+WhaletownCitizen:
+  Type: EVOKER
+  Display: '&e[&61&e] &aWhaletown Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+#  Skills:
+#  - message{cooldown=4;m=&7[1/1] &aAzana Citizen<&co> &fMercy! Please don<&sq>t report me for execution!} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: IssaMeMino
+WhaletownCitizen2:
+  Type: EVOKER
+  Display: '&e[&61&e] &aWhaletown Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+#  Skills:
+#  - message{cooldown=4;m=&7[1/1] &aAzana Citizen<&co> &fMercy! Please don<&sq>t report me for execution!} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Allydragon7

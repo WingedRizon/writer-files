@@ -1,0 +1,109 @@
+name: 'The Great Library'
+unique-id: 14
+repeatable: false
+side-quest: false
+requirements:
+  level: 27
+  level-not-met: '&cYou do not meet the level requirements!'
+  required-quests: 13
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Theia Ark'
+  npc-id: 651
+  speech:
+  - 'Thank you. We''ve stopped them for now.'
+  - 'Don''t worry, you did the right thing.'
+  - 'In any case, they''ll be back soon.'
+  - 'We must narrow down the location of the book and find it before they do.'
+  - 'I have a contact at Withered Sapling; the local inn. When you get there, speak to Teigh.'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Teigh'
+        npc-id: 614
+        speech:
+        - 'A friend of Theia''s, are you?'
+        - 'I must thank you for joining the fight. You are on the right side here.'
+        - 'Listen, we don''t have much time. The Azanians have already reached the Great Library.'
+        - 'They are searching for The Ancient Tome, which once held all the dark secrets of the realm.'
+        - 'It will not be long before they find it, at which point resistance will be futile.'
+        - 'There are soldiers guarding the pathway into the library.'
+        - 'You will need to fight through them or find some sort of way around.'
+        - 'Hurry! We can''t let Azana discover that book.'
+    goal-message: 'Speak to Teigh at the Withered Sapling.'
+    #location: 'Dead Man''s Rest'
+    #completed-message:
+  2:
+    #The Great Library
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 18
+      location: 'Alterra,-52,95,-581'
+    goal-message: 'Reach The Great Library'
+    #location: 'Top of Dead Man''s Rest'
+    #completed-message:
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Ghost of the Librarian'
+        npc-id: 615
+        speech:
+        - '???..'
+        - 'Disturbed...'
+        - 'Help me... Slay the intruders.'
+        - 'Impure hearts... Not worthy.'
+    goal-message: 'Speak to the Ghost of the Librarian'
+    #location: 'The Great Library'
+    #completed-message:
+  4:
+    requirement:
+      type: 'slay'
+      mob-names: 'AzanianSoldier'
+      amount: 3
+    goal-message: 'Defeat 3 Azanian Soldiers'
+    #location: 'The Great Library'
+    #completed-message:
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Ghost of the Librarian'
+        npc-id: 615
+        speech:
+        - 'You... Pure of heart.'
+        - 'Worthy...'
+    goal-message: 'Return to the Ghost of the Librarian'
+    #location: 'The Great Library'
+    execute:
+    - 'mm items give -s %player% AncientTome'
+    #completed-message:
+  6:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'Book'
+          item-name: 'Ancient Tome'
+          item-count: 1
+      npc:
+        npc-name: 'Teigh'
+        npc-id: 614
+        speech:
+        - 'You found it!'
+        - 'To be perfectly honest...I did not have much hope.'
+        - 'The book is now yours. Guard it with your life.'
+        - 'And whatever you do, do not let the Azanians get their hands on it! Even if you have to destroy it.'
+        - 'The Azanians might be dumb, but they''re not stupid.'
+        - 'They will find out you have the book sooner or later.'
+        - 'Speak to the elves in Isfodar. They might offer refuge and help you decipher the ancient text.'
+    goal-message: 'Return to Teigh at the Withered Sapling'
+    #location: 'The Withered Sapling Inn at DMR'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 9000
+  money: 20

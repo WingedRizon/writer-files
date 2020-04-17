@@ -1,0 +1,115 @@
+name: 'Training Arc'
+unique-id: 24
+repeatable: false
+side-quest: false
+requirements:
+  level: 46
+  level-not-met: '&cThanks but...Come back when you are level 46.'
+  required-quests: 23
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Chief_of_Naz''mora'
+  npc-id: 660
+  speech:
+  - 'Thank you for saving us! I wanted to seek guidance from our ancestors but we were ambushed by the Blood Orcs.'
+  - 'If you had not come...I doubt we could have all made it out alive.'
+  - 'I was foolish to speed up the training of these new recruits... My desperation to find our missing scouts mislead me and endangered their lives.'
+  - 'Our scouts? Well a while ago we encountered a creature using fire... It was powerful like nothing I had ever seen before. It originated in The Firezone.'
+  - 'About a week ago we sent a scouting party to investigate the zone. They were supposed to return within a few days...'
+  - 'I do not know what happened to them, we can only assume the worst. Now I am training new recruits to set sail and rescue them.'
+  - 'With your fighting skills, you could join us. However, it is clear that these trainees are not suited for battle yet.'
+  - 'Firstly, they need new armour. Can you speak to the blacksmith about making it?'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Blacksmith''s Apprentice'
+        npc-id: 661
+        speech:
+        - 'The Chief sent you, did she?'
+        - 'Well sure I could make some armour but does she not remember we used all our materials on the scouts?'
+        - 'If you could bring me some more iron then I could whip up new armour no problem.'
+    goal-message: 'Speak to the Orc Blacksmith'
+    #location: 'Naz''mora'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'iron_ore'
+          item-name: 'Iron Ore'
+          item-count: 25
+      npc:
+        npc-name: 'Blacksmith''s Apprentice'
+        npc-id: 661
+        speech:
+        - 'You are back. Good.'
+        - 'Thank you for the materials, they will make those recruits at least somewhat useful.'
+        - 'Oh and by the way, the Chief stopped by. She wanted to tell you to help the recruits train.'
+        - 'Go and help them kill some Blood Orcs.'
+    goal-message: 'Bring the Orc Blacksmith 25 Iron Ore.'
+    #location: 'Naz''mora'
+    #completed-message:
+  3:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 30
+      location: 'Alterra,2632,23,863'
+    goal-message: 'Reach The Garden outside Naz''mora'
+    #location: 'Outside Naz''mora'
+    #completed-message:
+  4:
+    requirement:
+      type: 'slay'
+      mob-names: 'BloodOrc'
+      amount: 10
+    goal-message: 'Assist the trainees in slaying 10 Blood Orcs.'
+    #location: 'The Garden'
+    #completed-message:
+  5:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 30
+      location: 'Alterra,2476,21,939'
+    goal-message: 'Reach Lizard Village'
+    #location: 'Lizard Village'
+    #completed-message:
+  6:
+    requirement:
+      type: 'slay'
+      mob-names: 'LizardSoldier'
+      amount: 10
+    goal-message: 'Assist the trainees in slaying 10 Lizard Soldiers.'
+    #location: 'Lizard Village'
+    #completed-message:
+  7:
+    requirement:
+      type: 'slay'
+      mob-names: 'LizardArcher'
+      amount: 5
+    goal-message: 'Assist the trainees in slaying 5 Lizard Archers.'
+    #location: 'Lizard Village'
+  8:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Naz''mora Warrior'
+        npc-id: 655
+        speech:
+        - 'Oh it''s you again.'
+        - 'The chief told me the recruits are ready.'
+        - 'They are setting sail soon.'
+        - 'Unfortunately I can''t come... For personal reasons...'
+        - 'Anyways, speak to the general at the docks when you''re ready to sail.'
+    goal-message: 'Speak to the Naz''mora Warrior at Lizard Village.'
+    #location: 'Lizard Village'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 20000
+  money: 20

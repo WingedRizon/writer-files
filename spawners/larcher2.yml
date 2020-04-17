@@ -1,0 +1,26 @@
+larcher2:
+  SpawnerGroup: archer
+  MobName: LizardArcher
+  World: Alterra
+  X: 2470
+  Y: 27
+  Z: 929
+  Radius: 0
+  UseTimer: true
+  MaxMobs: '1'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 8
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 32
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

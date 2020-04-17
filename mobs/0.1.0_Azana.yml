@@ -1,0 +1,272 @@
+AzanaCitizen:
+  Type: EVOKER
+  Display: '&e[&61&e] &aAzana Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: kookamooka
+AzanaCitizen2:
+  Type: EVOKER
+  Display: '&e[&61&e] &aAzana Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: AniBee55
+AzanaGuard1:
+  Type: IRON_GOLEM
+  Display: '&e[&650&e] &aAzana Guard'
+  Health: 5000
+  Damage: 100
+  Faction: Guard
+  Equipment:
+  - IRON_AXE HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.24
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+#  - 2 gotolocation -986,34,176
+  - 3 lookatplayers
+  - 4 randomlookaround
+  AITargetSelectors:
+  - 0 clear
+  - 1 OtherFactionVillagers
+  - 2 OtherFactionMonsters
+  - 3 villagers
+  - 4 monsters
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aAzana Guard<&co> &fWe are the watchers on the wall.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Darksalvo
+AzanaGuard2:
+  Type: IRON_GOLEM
+  Display: '&e[&650&e] &aAzana Guard'
+  Health: 5000
+  Damage: 100
+  Faction: Guard
+  Equipment:
+  - IRON_AXE HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.24
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+#  - 2 gotolocation -986,34,188
+  - 3 lookatplayers
+  - 4 randomlookaround
+  AITargetSelectors:
+  - 0 clear
+  - 1 OtherFactionVillagers
+  - 2 OtherFactionMonsters
+  - 3 villagers
+  - 4 monsters
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aAzana Guard<&co> &fWe are the watchers on the wall.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Darksalvo
+AzanaGuard3:
+  Type: IRON_GOLEM
+  Display: '&e[&650&e] &aAzana Guard'
+  Health: 5000
+  Damage: 100
+  Faction: Guard
+  Equipment:
+  - IRON_AXE HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.24
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+#  - 2 gotolocation -1428,39,180
+  - 3 lookatplayers
+  - 4 randomlookaround
+  AITargetSelectors:
+  - 0 clear
+  - 1 OtherFactionVillagers
+  - 2 OtherFactionMonsters
+  - 3 villagers
+  - 4 monsters
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aAzana Guard<&co> &fWe are the watchers on the wall.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Darksalvo
+AzanaGuard4:
+  Type: IRON_GOLEM
+  Display: '&e[&650&e] &aAzana Guard'
+  Health: 5000
+  Damage: 100
+  Faction: Guard
+  Equipment:
+  - IRON_AXE HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.24
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+#  - 2 gotolocation -1421,38,187
+  - 3 lookatplayers
+  - 4 randomlookaround
+  AITargetSelectors:
+  - 0 clear
+  - 1 OtherFactionVillagers
+  - 2 OtherFactionMonsters
+  - 3 villagers
+  - 4 monsters
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aAzana Guard<&co> &fWe are the watchers on the wall.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Darksalvo
+BanditAzanaRookie:
+  Type: EVOKER
+  Display: '&e[&63&e] &cRookie Bandit'
+  Health: 35
+  Modules:
+    ThreatTable: true
+  Damage: 12
+  Faction: Bandit
+  Equipment:
+  - WOODEN_SWORD HAND
+  Drops:
+  - Coin 1-3 0.3
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 20
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 40 <mob.l.x> <mob.l.y> <mob.l.z> 3"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor common <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
+  - command{c="giveweapon <trigger.name> common <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
+  - skill{s=SummonElite_Bandit} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Ramus
+    ModifyBoundingBox: true
+BanditAzanaTough:
+  Type: EVOKER
+  Display: '&e[&64&e] &cTough Bandit'
+  Health: 50
+  Damage: 18
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - WOODEN_SWORD HAND
+  Drops:
+  - Coin 1-3 0.3
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 20
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 75 <mob.l.x> <mob.l.y> <mob.l.z> 4"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor common <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
+  - command{c="giveweapon <trigger.name> common <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
+  - skill{s=SummonElite_Bandit} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: NebulaEdge
+BanditAzanaElite:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cElite Bandit'
+  Health: 75
+  Modules:
+    ThreatTable: true
+  Damage: 25
+  Equipment:
+  - WOODEN_SWORD HAND
+  Drops:
+  - Coin 1-5 1.0
+  Options:
+    MovementSpeed: 0.3
+    PreventOtherDrops: true
+    FollowRange: 20
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 150 <mob.l.x> <mob.l.y> <mob.l.z> 5"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor common <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.75
+  - command{c="giveweapon <trigger.name> common <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.5
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: ForHonor
+BanditPig:
+  Type: Pig
+  Display: '&e[&61&e] &aStolen Pig'
+  Health: 15
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true

@@ -1,0 +1,82 @@
+Allaster:
+  Type: IRON_GOLEM
+  Display: '&e[&660&e] &aAllaster Farseer'
+  Health: 50000
+  Damage: 1
+  Faction: Guard
+  Equipment:
+  - WOODEN_HOE HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.24
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 lookatplayers
+  - 3 randomlookaround
+  AITargetSelectors:
+  - 0 clear
+  - 1 OtherFactionVillagers
+  - 2 OtherFactionMonsters
+  - 3 villagers
+  - 4 monsters
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: 1_4m_b1663r
+
+ForestOwl:
+  Type: bat
+  Display: '&e[&63&e] &aForest Owl'
+  Health: 20
+  Disguise:
+   Type: babyzombie
+  Skills:
+  - potion{t=INVISIBILITY;d=2147483647;l=1} @self ~onSpawn
+  - equip{i=birdhead:4} ~onSpawn
+  Options:
+    PreventRandomEquipment: true
+    PreventOtherDrops: true
+    Silent: true
+    PreventRenaming: false
+    MovementSpeed: 0.05
+  AIGoalSelectors:
+  - 0 clear
+  AITargetSelectors:
+  - 0 clear
+
+ForestBandit:
+  Type: EVOKER
+  Display: '&e[&625&e] &cForest Bandit'
+  Health: 290
+  Damage: 35
+  Faction: Undead
+  Equipment:
+  - IRON_SWORD HAND
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 2-4 0.3
+  Options:
+    MovementSpeed: 0.34
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 180 <mob.l.x> <mob.l.y> <mob.l.z> 25"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
+  - command{c="giveweapon <trigger.name> uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Hasslich

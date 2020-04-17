@@ -1,0 +1,76 @@
+summonFollower:
+ Conditions:
+ - incombat{} true
+ - stance normal
+ Skills:
+ - summon{type=ShamanFollower;amount=3;yr=0;os=true;radius=3} @self
+
+startMutate:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - setstance{stance=queue}
+ - sendtitle{title="&4&kooo&r&l&cMutate&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cMutate&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cMutate&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cMutate&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cMutate&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - skill{s=mutate}
+
+mutate:
+ Skills:
+ - summon{type=ShamanFollower;amount=1;yr=0;os=true;radius=0} @self
+ - signal{s=mutate} @MIR{r=50;t=ShamanFollower}
+ - delay 1
+ - setstance{stance=normal}
+
+mutateCounter:
+ Skills:
+ - signal{s=lvlUp} @MIR{r=50;t=ShamanAmalgamation}
+ - delay 1
+ - suicide @self
+
+startSolarBlessing:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - sendtitle{title="&4&kooo&r&l&cSolar Blessing&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cSolar Blessing&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cSolar Blessing&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cSolar Blessing&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cSolar Blessing&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - summon{type=solarBlessingAura;amount=1;yr=0;os=true;radius=0} @self #replaced skill
+ - delay 240
+ - signal{s=despawn} @MIR{r=90;t=solarBlessingAura}
+
+SolarBlessingAffect:
+ Skills:
+ - damage{a=22} @PIR{r=5}
+ - signal{s=heal} @MIR{r=5;t=GuardianOfTheFruit}
+
+GOFHeal:
+ Skills:
+ - effect:particles{p=HAPPY_VILLAGER;amount=10;vSpread=1;hSpread=.5;Speed=0;yOffset=0} @self
+ - effect:sound{s=entity.experience_orb.pickup;volume=1.0;pitch=0.5} @PlayersInRadius{r=80}
+ - heal{amount=18} @self
+ - damage{a=0} @self

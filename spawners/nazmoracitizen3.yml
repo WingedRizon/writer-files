@@ -1,0 +1,26 @@
+nazmoracitizen3:
+  SpawnerGroup: nazmoracitizen
+  MobName: NazmoraCitizen
+  World: Alterra
+  X: 2596
+  Y: 32
+  Z: 1058
+  Radius: 20
+  UseTimer: true
+  MaxMobs: '2'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 0
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 32
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

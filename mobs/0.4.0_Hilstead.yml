@@ -1,0 +1,69 @@
+HilsteadCitizen:
+  Type: EVOKER
+  Display: '&e[&61&e] &aHilstead Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aHilstead Citizen<&co> &fWe were once the kin of Wintervale.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Barkzee
+HilsteadCitizen2:
+  Type: EVOKER
+  Display: '&e[&61&e] &aHilstead Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aHilstead Citizen<&co> &fWe were once the kin of Wintervale.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: MissAK47
+
+NorthernBear:
+  Type: POLAR_BEAR
+  Display: '&e[&6✸&e] &cNorthern Bear'
+  Health: 300
+  Damage: 30
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 4-6 1.0
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 25
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 275 <mob.l.x> <mob.l.y> <mob.l.z> 15"} @trigger ~onDeath 1.0
+#  - command{c="runicgive item <trigger.name> armor uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.75
+#  - command{c="giveweapon <trigger.name> uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.5
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget

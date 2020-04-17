@@ -1,0 +1,71 @@
+name: 'A Test of Strength'
+unique-id: 8
+repeatable: false
+side-quest: false
+requirements:
+  level: 12
+  level-not-met: '&cYou must be a higher level to enter the tournament. Come back at level 12.'
+  required-quests: 7
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Gyrid'
+  npc-id: 624
+  speech:
+  - 'Ah, yar here for the viking tournament I see.'
+  - 'So many new faces here around this time of year...But yar do not seem like a fella from Hilstead.'
+  - 'Ye there is something different about yar, but I don''t understand why.'
+  - 'In any case, yar wanna go to the landboat. Tis a short walk from here to Warrior''s Lodge.'
+  - 'Speak to the Tournament Overseer there. Good luck fella!'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Tournament Overseer'
+        npc-id: 623
+        speech:
+        - 'Tournament? Great. Good luck. Yar in. Go. Go. Go!'
+    goal-message: 'Speak to the Tournament Overseer.'
+    #location: 'Warrior''s Lodge'
+    completed-message: '&aTime for the next challenger!'
+  2:
+    requirement:
+      type: 'slay'
+      mob-names: 'Valoran'
+      amount: 1
+    goal-message: 'Defeat Challenger Valoran!'
+    #location: 'Warriors'' Arena'
+    completed-message: '&aTime for the next challenger!'
+  3:
+    requirement:
+      type: 'slay'
+      mob-names: 'Gorm'
+      amount: 1
+    goal-message: 'Defeat Challenger Gorm!'
+    #location: 'Warriors'' Arena'
+    completed-message: '&aTime for the next challenger!'
+  4:
+    requirement:
+      type: 'slay'
+      mob-names: 'Bjorn'
+      amount: 1
+    goal-message: 'Defeat Challenger Bjorn!'
+    #location: 'Warriors'' Arena'
+    #completed-message: '&aTime for the next challenger!'
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Tournament Overseer'
+        npc-id: 623
+        speech:
+        - 'We have our winner!'
+        - 'I shall reward yar with this viking stamp.'
+        - 'That''s it folks, come back next year!'
+    goal-message: 'Return to the Tournament Overseer.'
+    #location: 'Warrior''s Lodge'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 6000
+  money: 32

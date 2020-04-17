@@ -1,0 +1,158 @@
+name: 'Nostalgia'
+unique-id: 105
+repeatable: false
+side-quest: true
+requirements:
+  level: 25
+  level-not-met:
+  - '&cIt has been so long since I walked down these roads, adventurer.'
+  - '&cSo much has changed, everything has become so grand!'
+  - '&cWould you be able to return to me once I''ve taken everything in? Perhaps at level 25.'
+  - '&cI have some letters I''d like to be delivered to friends from a, should I say, simpler time.'
+first-npc:
+  npc-name: 'Morris'
+  npc-id: 735
+  speech:
+  - 'Ah, this nostalgic feeling; I wish I could turn back time...'
+  - 'This was once the centre of the city, where I met the comrades I once knew, but can no longer contact.'
+  - 'I want to return to those days, you know? Back when things were simpler.'
+  - 'You see, the military is slacking off with the postal service, and I can''t travel the long distances I once could.'
+  - 'Will you do me a favour and deliver these letters for me? The problem here is that I do not know where they live, only their names.'
+  - 'Maybe you could check the town records, would you do me this favour?'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Record Keeper'
+        npc-id: 736
+        speech:
+        - 'Welcome, welcome, what can I help you with?'
+        - 'The Town Records? I should have them in this chest! Let me hand them to you...'
+        - 'Ah, here they are! Let''s see here, I can''t seem to find the three names you mentioned.'
+        - 'I only found one - Lawson - who bought a house out in Silkwood Forest. You should be able to find him.'
+        - 'He has become quite the household name around here. Farmer Lawson is what they call him.'
+    goal-message: 'Search the town records for the addresses of Morris'' old friends'
+    goal-location: '&eSouth-West Azana: The town record keeper''s house, bordering the ruined arena'
+    #completed-message:
+    #- &7'You have located the whereabouts of Morris'' old friends.'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Farmer Lawson'
+        npc-id: 322
+        speech:
+        - 'Hello again, %player%! What can I do for you today?'
+        - 'Ahh, a letter? Who is this from? Ah, Morris... I see'
+        - 'No, unfortunately, I have no intention of reconnecting with him, %player%.'
+        - 'Our friendship ended when he abandoned us. The day before we left for duty no less.'
+        - 'I appreciate him reaching out to me, and I will ponder it over. But for now, I''ll stay out here and keep my distance.'
+        - 'Oh and if you''re looking for Greg, I know he moved back into Azana a while ago.'
+        - 'You should speak to his granddaughter Susie. She owns the house now.'
+    goal-message: 'Find Lawson on the path outside Azana'
+    goal-location: 'Just past the pond outside Azana'
+    #completed-message:
+    #- &7'You have located Lawson'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Morris'
+        npc-id: 735
+        speech:
+        - 'Hello again, adventurer! How was it?'
+        - 'Oh, I see... that is unfortunate.'
+        - 'You know, even to this day I question whether or not my decision was the correct one...'
+        - 'Please adventurer, deliver the next letter to my friend Greg.'
+    goal-message: 'Return to Morris and deliver the news'
+    goal-location: 'Old Azana Town Square'
+    #completed-message:
+    #- '&7
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Susie'
+        npc-id: 738
+        speech:
+        - 'Hello, what brings you here, traveller? You have come to deliver a letter? Let me have a look.'
+        - 'Oh, a letter for my grandfather, unfortunately, he passed away some time ago.'
+        - 'I do remember him telling me stories about those four being together through it all...'
+        - 'There was only one thing my grandfather regretted and that was moving away. Though he did continue to contact another friend, here''s where they live.'
+        - 'Before you go, could you please deliver some flowers to my grandfather''s grave? I would really appreciate it. And please pass my regards to Morris.'
+    goal-message: 'Speak to Susie, granddaughter of Greg'
+    goal-location: 'Left of the Azana bakery'
+    #completed-message:
+    #- &7''
+  5:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 6
+      location: 'Alterra,-673,37,206'
+    goal-message: 'Travel to the graveyard to find Greg.'
+    goal-location: 'Azana Graveyard'
+    completed-message:
+    - '&7You have located Greg, may he rest in peace.'
+  6:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Morris'
+        npc-id: 735
+        speech:
+        - 'Any good news adventurer?'
+        - 'Oh god... did I wait too long? Perhaps it is simply time for me to let bygones be bygones.'
+        - 'We may as well see if my last friend is still with us... Thank you again, adventurer, no %player%.'
+    goal-message: 'Return to Morris to deliver the news.'
+    goal-location: 'Old Azana Town Square'
+    #completed-message:
+    #- &7''
+  7:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Lana'
+        npc-id: 740
+        speech:
+        - 'Oh! Hello there, what brings you to our home?'
+        - 'Morris? Oh, Grandmother mentioned him several times, somewhat of a school crush.'
+        - 'However, I cannot accept this letter. Perhaps you should leave it with her.'
+        - 'You should find her in the cemetery, on the top-level.'
+    goal-message: 'Travel to the final friend''s location just outside Azana'
+    goal-location: 'The house next to the stables outside Azana.'
+    #completed-message:
+    #- &7''
+  8:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Betty'
+        npc-id: 742
+        speech:
+        - 'Oh, hello there dear, I was just visiting the grave of my husband, what can I do for you?'
+        - 'Oh, a letter? From Morris? Why it''s been years since we’''ve talked!'
+        - 'You know what dear? Tell Morris I would love to meet up with him. Thank you very much.'
+    goal-message: 'Travel to the graveyard again to locate Betty'
+    #completed-message:
+    #- &7' Successfully located Betty'
+  9:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Morris'
+        npc-id: 735
+        speech:
+        - 'No need to tell me, %player%... I saw you walking towards the graveyard.'
+        - 'Wait... what?! She wants to meet up with me! That would be... really nice actually.'
+        - 'Thank you so much. I owe you so much. Perhaps I was holding onto the past too much.'
+        - 'However, I will continue to cherish those memories. Thank you. Here, take this for your troubles!'
+    goal-message: 'Return to Morris with the news'
+    #completed-message:
+    #- &7'Successfully reunited Morris with an old friend.'
+rewards:
+  quest-points: 1
+  exp: 6000
+  money: 19

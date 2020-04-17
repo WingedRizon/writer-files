@@ -1,0 +1,62 @@
+FeldruidScepter:
+  Id: WOOD_HOE
+  Data: 6
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+
+# Looming Threat
+PhoenixFeather:
+  Id: FEATHER
+  Amount: 1
+  Display: '&6Phoenix Feather'
+  Lore:
+  - ''
+  - '&7A feather from the plume of a phoenix!'
+  - ''
+  - '&6Quest Item'
+Soulstone:
+  Id: ENDER_PEARL
+  Amount: 1
+  Display: '&6Soulstone'
+  Lore:
+  - ''
+  - '&7Lost to time...'
+  - ''
+  - '&6Quest Item'
+MemoryFragment:
+  Id: GHAST_TEAR
+  Amount: 1
+  Display: '&6Memory Fragment'
+  Lore:
+  - ''
+  - '&7You can hear faint voices...'
+  - ''
+  - '&6Quest Item'
+PyreCatalyst:
+  Id: BLAZE_POWDER
+  Amount: 1
+  Display: '&6Pyre Catalyst'
+  Lore:
+  - ''
+  - '&7To start a great fire!'
+  - ''
+  - '&6Quest Item'
+RhaliksAxe:
+  Id: IRON_AXE
+  Data: 3
+  Amount: 1
+  Display: '&6Rhalik''s Axe'
+  Lore:
+  - ''
+  - '&7The sturdy axe of a dwarf!'
+  - ''
+  - '&6Quest Item'
+  Options:
+      HideFlags: true
+      Unbreakable: true
+  Hide:
+  - UNBREAKABLE

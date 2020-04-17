@@ -1,0 +1,173 @@
+name: 'A Desertic Conspiracy'
+unique-id: 111
+repeatable: false
+side-quest: true
+requirements:
+  level: 43
+  level-not-met:
+  - 'I need someone stronger! Not a weakling like you!'
+first-npc:
+  npc-name: 'Tony'
+  npc-id: 818
+  speech:
+  - 'Ahh... what can I do!?'
+  - 'Oh, hey! Adventurer! Can you help me?'
+  - 'I need to run some errands in town, but I can''t leave the house alone.'
+  - 'I fear that the bandits come here and raid the house!'
+  - 'Go and help me would you? I have to do some things for three people, I know they are in Naheen but not sure where.'
+  - 'I know one man should be by the tents, go on help him would you?'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Wallace the Strong'
+        npc-id: 819
+        speech:
+        - 'Oi! What are you doing here kid!? Go away!'
+        - 'Oh, Tony sent you here? Alright, I''ll tell ya what I need.'
+        - 'I need you to slay 3 Desert Necromancers, that fine with ya?'
+        - 'Good, now go off and finish your task.'
+    goal-message: 'Talk to Wallace the Strong'
+    goal-location: 'At the tents of Naheen'
+    #completed-message:
+    # - '&7Located Wallace!'
+  2:
+    requirement:
+      type: 'slay'
+      mob-names: 'BugElite'
+      amount: 3
+    goal-message: 'Slay 3 Desert Necromancers!'
+    goal-location: 'Near the south exit of Naheen.'
+    #completed-message:
+    # - '&7Slayed the Toxic Wasps!'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Wallace the Strong'
+        npc-id: 819
+        speech:
+        - 'You killed them? Good, good.'
+        - 'For Tony''s next task, we needed him to go talk to Peter.'
+        - 'He was supposed to give Tony his next task, guess we''ll have to work with you.'
+        - 'Good luck chump! You made good work here.'
+    goal-message: 'Talk to Wallace the Strong '
+    goal-location: 'At the tents in Naheen'
+    #completed-message:
+    #- '&7Reported back to Wallace'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Peter the Sly'
+        npc-id: 824
+        speech:
+        - 'Now where did that kid go... Don''t tell me he went and get in trouble...'
+        - 'Hey there lad, what are you doing here? ... You''re saying Tony sent you?'
+        - 'Alright then, I guess I''ll have to work with you.'
+        - 'I need you to go deliver this Flask to good ol'' Carlton at the bank, simple enough right?'
+        - 'Off you go, it shouldn''t take you too long to find him.'
+    execute:
+    - 'mm i give %player% DubiousFlask 1'
+    goal-message: 'Locate Peter the Sly'
+    goal-location: 'At the docks of Naheen.'
+    #completed-message:
+    #- '&7Located Peter the Sly'
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Carlton the Wild'
+        npc-id: 826
+        speech:
+        - 'Shhh! Don''t make too much noise adventurer.'
+        - 'That bottle you got there... Did Peter send you?'
+        - 'Hand that over right now! Hmm... It seems like the real thing.'
+        - 'Since you got this, I need you to do something for me alright?'
+        - 'Go and make the Bank Governor drink this potion, make him believe it will bring insane luck or something.'
+        - 'Good luck!'
+    goal-message: 'Talk to Carlton the Wild'
+    goal-location: 'Bank of Naheen'
+    #completed-message:
+    #- '&7Located Carlton the Wild'
+  6:
+    requirement:
+      requires:
+        1:
+          item-type: 'dragon_breath'
+          item-name: 'Flask of Dubious Fluids'
+          item-count: 1
+      type: 'talk'
+      npc:
+        npc-name: 'Bank Governor'
+        npc-id: 827
+        speech:
+        - 'Welcome to our humble bank, adventurer! What can I do for you?'
+        - 'You''re telling me I can drink this and be the luckiest person in the business? I''m in!'
+        - '&c&oThe Bank Governor drinks the potion'
+        - 'Alright then! That wasn''t so bad, thank you %player%.'
+        - 'Hmm... I seem to be a little bit dizzy, oh well, it is probably nothing too dangerous...'
+    goal-message: 'Make the Bank Governor drink that potion'
+    goal-location: 'Bank of Naheen'
+    #completed-message:
+    #- '&7Convinced the Bank Governor to drink the Potion!'
+  7:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Carlton the Wild'
+        npc-id: 826
+        speech:
+        - 'You''re back! Did you do it?'
+        - 'You actually did it?! Haha! This is going well.'
+        - 'Maybe you should return to Tony, he''ll fill you in what is happening here.'
+        - 'I think we will meet again, adventurer. Hahaha!'
+    goal-message: 'Report back to Carlton'
+    #completed-message:
+    #- '&7Reported back to Carlton'
+  8:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Tony'
+        npc-id: 818
+        speech:
+        - 'Hey! What did you do?!'
+        - 'You gave the Governor a potion?! Oh no, no... This is bad'
+        - 'Those people are bandits! They want Naheen''s treasure!'
+        - 'I asked you to do this because you seemed well geared and strong... And maybe you could do something about this.'
+        - 'That potion had the toxins of a wasp, it may paralize the Governor for life!'
+        - 'I have a final task for you, please slay the Bandit Leader, Wallace, he will be waiting at his hideout east of Naheen, they are some tents'
+        - 'I wish you luck, adventurer. Come back to me once you finish your task.'
+    goal-message: 'Report back to Tony.'
+    goal-location: 'House outside Naheen, next to the Wagonmaster'
+    #completed-message:
+    #- '&7Reported back to Tony'
+  9:
+    requirement:
+      type: 'slay'
+      mob-names: 'wallaceTheStrong'
+      amount: 1
+    goal-message: 'Slay Wallace, the Strong!'
+    goal-location: 'East of Naheen, in some tents.'
+    completed-message:
+    - '&7It seems Wallace wasn''t as strong as he thought he was.'
+  10:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Tony'
+        npc-id: 818
+        speech:
+        - '%player%, you''re alive! I assume you come back victorious, right!?'
+        - 'I think I am speaking for the entire town when I say thank you.'
+        - 'It''s not much, but here you go, for your honest work.'
+    goal-message: 'Report back to Tony'
+    #completed-message:
+    #- '&7Successfully uncovered the conspiracy! '
+
+rewards:
+  quest-points: 1
+  exp: 19000
+  money: 28

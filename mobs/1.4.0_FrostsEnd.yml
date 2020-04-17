@@ -1,0 +1,26 @@
+BlackfrostBear:
+  Type: POLAR_BEAR
+  Display: '&e[&656&e] &cBlackfrost Bear'
+  Health: 550
+  Damage: 60
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 4-6 1.0
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 25
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 380 <mob.l.x> <mob.l.y> <mob.l.z> 56"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  - command{c="giveweapon <trigger.name> epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget

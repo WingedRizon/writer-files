@@ -1,0 +1,9 @@
+TogrundMace:
+  Id: WOOD_SPADE
+  Data: 3
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS

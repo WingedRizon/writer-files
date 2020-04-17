@@ -1,0 +1,137 @@
+name: 'Audience with the Sultan'
+unique-id: 21
+repeatable: false
+side-quest: false
+requirements:
+  level: 37
+  level-not-met: '&cWeak! Come back when you are at least level 37.'
+  required-quests: 20
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Ebo'
+  npc-id: 636
+  speech:
+  - 'What are you looking at me for?'
+  - 'Go feed those swine the potion and get this ordeal over with!'
+  - 'Start with the fat one over there.'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Servant'
+        npc-id: 670
+        speech:
+        - 'Oink oink *ahem* I mean thank you.'
+    goal-message: 'Give the potion to the first servant.'
+    execute:
+    - 'npc select 670'
+    - 'npc skin ImConnor_'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Servant'
+        npc-id: 672
+        speech:
+        - 'Mud is surprisingly tasty.'
+    goal-message: 'Give the potion to the second servant.'
+    execute:
+    - 'npc select 672'
+    - 'npc skin ImConnor_'
+    #completed-message:
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Servant'
+        npc-id: 671
+        speech:
+        - 'I was actually enjoying myself...'
+    goal-message: 'Give the potion to the final servant.'
+    execute:
+    - 'npc select 671'
+    - 'npc skin ImConnor_'
+    #completed-message:
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Ebo'
+        npc-id: 636
+        speech:
+        - 'They''re back! Now get to work you three! Start by getting rid of all this mud.'
+        - 'What permit? I don''t remember such a thing.'
+        - 'Oh fine, fine I''ll write you letter. Just leave quickly, I have to put my house in order.'
+    goal-message: 'Speak to Ebo'
+    #completed-message:
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Information Clerk'
+        npc-id: 635
+        speech:
+        - 'I assume everything is sorted with Ebo then.'
+        - 'Marvelous. With this letter, I can process your request immediately.'
+        - '...'
+        - 'Here you are: an official permit to see the Sultan.'
+    goal-message: 'Return to the Information Clerk'
+    execute:
+    - 'npc select 670'
+    - 'npc skin 0rnen'
+    - 'npc select 671'
+    - 'npc skin 0rnen'
+    - 'npc select 672'
+    - 'npc skin 0rnen'
+    #completed-message:
+  6:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Zenyth Guard'
+        npc-id: 632
+        speech:
+        - 'Back already? Didn''t I tell you to stay away last time? The Sultan doesn''t see anyone unless they ha-'
+        - '...an official permit.'
+        - 'Amsu have a look at this.'
+        - 'I have no clue how you got your hands on one of these but it is real.'
+        - 'Hey! Don''t look so happy! If you think this guarantees anything from the Sultan then I''ve got bad news for you, kid.'
+        - 'Just go through, you''ll see.'
+    goal-message: 'Speak to the Palace Guards.'
+    #completed-message:
+  7:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Sultan Abbas'
+        npc-id: 442
+        speech:
+        - 'Next!'
+        - 'State your request.'
+        - 'You want ME to help those pathetic elves and mages?'
+        - 'You have some guts to come here and spout such rubbish. Why on earth would I help those lowly creatures?'
+        - 'Serves them right for using magic! They deserve all the consequences.'
+        - 'You''re lucky I don''t kill you on the spot for even suggesting such a thing.'
+        - 'Now begone before I change my mind.'
+        - 'Next!'
+    goal-message: 'Speak to the Sultan.'
+    #completed-message:
+  8:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Zenyth Guard'
+        npc-id: 632
+        speech:
+        - 'Hahaha what did I tell you?'
+        - 'You''re better off asking the Naheenians for help!'
+        - 'Imagine that, Amsu!'
+        - 'I can''t control myself! This is too much... And to walk in with such confidence too.'
+    goal-message: 'Return to the Palace Guards'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 9000
+  money: 30

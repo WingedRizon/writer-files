@@ -1,0 +1,25 @@
+disciplelibrarian2:
+  MobName: DiscipleLibrarian2
+  World: dungeons
+  X: 175
+  Y: 34
+  Z: -113
+  Radius: 7
+  UseTimer: true
+  MaxMobs: '4'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 60
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 32
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

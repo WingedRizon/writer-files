@@ -1,0 +1,177 @@
+FireElemental:
+  Type: BLAZE
+  Display: '&e[&650&e] &cFire Elemental'
+  Health: 500
+  Damage: 60
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 3-4 0.3
+  - SacredFlame 1 0.04
+  Options:
+    MovementSpeed: 0.4
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 350 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.03
+  - command{c="giveweapon <trigger.name> epic <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.03
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+InfernalGrunt:
+  Type: EVOKER
+  Display: '&e[&654&e] &cInfernal Grunt'
+  Health: 530
+  Damage: 55
+  Drops:
+  - Coin 4-6 0.3
+  - SacredFlame 1 0.04
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - FireSword HAND
+  Options:
+    MovementSpeed: 0.34
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - skill{s=FireAuraSmall} @self ~onTimer:200
+  - command{c="runicgive exp <trigger.name> 365 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.03
+  - command{c="giveweapon <trigger.name> epic <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.03
+  - skill{s=SummonElite_InfernalGrunt} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: 0mah
+InfernalArcher:
+  Type: EVOKER
+  Display: '&e[&652&e] &cInfernal Archer'
+  Health: 515
+  Damage: 55
+  Drops:
+  - Coin 4-6 0.3
+  - SacredFlame 1 0.04
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - FireBow HAND
+  Options:
+    MovementSpeed: 0.26
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - skill{s=FireArrow} @NearestPlayer{r=80} ~onTimer:40
+  - command{c="runicgive exp <trigger.name> 380 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.03
+  - command{c="giveweapon <trigger.name> epic <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.03
+  - skill{s=SummonElite_InfernalGrunt} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers	
+  - 2 randomlookaround
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: umuYuyu
+InfernalGruntElite:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cInfernal Captain'
+  Health: 650
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - FireAxe HAND
+  Damage: 65
+  Drops:
+  - Coin 4-8 0.3
+  - SacredFlame 1 0.04
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 550 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.5
+  - command{c="giveweapon <trigger.name> epic <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.35
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: bedbreakmaster7
+ThePyromancer:
+  Type: EVOKER
+  Display: '&e[&6☠&e] &cThe Pyromancer'
+  Health: 40000
+  Faction: Boss
+  Modules:
+    ThreatTable: true
+  Damage: 48
+  BossBar:
+    Enabled: true
+    Title: '&c&lThe Pyromancer'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+  Equipment:
+  - AIR HAND #ask Sky what to put in hand
+  Options:
+    MovementSpeed: 0.01
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+    Silent: true
+  Skills: 
+  - skill{s=passiveSkill_cinders} @self ~onTimer:20
+  - skill{s=startCinderStorm} @self ~onTimer:600
+  - potion{t=SLOW;d=2147483647;l=998;hasParticles=true;force=true} @self ~onSpawn
+  - velocity{m=set;x=0;y=0;z=0} @self ~onDamaged
+  - command{c="giveartifact <trigger.name> scorpion <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.1
+  - command{c="giveartifact <trigger.name> dawnbringer <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.1
+  - command{c="giveartifact <trigger.name> sunflare <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.1
+  - command{c="giveartifact <trigger.name> cataclysm <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.1
+  - command{c="giveartifact <trigger.name> warmonger <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.1
+  - command{c="givescroll <trigger.name> fire eruption <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.1
+  - command{c="givescroll <trigger.name> fire shadowbolt <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.1
+  - command{c="givescroll <trigger.name> water insanity <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.1
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: ChavezFam505

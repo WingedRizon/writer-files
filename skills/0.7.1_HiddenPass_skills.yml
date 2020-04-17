@@ -1,0 +1,16 @@
+SummonElite_ElvenArcher:
+  Cooldown: 60
+  Skills:
+  - message{cooldown=60;m="§6§l✸ &c&lElite Elven Archer &e&lhas spawned!"} @PlayersInRadius{r=50}
+  - summon{mob=HauntingGhoulElite;amount=1;noise=5;os=true} @Self
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+ElfArrow:
+  Skills:
+  - projectile{onTick=ElfArrow-Tick;onHit=ElfArrow-Hit;v=10;i=1;hR=1;vR=1;sfo=2}
+  - sound{s=entity.arrow.shoot} @self
+ElfArrow-Tick:
+  Skills:
+  - effect:particles{p=reddust;color=#DEB887;amount=3;speed=0;hS=0.1;vS=0.1} @origin
+ElfArrow-Hit:
+  Skills:
+  - damage{a=25}

@@ -1,0 +1,84 @@
+Bug:
+  Type: EVOKER
+  Display: '&e[&640&e] &cToxic Wasp'
+  Health: 400
+  Modules:
+    ThreatTable: true
+  Damage: 34
+  Drops:
+  - Coin 4-8 0.3
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - skill{s=Sting} @target ~onTimer:140
+  - command{c="runicgive exp <trigger.name> 325 <mob.l.x> <mob.l.y> <mob.l.z> 40"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  - command{c="giveweapon <trigger.name> epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  - skill{s=SummonElite_Bug} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Lacaille
+BugElite:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cDesert Necromancer'
+  Health: 415
+  Damage: 37
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - DesertStaff HAND
+  Drops:
+  - Coin 5-10 1.0
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - skill{s=SandAura} @self ~onTimer:200
+  - command{c="runicgive exp <trigger.name> 500 <mob.l.x> <mob.l.y> <mob.l.z> 40"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.5
+  - command{c="giveweapon <trigger.name> epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.35
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: flyer609
+BugAmbient:
+  Type: bat
+  Display: '&e[&61&e] &aWasp'
+  Health: 20
+  Disguise:
+   Type: babyzombie
+  Skills:
+  - potion{t=INVISIBILITY;d=2147483647;l=1} @self ~onSpawn
+  - equip{i=wasphead:4} ~onSpawn
+  Options:
+    PreventRandomEquipment: true
+    PreventOtherDrops: true
+    Silent: true
+    PreventRenaming: false
+    MovementSpeed: 0.05
+  AIGoalSelectors:
+  - 0 clear
+  AITargetSelectors:
+  - 0 clear

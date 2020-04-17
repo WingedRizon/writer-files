@@ -1,0 +1,135 @@
+name: 'The Mages of Wintervale'
+unique-id: 11
+repeatable: false
+side-quest: false
+requirements:
+  level: 20
+  level-not-met: '&cAt your level you will not be able to help. Come back at level 20.'
+  required-quests: 10
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Asger'
+  npc-id: 606
+  speech:
+  - 'Oh, dear. It really is quite serious.'
+  - 'I don''t even think I can help...but I might know someone who can.'
+  - 'Go to the High Council and speak to Allaster Farseer.'
+  - 'Unlike the other mages in The Council, he might not have forgotten what''s important...'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Allaster Farseer'
+        npc-id: 605
+        speech:
+        - '&4Dear cousin, I write to you seeking help...'
+        - '&4...harsh conditions...'
+        - '&4...rescue us...'
+        - '&4...you''re the only one I can turn to.'
+        - 'This really is a fascinating letter. Thank you for bringing it to me.'
+        - 'Let us discuss this with the rest of the High Council.'
+    goal-message: 'Deliver the letter to Allaster Farseer of the High Council'
+    #location: 'The Councilhouse in Wintervale'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'High Mage Oriben'
+        npc-id: 652
+        speech:
+        - 'This is troubling news indeed. However, our resources are already stretched too thin.'
+        - 'My answer is no.'
+    goal-message: 'Speak to Council High Mage Oriben'
+    #location: 'The Councilhouse in Wintervale'
+    #completed-message:
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'High Mage Falenas'
+        npc-id: 653
+        speech:
+        - 'Wintervale has seen it''s own trials in the past.'
+        - 'Each time we have come out stronger.'
+        - 'We did this without the aid of others. So can they.'
+        - 'My answer is no.'
+    goal-message: 'Speak to High Mage Falenas'
+    #location: 'The Councilhouse in Wintervale'
+    #completed-message:
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Allaster Farseer'
+        npc-id: 605
+        speech:
+        - 'I have to say I did not expect them to help but I didn''t think it would go THAT badly.'
+        - 'I really wish they could see what it''s like for the common man.'
+        - 'They have spent too much time here in Wintervale...and perhaps so have I.'
+        - 'As a matter of fact...I have decided.'
+        - 'I will help you.'
+        - 'But first, you will need to prove that you are up to the task. You cannot go out there into the world in your current state.'
+        - 'You must increase your magical power first.'
+        - 'Bring me 20 uncut diamonds and I shall make you a damage gem. It should be enough for the time being.'
+    goal-message: 'Speak to Allaster Farseer'
+    #location: 'The Councilhouse in Wintervale'
+    #completed-message:
+  5:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'diamond_ore'
+          item-name: 'Uncut Diamond'
+          item-count: 20
+      npc:
+        npc-name: 'Allaster Farseer'
+        npc-id: 605
+        speech:
+        - 'Very good. Take this gem.'
+        - 'It should make you strong enough.'
+        - '...Having said that, while you were gone, I heard news that one of our old Council mages has gone rogue.'
+        - 'This will be a proper test of your current strength. I want you to slay him.'
+        - 'If you come back alive then we will set sail. If not then...'
+    goal-message: 'Deliver 20 Uncut Diamonds to Allaster Farseer'
+    #location: 'The Councilhouse in Wintervale'
+    execute:
+    - '/give %player% Cut Opal'
+    #completed-message:
+  6:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 15
+      location: 'Alterra,-1554,59,-2616'
+    goal-message: 'Find Pharindar near the entrance to Wintervale'
+    #location: 'Near the entrance to Wintervale'
+    #completed-message:
+  7:
+    requirement:
+      type: 'slay'
+      mob-names: 'Pharindar'
+      amount: 1
+    goal-message: 'Defeat Pharindar'
+    #location: 'Near the entrance to Wintervale'
+    #completed-message:
+  8:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Allaster Farseer'
+        npc-id: 605
+        speech:
+        - 'Thank you for dealing with that mage.'
+        - 'You have demonstrated that you are ready to go on this journey.'
+        - 'We will depart for Dawnshire Inn shortly.'
+        - 'Come back to me when you are ready.'
+    goal-message: 'Speak to Allaster Farseer'
+    #location: 'The Councilhouse in Wintervale'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 7000
+  money: 28

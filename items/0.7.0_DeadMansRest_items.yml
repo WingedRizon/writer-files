@@ -1,0 +1,55 @@
+MournfulTear:
+  Id: GHAST_TEAR
+  Data: 0
+  Amount: 1
+  Display: '&6Mournful Tear'
+  Lore:
+  - ''
+  - '&7I should return this to the Captain!'
+  - ''
+  - '&6Quest Item'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:1
+  Hide:
+#  - ATTRIBUTES
+  - ENCHANTS
+MariasPendant:
+  Id: OAK_BUTTON
+  Data: 0
+  Amount: 1
+  Display: '&6Maria''s Pendant'
+  Lore:
+  - ''
+  - '&7I should return this to Maria!'
+  - ''
+  - '&6Quest Item'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:1
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+AncientTome:
+  Id: BOOK
+  Amount: 1
+  Display: '&6Ancient Tome'
+  Lore:
+  - ''
+  - '&7What dark secrets lie within...'
+  - ''
+  - '&6Quest Item'
+DeathbringerNew:
+  Id: WOOD_AXE
+  Data: 2
+  Amount: 1
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+  Unbreakable: true
+SkeletonBow:
+  Id: BOW
+  Data: 2
+  Amount: 1
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+  Unbreakable: true

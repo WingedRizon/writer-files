@@ -1,0 +1,48 @@
+name: 'The Black Rider'
+unique-id: 4
+repeatable: false
+side-quest: false
+requirements:
+  level: 5
+  level-not-met: '&cYou need to be stronger for this task. Come back when you are level 5.'
+  required-quests: 3
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Farmer Lawson'
+  npc-id: 322
+  speech:
+  - 'To stop the bandits indefinitely, we need to take out the one behind them.'
+  - 'The one known as The Black Rider now controls the Silkwood Forest.'
+  - 'The bandits gain their morale from his existence.'
+  - 'If you could somehow kill him; their numbers will wane.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'slay'
+      mob-names: 'TheBlackRider'
+      amount: 1
+    goal-message: 'Defeat the Black Rider at his camp in Silkwood Forest'
+    #goal-location: 'At his camp in Silkwood Forest'
+    completed-message: '&aYou''ve slain the rider! Return to the farmer.'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Farmer Lawson'
+        npc-id: 322
+        speech:
+        - 'You son of a warrior, you did it!'
+        - 'I can now rest knowing that my farm will be safe.'
+        - 'Thank you, adventurer.'
+        - 'Please, tell me your name so that I can spread it far and wide.'
+        - 'Ah, %player%, truly the name of a champion.'
+        - 'If you ever want to spread your fame further, I suggest you head to Koldore.'
+        - 'I imagine the bandits are already terrorising the citizens there.'
+        - 'Once again, thank you, and good luck.'
+    goal-message: 'Deliver the news to Farmer Lawson.'
+    #location: 'Silkwood Forest'
+rewards:
+  quest-points: 1
+  exp: 2000
+  money: 16

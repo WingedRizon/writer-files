@@ -1,0 +1,42 @@
+FireBow:
+  Id: BOW
+  Data: 5
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+FireSword:
+  Id: WOOD_SWORD
+  Data: 5
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+FireAxe:
+  Id: WOOD_AXE
+  Data: 5
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+FireStaff:
+  Id: WOOD_HOE
+  Data: 5
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+SacredFlame:
+  Id: NETHER_WART
+  Amount: 1
+  Display: '&fSacred Flame'
+  Lore:
+  - '&7Crafting Reagent'

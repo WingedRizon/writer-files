@@ -1,0 +1,51 @@
+name: '&5The Sunken Library'
+unique-id: 108
+repeatable: false
+side-quest: true
+requirements:
+  level: 25
+  level-not-met: '&cYou are too weak to be walking around these parts so carelessly...'
+first-npc:
+  npc-name: 'Dispatched General'
+  npc-id: 245
+  speech:
+  - 'This is as far as you can go, buddy.'
+  - 'Trust me, you do not want to go up there. I''ve heard there are some true terrors in that library.'
+  - 'The whole place has turned into a dungeon. The monsters there are as strong as you will find.'
+  - 'It seems like the old librarians were doing more than just reading in this library...'
+  - 'It''s definitely no place for a civilian like you.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 12
+      location: 'Alterra,-52,95,-581'
+    goal-message: 'Make your way into the Sunken Library Dungeon'
+    goal-location: 'The top of Dead Man''s Rest'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Dispatched General'
+        npc-id: 424
+        speech:
+        - 'You again! How many times will I see your face around these parts?!'
+        - 'Didn''t I tell you to stay away? What were those useless soldiers doing?'
+        - 'Fine. If you''re really that determined, go right ahead!'
+        - 'It''s not like another death will matter at this point...'
+    goal-message: 'Speak to the Dispatched General inside the dungeon'
+    goal-location: 'Sunken Library Dungeon'
+  3:
+    requirement:
+      type: 'slay'
+      mob-names: 'TheLibrarian'
+      amount: 1
+    goal-message: 'Proceed through the dungeon and defeat the Great Librarian'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 9000
+  money: 32

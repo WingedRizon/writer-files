@@ -1,0 +1,225 @@
+NaheenCitizen:
+  Type: EVOKER
+  Display: '&e[&61&e] &aNaheen Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aNaheen Citizen<&co> &fThe goddess looks upon us this day.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Sabrisalim
+NaheenCitizen2:
+  Type: EVOKER
+  Display: '&e[&61&e] &aNaheen Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aNaheen Citizen<&co> &fThe goddess looks upon us this day.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: pingpong1010
+NaheenGuard:
+  Type: EVOKER
+  Display: '&e[&650&e] &aNaheen Guard'
+  Health: 5000
+  Damage: 0
+  Equipment:
+  - IRON_SWORD HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+#  - 1 gotolocation 1897,43,229
+  - 2 lookatplayers
+  - 3 randomlookaround
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aNaheen Guard<&co> &fBlessings upon you, stranger.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: No_Name
+NaheenLlama:
+  Type: Rabbit
+  Display: '&e[&61&e] &aDesert Rabbit'
+  Health: 25
+  Damage: 0
+  Drops:
+  - UncookedRabbit 1 0.3
+  Options:
+    RabbitType: Gold
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 fleeplayers
+  - 3 float
+
+UnstableCorpse:
+  Type: EVOKER
+  Display: '&e[&642&e] &cUnstable Corpse'
+  Health: 200 
+  Damage: 80 
+  Modules:
+    ThreatTable: true
+#  Faction: test #placeholder
+  Drops:
+  - Coin 1-3 0.3 
+  - SlimyFlint 1 1.0
+  - Gunpowder 1 1.0
+  Options:
+    MovementSpeed: 0.34
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 300 <caster.l.x> <caster.l.y> <caster.l.z> 42"} @trigger ~onDeath 1.0
+  - skill{s=boomerExplosion} @self ~onTimer:20
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: 105429
+    ModifyBoundingBox: true
+
+UnstableSlime:
+  Type: EVOKER
+  Display: '&e[&644&e] &cUnstable Slime'
+  Health: 500 
+  Damage: 40 
+  Modules:
+    ThreatTable: true
+#  Faction: test #placeholder
+  Drops:
+  - Coin 1-3 0.3
+  - Fertilizer 1 1.0
+  - SlimyFlint 1 1.0
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 350 <caster.l.x> <caster.l.y> <caster.l.z> 44"} @trigger ~onDeath 1.0
+  - skill{s=unstableSlimePoison} @self ~onTimer:20
+  - skill{s=unstableSlimeDeath} @self ~onDeath
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 randomstroll
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Boss_Kim_
+    ModifyBoundingBox: true
+
+wallaceTheStrong:
+  Type: VINDICATOR
+  Display: '&e[&6☠&e] &cWallace<&cm> The Strong'
+  Health: 3000
+  Faction: Boss
+  Modules:
+    ThreatTable: true
+  Damage: 60
+  BossBar:
+    Enabled: true
+    Title: '&c&lWallace<&cm> The Strong'
+    Range: 20
+    Color: RED
+    Style: SEGMENTED_10
+  Equipment:
+  - AIR HAND #placeholder
+  Options:
+    MovementSpeed: 0.36
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+    Silent: true
+  Skills:
+  - effect:sound{s=entity.ender_eye.death;volume=0.35;p=0.5} @PIR{r=35} ~onDamaged #put custom damage sound effect here
+  - skill{s=chooseSkill_sidequestWallace} @self ~onTimer:200
+  - skill{s=reinforcements} @self ~onTimer:440
+  - command{c="runicgive exp <trigger.name> 700 <caster.l.x> <caster.l.y> <caster.l.z> 44"} @trigger ~onDeath 1.0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: ImWarrior
+
+wallaceLackey:
+  MobType: VINDICATOR
+  Display: '&e[&6✸&e] &cWallace<&sq>s Lackey'
+  Health: 420
+  Damage: 30
+  Options:
+    MovementSpeed: 0.38
+    PreventOtherDrops: true
+    FollowRange: 30
+    NoDamageTicks: 0
+    Silent: true
+    Angry: true
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Haku #placeholder
+  Equipment:
+  - AIR HAND #placeholder
+  Skills:
+  - effect:sound{s=block.stone.break;volume=1;p=0.5} @trigger ~onDamaged #put custom damage sound effect here
+  - command{c="runicgive exp <trigger.name> 320 <caster.l.x> <caster.l.y> <caster.l.z> 44"} @trigger ~onDeath 1.0

@@ -1,0 +1,104 @@
+KoldoreCitizen:
+  Type: EVOKER
+  Display: '&e[&61&e] &aKoldore Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aKoldore Citizen<&co> &fOur folk don<&sq>t take kindly to outsiders.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: kidneywarrior
+KoldoreCitizen2:
+  Type: EVOKER
+  Display: '&e[&61&e] &aKoldore Citizen'
+  Health: 100
+  Damage: 0
+  Equipment:
+  - IRON_PICKAXE HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aKoldore Citizen<&co> &fOur folk don<&sq>t take kindly to outsiders.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: xAliPlayz
+KoldoreGuard:
+  Type: EVOKER
+  Display: '&e[&650&e] &aKoldore Guard'
+  Health: 5000
+  Damage: 0
+  Equipment:
+  - DwarvenBattleaxe HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+#  - 1 gotolocation -1626,28,318
+  - 2 lookatplayers
+  - 3 randomlookaround
+  Skills:
+  - message{cooldown=4;m='&7[1/1] &aKoldore Guard<&co> &fOur will is iron.'} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Shades416
+KoldoreChicken:
+  Type: Chicken
+  Display: '&e[&61&e] &aChicken'
+  Health: 5
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+
+StoneGolem:
+  Type: EVOKER
+  Display: '&e[&68&e] &cStone Golem'
+  Health: 80
+  Damage: 15
+  Modules:
+    ThreatTable: true
+  Options:
+    MovementSpeed: 0.26
+    PreventOtherDrops: true
+    FollowRange: 8
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 50 <mob.l.x> <mob.l.y> <mob.l.z> 8"} @trigger ~onDeath 1.0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: ParaDiceRaider

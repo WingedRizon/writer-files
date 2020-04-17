@@ -1,0 +1,90 @@
+name: 'Final Hope'
+unique-id: 23
+repeatable: false
+side-quest: false
+requirements:
+  level: 45
+  level-not-met: '&cCome back when you are level 45.'
+  required-quests: 22
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Naz''mora Citizen'
+  npc-id: 654
+  speech:
+  - 'Hey there!'
+  - 'Not often do we get visitors out here in the boonies. What can I help you with?'
+  - 'You want to speak to the chief?'
+  - 'Have you not heard?!'
+  - 'There is a rumour going around that something happened to all of our scouts. I have not seen a single one around.'
+  - 'Everyone has been panicking. I do not know how hard it must be for the chief.'
+  - 'Well if you want to find the chief, I saw her heading towards Lizard Village this morning along with some new recruits.'
+  - 'I know that a Naz''mora Warrior likes to practice there. Maybe he knows where they went.'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Naz''mora Warrior'
+        npc-id: 655
+        speech:
+        - 'The chief? Yeah I''ve seen ''er.'
+        - 'She was having a hard time with these noobies. It took three of them to slay one Lizard Soldier. Can you imagine?'
+        - 'I think she gave up and decided to take them somewhere easier.'
+        - 'Probably towards the Blood Orcs. Maybe a miner saw her.'
+        - 'Well I gotta get back to training. I''m not gonna get any stronger by talking.'
+    goal-message: 'Speak to the Naz''mora Warrior in Lizard Town.'
+    #location: 'Lizard Town'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Gold Miner'
+        npc-id: 657
+        speech:
+        - 'The chief? Indeed, she passed by.'
+        - 'Hah! You should have seen those new recruits though.'
+        - 'They got absolutely battered by the Blood Orcs. Even I could take them out.'
+        - 'If you follow this path towards The Oasis you might catch up to them. It hasn''t been too long since they passed here.'
+        - 'Now I wouldn''t advise this...but if you are really desperate, you could ask Crazy Dave if he saw them.'
+        - 'But like I said, only do this if you are really stuck.'
+        - 'The man is insane and so are his parents. Who in their right mind calls their kid Crazy Dave?!'
+    goal-message: 'Speak to a Gold Miner.'
+    #location: 'Between Naheen and Naz''mora'
+    #completed-message:
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Crazy Dave'
+        npc-id: 658
+        speech:
+        - 'Of course I saw them! I saw it all from right here where I stood!'
+        - 'First they walked on the floating passage over the dry river!'
+        - 'Then they spoke to our ancestors but were chased away by vampires!'
+        - 'The pathway back was blocked so they ran up! Up and over until they ascended into the heavens!'
+        - 'Alas, I could see them no longer.'
+    goal-message: 'Find Crazy Dave'
+    #location: 'Between Naheen and Naz''mora'
+    #completed-message:
+  4:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 12
+      location: 'Alterra,2240,55,641'
+    goal-message: 'Find the Orc Chief'
+    #location: '???'
+    #completed-message:
+  5:
+    requirement:
+      type: 'slay'
+      mob-names: 'BloodOrc'
+      amount: 3
+    goal-message: 'Save the chief along with the recruits. Slay 3 Blood Orcs!'
+    #location: '???'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 18500
+  money: 12

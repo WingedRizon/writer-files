@@ -1,0 +1,556 @@
+AdeptLibrarian:
+  Type: Vindicator
+  Display: '&e[&6☠&e] &cAdept Librarian'
+  Faction: Boss
+  Health: 2000
+  Damage: 20
+  Modules:
+    ThreatTable: true
+  Drops:
+  - SilverKey 1 1.0
+  BossBar:
+    Enabled: true
+    Title: '&c&lAdept Librarian'
+    Range: 15
+    Color: RED
+    Style: SEGMENTED_10
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0
+    MaxCombatDistance: 15
+    FollowRange: 10
+    AttackSpeed: 1
+    PreventOtherDrops: true
+    NoDamageTicks: 0
+    Silent: true
+  Skills:
+  - sendtitle{title="";subtitle="&e&lTargeted";d=10} @target ~onChangeTarget
+  - sendtitle{title="";subtitle="&e&lTargeted";d=10} @target ~onEnterCombat
+  # - randomskill{skills=BoomerangShot,CurvedMissile} @target ~onTimer:100
+  - potion{type=SLOW;d=10000;l=99;p=false} @self ~onSpawn
+  - skill{s=GravityAura} @self ~onTimer:300
+  - skill{s=MeteorShower} @self ~onTimer:100
+  - skill{s=FlamingMissile} ~onTimer:30
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Haku
+
+MasterLibrarian:
+  Type: Vindicator
+  Display: '&e[&6☠&e] &cMaster Librarian'
+  Faction: Boss
+  Health: 1000
+  Damage: 20
+  Modules:
+    ThreatTable: true
+  Drops:
+  - EtherealKey 1 1.0
+  BossBar:
+    Enabled: true
+    Title: '&c&lMaster Librarian'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0
+    MaxCombatDistance: 50
+    FollowRange: 40
+    AttackSpeed: 1
+    PreventOtherDrops: true
+    NoDamageTicks: 0
+    Silent: true
+  Skills:
+  - sendtitle{title="";subtitle="&e&lTargeted";d=10} @target ~onChangeTarget
+  - sendtitle{title="";subtitle="&e&lTargeted";d=10} @target ~onEnterCombat
+  - skill{s=MasterBasicAttack} ~onTimer:100
+  - potion{type=SLOW;d=10000;l=99;p=false} @self ~onSpawn
+  - summon{type=BookWorm;a=1} @location{c=148,46,-18;world=dungeons} ~onSpawn
+  - damage{a=300;i=true} @MIR{r=30;t=BookWorm} ~onDeath
+  - damage{a=300;i=true} @MIR{r=30;t=BookWorm} ~onDespawn
+  - summon{type=MasterTimer;a=1} @location{c=152,39,-14;world=dungeons} ~onDeath
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Haku
+
+OracleLibrarian:
+  Type: Vindicator
+  Display: '&e[&6☠&e] &cOracle Librarian'
+  Faction: Boss
+  Health: 4000
+  Damage: 50
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.35
+    MaxCombatDistance: 30
+    FollowRange: 30
+    AttackSpeed: 1
+    PreventOtherDrops: true
+    NoDamageTicks: 0
+    Silent: true
+  Modules:
+    ThreatTable: true
+  Drops:
+  - GoldKey 1 1.0
+  BossBar:
+    Enabled: true
+    Title: '&c&lOracle Librarian'
+    Range: 25
+    Color: RED
+    Style: SEGMENTED_10
+  Skills:
+  #- setvariable{var=world.DiscipleTimer;type=STRING;value="true"} ~onSpawn
+  - randomskill{skills=StartLightsOut,StartRally} ~onTimer:320
+  - skill{s=ChargePlayerCast} @target ~onTimer:300
+  - sendtitle{title="";subtitle="&e&lTargeted";d=10} @target ~onChangeTarget
+  - sendtitle{title="";subtitle="&e&lTargeted";d=10} @target ~onEnterCombat
+  #- setvariable{var=chainNumber;scope=caster;type=integer;value=0} ~onSpawn
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Haku
+
+InitiateLibrarian:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cInitiate Librarian'
+  Health: 300
+  Damage: 5
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - AncientStaff HAND
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.2
+    MaxCombatDistance: 30
+    FollowRange: 30
+    AttackSpeed: 1
+    PreventOtherDrops: true
+    NoDamageTicks: 0
+    Silent: true
+  Skills:
+  - skill{s=MeteorShot3} @target ~onTimer:200
+  - skill{s=EvadePlayer} @target ~onTimer:160
+  - skill{s=SmallFlameShot} ~onTimer:100
+  - skill{s=SmallFlameShot} @target ~onDamaged 0.05
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Webdoos
+    ModifyBoundingBox: true
+
+ApprenticeLibrarian:
+  Type: Vindicator
+  Display: '&e[&6✸&e] &cApprentice Librarian'
+  Health: 350
+  Damage: 10
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - AncientStaff HAND
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.2
+    MaxCombatDistance: 30
+    FollowRange: 30
+    AttackSpeed: 1
+    PreventOtherDrops: true
+    NoDamageTicks: 0
+    Silent: true
+  Skills:
+  - skill{s=MeteorShot} @target ~onTimer:200
+  - skill{s=EvadePlayer} @target ~onTimer:160
+  - skill{s=SmallFlameShot} ~onTimer:80
+  - skill{s=SmallFlameShot} @target ~onDamaged 0.1
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Webdoos
+    ModifyBoundingBox: true
+
+BookWorm:
+  Type: Silverfish
+  Display: '&e[&6✸&e] &cBookworm'
+  Health: 300
+  Damage: 1
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0
+    MaxCombatDistance: 30
+    FollowRange: 30
+    AttackSpeed: 1
+    PreventOtherDrops: true
+    NoDamageTicks: 0
+  Skills:
+  - potion{type=SLOW;d=10000;l=99;p=false} @self ~onSpawn
+  - skill{s=BookwormHeal} ~onTimer:120
+
+DiscipleLibrarian1:
+  Type: Vindicator
+  #Faction: Disciple
+  Display: '&e[&6✸&e] &cDisciple Librarian'
+  Health: 450
+  Damage: 30
+  Modules:
+    ThreatTable: true
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.3
+    MaxCombatDistance: 30
+    FollowRange: 30
+    AttackSpeed: 1
+    PreventOtherDrops: true
+    NoDamageTicks: 0
+    Silent: true
+  Skills:
+  - potion{type=SPEED;d=80;l=1;p=true} @self ~onDamaged 0.15
+  - skill{s=FireAura} @self ~onTimer:200 0.8
+  - skill{s=StartRespawnTimer} ~onDeath
+
+DiscipleLibrarian2:
+  Type: Vindicator
+  #Faction: Disciple
+  Display: '&e[&6✸&e] &cDisciple Librarian'
+  Health: 450
+  Damage: 30
+  Modules:
+    ThreatTable: true
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.3
+    MaxCombatDistance: 30
+    FollowRange: 30
+    AttackSpeed: 1
+    PreventOtherDrops: true
+    NoDamageTicks: 0
+    Silent: true
+  Skills:
+  - skill{s=FireAura} @self ~onTimer:150 0.75
+  - potion{type=SLOW;d=80;l=2;p=true} @trigger ~onDamaged 0.25
+  - skill{s=StartRespawnTimer} ~onDeath
+
+DiscipleTimer:
+  Type: armor_stand
+  Display: '&0'
+  Health: 60
+  Damage: 0
+  BossBar:
+    Enabled: true
+    Title: '&1&lDisciple Respawn Timer'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+    #Invisible: true
+    #HasGravity: false
+  Skills:
+  #- teleportto{location=175,58,-101;pitch=0;world=dungeons} @self ~onSpawn
+  #- setvariable{var=world.DiscipleTimer;type=string;value="true"} ~onSpawn
+  #- setvariable{var=world.DiscipleTimer;type=string;value="false"} ~onDeath
+  #- setvariable{var=world.DiscipleTimer;type=string;value="false"} ~onDespawn
+  - damage{a=1;i=true} @self ~onTimer:20
+  - skill{s=RespawnDisciples} ~onDeath
+
+MasterTimer:
+  Type: armor_stand
+  Display: '&0'
+  Health: 20
+  Damage: 0
+  BossBar:
+    Enabled: true
+    Title: '&1&lMaster Librarian Respawn Timer'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+  Skills:
+  - damage{a=1;i=true} @self ~onTimer:20
+
+TheLibrarian:
+  Type: EVOKER
+  Display: '&e[&6☠&e] &cThe Great Librarian'
+  Health: 8000
+  Faction: Boss
+  Modules:
+    ThreatTable: true
+  Damage: 50
+  BossBar:
+    Enabled: true
+    Title: '&c&lThe Great Librarian'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+  Equipment:
+  - WRITABLE_BOOK HAND
+  Options:
+    MovementSpeed: 0.35
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+    Silent: true
+  Skills:
+  - sendtitle{title="";subtitle="&e&lTargeted";d=10} @target ~onChangeTarget
+  - sendtitle{title="";subtitle="&e&lTargeted";d=10} @target ~onEnterCombat
+  - effect:sound{s=entity.ender_eye.death;volume=0.35;p=0.5} @PIR{r=35} ~onDamaged
+  #NERDY STAGE
+  #He needs some sort of enchantment table particle aura
+  - setstance{stance=normal} @self ~onSpawn
+  - skill{s=summonBook} @self ~onTimer:60
+  - skill{s=summonBossBook} @self ~onTimer:100
+  - skill{s=chooseSkill_sunkenNormal} @self ~onTimer:400 =51%-100%
+  #FIERY BOI STAGE
+  - setstance{stance=flame} @self ~onDamaged =1%-50% #flame stage
+  #Perhaps have flame particles that build around the boss every 10% of damage until he explodes into a fire type
+  #NEED A MESSAGE HERE - SOMETHING GRAND TO START NEXT STAGE - MAYBE EVEN A FLAME EXPLOSION, yes
+  - remove @MIR{r=85;t=LivingBook} ~onTimer:60 <51%
+  #LET'S GET INTO IT
+  - skill{s=chooseSkill_sunkenFlame} @self ~onTimer:400 <51%
+  - skill{s=lavaPoolSpawn} @self ~onSpawn
+  - skill{s=flameEffect} @self ~onTimer:20
+  - skill{s=BlazingMissile} @target ~onTimer:60
+  - skill{s=MeteorMonsoon} @self ~onTimer:100
+  - skill{s=removePools} @self ~onDeath
+  #Drops
+  - command{c="runicgive exp <target.name> 750 <caster.l.x> <caster.l.y> <caster.l.z>"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor uncommon"} @trigger ~onDeath 0.5
+  - command{c="runicgive item <target.name> armor uncommon"} @trigger ~onDeath 0.5
+  - command{c="runicgive item <target.name> armor uncommon"} @trigger ~onDeath 0.5
+  - command{c="giveartifact <trigger.name> skeletal_shortbow <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.2
+  - command{c="giveartifact <trigger.name> bonecleaver <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.2
+  - command{c="giveartifact <trigger.name> ancient_arcane_rod <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.2
+  - command{c="giveartifact <trigger.name> wolfspine <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.2
+  - command{c="giveartifact <trigger.name> deathbringer <caster.l.x> <caster.l.y> <caster.l.z> <caster.uuid>"} @trigger ~onDeath 0.2
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Haku
+
+LivingBook:
+  MobType: pigzombie
+  Display: '&e[&6✸&e] &cLiving Book'
+  Health: 25
+  Damage: 30
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    Silent: true
+    Angry: true
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - WRITABLE_BOOK HAND
+  Skills:
+  - potion{t=INVISIBILITY;d=2147483647;l=0;hasParticles=true} @self ~onSpawn
+  - effect:sound{s=block.stone.break;volume=1;p=0.5} @PIR{r=35} ~onDamaged
+  - effect:smoke @self ~onSpawn
+  - potion{t=SLOW;d=60;l=0;hasParticles=true} @target ~onAttack
+  - setstance{stance=normal} @self ~onSpawn
+  - skill{s=plotTwistAffect} ~onDamaged
+  #Add a fire effect whenever it dies: foreshadowing the next stage
+
+flamePool1: #remake
+  Type: armor_stand
+  Display: '&0'
+  Health: 0
+  Damage: 0
+  Skills:
+  - teleportto{location=168,34,-194;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true
+flamePool2: #remake
+  Type: armor_stand
+  Display: '&0'
+  Health: 0
+  Damage: 0
+  Skills:
+  - teleportto{location=183,34,-194;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true
+flamePool3: #remake
+  Type: armor_stand
+  Display: '&0'
+  Health: 0
+  Damage: 0
+  Skills:
+  - teleportto{location=175,34,-184;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true
+flamePool4: #remake
+  Type: armor_stand
+  Display: '&0'
+  Health: 0
+  Damage: 0
+  Skills:
+  - teleportto{location=167,34,-171;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true
+flamePool5: #remake
+  Type: armor_stand
+  Display: '&0'
+  Health: 0
+  Damage: 0
+  Skills:
+  - teleportto{location=166,34,-170;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true
+flamePool6: #remake
+  Type: armor_stand
+  Display: '&0'
+  Health: 0
+  Damage: 0
+  Skills:
+  - teleportto{location=179,34,-167;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true
+flamePool7: #remake
+  Type: armor_stand
+  Display: '&0'
+  Health: 0
+  Damage: 0
+  Skills:
+  - teleportto{location=160,34,-159;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true
+flamePool8: #remake
+  Type: armor_stand
+  Display: '&0'
+  Health: 0
+  Damage: 0
+  Skills:
+  - teleportto{location=181,34,-151;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true
+flamePool9: #remake
+  Type: armor_stand
+  Display: '&0'
+  Health: 0
+  Damage: 0
+  Skills:
+  - teleportto{location=167,34,-143;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true
+flamePool10: #remake
+  Type: armor_stand
+  Display: '&0'
+  Health: 0
+  Damage: 0
+  Skills:
+  - teleportto{location=182,34,-139;pitch=0;world=dungeons} @self ~onSpawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true
+
+################################################################################################################################################
+ForsakenLibrarian:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cForsaken Librarian'
+  Health: 400
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 2-4 0.3
+  - SilverKey 1 1.0
+  Damage: 40
+  Faction: Undead
+  Equipment:
+  - AncientStaff HAND
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 30
+    NoDamageTicks: 5
+  Skills:
+  - skill{s=MeteorShot} @NearestPlayer{r=10} ~onTimer:120
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Webdoos
+    ModifyBoundingBox: true
+
+ForsakenSentry:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cForsaken Sentry'
+  Health: 450
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 2-4 0.3
+  - GoldKey 1 1.0
+  Damage: 30
+  Faction: Undead
+  Equipment:
+  - GOLDEN_AXE HAND
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 5
+  Skills:
+  - skill{s=FireAuraSmall} @self ~onTimer:200
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: tower02

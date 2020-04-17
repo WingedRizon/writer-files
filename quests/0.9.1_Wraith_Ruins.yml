@@ -1,0 +1,75 @@
+name: 'Ruined Plans'
+unique-id: 18
+repeatable: false
+side-quest: false
+requirements:
+  level: 34
+  level-not-met: '&cYou need to get stronger before we can leave'
+  required-quests: 17
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Rhalik Redbeard'
+  npc-id: 625
+  speech:
+  - 'Thank you for the soup. Once we deal with the whole Pyromancer thing, I''ll treat you to a bowl myself!'
+  - 'Let''s head to Zenyth then!'
+  - 'Oh. I just remembered!...'
+  - 'On my way here, I got into a little ambush, you see. Some pesky elven spirits attacked me and stole my waraxe!'
+  - 'Can we try to retrieve it? I promise it''s only a short detour...'
+  - 'I asked around and apparently they''ve taken over some old ruins around here.'
+  - 'It''s on the way to Zenyth. Just turn right when you see a diverting path.'
+objectives:
+  1:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 10
+      location: 'Alterra,1051,27,793'
+    goal-message: 'Reach the Elven Ruins'
+    #location: 'Near Tireneas'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Rhalik Redbeard'
+        npc-id: 628
+        speech:
+        - 'We found the ruins!'
+        - 'However, knowing those vexing spirits, they probably hid my axe at the top!'
+        - 'You will need to scale these ruins to retrieve it.'
+        - 'Good luck, I know you can accomplish it.'
+    goal-message: 'Speak to Rhalik outside the ruins.'
+    #location: 'Elven Ruins'
+    #completed-message:
+  3:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 5
+      location: 'Alterra,1071,75,793'
+    goal-message: 'Climb to the top of the Elven Ruins.'
+    #location: 'Elven Ruins'
+    execute: 'mm i give %player% RhaliksAxe'
+    #completed-message:
+  4:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'IRON_AXE'
+          item-name: 'Rhalik''s Axe'
+          item-count: 1
+      npc:
+        npc-name: 'Rhalik Redbeard'
+        npc-id: 628
+        speech:
+        - 'My axe! Thank you. I feel a lot safer already.'
+        - 'To Zenyth!'
+    goal-message: 'Return Rhalik''s axe.'
+    #location: 'Elven Ruins'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 10000
+  money: 10

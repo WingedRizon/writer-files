@@ -1,0 +1,36 @@
+Fertilizer:
+  Id: COCOA_BEANS
+  Amount: 1
+  Display: '&6Fertilizer'
+  Lore:
+  - ''
+  - '&7Ew.'
+  - ''
+  - '&6Quest Item'
+SlimyFlint:
+  Id: FLINT
+  Amount: 1
+  Display: '&6Slimy Flint'
+  Lore:
+  - ''
+  - '&7The Shah of Naheen could use this!'
+  - ''
+  - '&6Quest Item'
+Gunpowder:
+  Id: GUNPOWDER
+  Amount: 1
+  Display: '&6Gunpowder'
+  Lore:
+  - ''
+  - '&7The Shah of Naheen could use this!'
+  - ''
+  - '&6Quest Item'
+DubiousFlask:
+  Id: DRAGON_BREATH
+  Amount: 1
+  Display: '&6Flask of Dubious Fluids'
+  Lore:
+  - ''
+  - '&7I bet it''s not honey!'
+  - ''
+  - '&6Quest Item'

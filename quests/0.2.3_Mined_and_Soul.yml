@@ -1,0 +1,75 @@
+name: 'Mined and Soul'
+unique-id: 106
+repeatable: false
+side-quest: true
+requirements: 
+  level: 8
+  level-not-met: 'Tis a bit too soon for ya tah aide me lad, come back when yer a wee less scrawny!'
+first-npc:
+  npc-name: 'Dole the Miner Leader'
+  npc-id: 809
+  speech:
+  - 'Oi! Traveler! C''mere and do me a favor would ye? The town''s coal is about tah ran out, figured ye could help me.'
+  - 'Blackrail Burrow has been closed for years now, we got our coal and iron from there, but that damn gas doomed us all...'
+  - 'One day I was doing management outside the mines when I heard screaming! A deadly gas emanated from the cave!'
+  - 'Everyone went running, but there were those we couldn''t save...'
+  - 'The miners that were there in the cave were now unrecognizable, that bloody mine was now a massive grave!'
+  - 'It seemed our comrades were dead, acting without a mind.'
+  - 'Go tah the Elder inside Koldore would ye? He''ll treat ye a blessing tah protect ye in that bloody grave.'
+deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+         npc-name: 'Solus the Elder Priest'
+         npc-id: 810
+         speech:
+         - 'Traveler, what brings you here? Dole told you to come here? Ah, so that''s it...'
+         - 'I know what this is about, the Blackrail Burrow incident was truly a massacre, the Iron Knight...'
+         - 'The sworn enemy of the first kingdom of Koldore.'
+         - 'We all thought it was a mere legend. That a band of 5 great warriors, both highly skilled and loyal only to Kodin, the first dwarven king.'
+         - 'Would fight through hordes of undead beasts only sacrifice themselves to encase that unholy wretch in layers of stone.'
+         - 'A mere winter ago a legend is all we thought it was... until the miners unintentionally uncovered "it''s" remains, releasing a toxic miasma which claimed their lives.'
+         - 'You have my blessing Adventurer, fight through at least 15 undead and make your way to the iron knight, finish what the heroes of legend started!'
+         - 'Be careful however, the knight has gathered the weapons of the heroes who originally defeated him, he will be more powerful than ever!'
+         - 'I shall inform Dole to await your return, Godspeed adventurer.'
+
+    goal-message: 'Go talk to Solus the Elder Priest'
+    goal-location: 'Inside the Koldore Mountain.'
+    #completed-message:
+    #- &7' You located the Elder Priest!'
+  2:
+    requirement:
+      type: 'slay'
+      mob-names: 'UndeadMiner'
+      amount: 25
+    goal-message: 'Slay 25 Undead Miners'
+    completed-message:
+    - '&7You have slain the Undead Miners!'
+  3:
+    requirement:
+      type: 'slay'
+      mob-names: 'IronSoldier'
+      amount: 1
+    goal-message: 'Slay 1 Iron Soldier'
+    completed-message: 
+    - '&7You have defeated the Iron Soldier!'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Dole the Miner Leader' 
+        npc-id: 809
+        speech: 
+        - 'Ye made it! I thought ye were a goner by now.'
+        - 'The mine''s open again, thanks tah ye.'
+        - 'I bet those poor bastards are now smiling up in heaven.'
+        - 'Here, tah make up for the gruesome task I gave ye.'
+    goal-message: 'Report back to Dole.'
+    completed-message:
+    - '&7Freed the souls and opened the mine!' 
+rewards:
+  quest-points: 1
+  exp: 1800
+  money: 12

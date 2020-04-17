@@ -1,0 +1,25 @@
+pharindar:
+  MobName: Pharindar
+  World: Alterra
+  X: -1547
+  Y: 59
+  Z: -2617
+  Radius: 0
+  UseTimer: true
+  MaxMobs: '1'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 20
+  WarmupTimer: 0
+  CheckForPlayers: false
+  ActivationRange: 30
+  ScalingRange: 25.0
+  LeashRange: 15
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

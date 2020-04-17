@@ -1,0 +1,62 @@
+name: 'Bandit Trouble'
+unique-id: 3
+repeatable: false
+side-quest: false
+requirements:
+  level: 4
+  level-not-met: '&cCome back when you are level 4.'
+  required-quests: 2
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Captain Henry'
+  npc-id: 696
+  speech:
+  - 'So you''re the one Theia sent?'
+  - 'I guess you can''t really choose your help these days.'
+  - 'In any case, I appreciate you helping out. I hope I don''t need to explain the secrecy of the situation.'
+  - 'Azana is not the place it used to be. Our leader is so fixated on expansion that he has ignored the troubles of his own people.'
+  - 'We can''t even send troops to squash local bandits! I mean what kind of nation cannot keep peace within its own borders?'
+  - 'I am sure you have seen the food shortages around here. A big reason for these are the bandits raiding our farms.'
+  - 'Please speak to Farmer Lawson inside Silkwood Forest. He will tell you more.'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Farmer Lawson'
+        npc-id: 322
+        speech:
+        - 'You are here to help?!'
+        - 'Did the bandits finally get me or am I still dreaming?'
+        - 'I had long given up hope of getting assistance. Perhaps the leaders have finally opened their eyes.'
+        - 'Oh, you are not a soldier? Now that I think about it, you''re not wearing their armour nor have you tried to steal any of my wheat yet.'
+        - 'Please, adventurer, get rid of these bandits for me... by any means. They have plundered my lands for far too long.'
+        - 'Perhaps then I could finally provide more food for the citizens.'
+    goal-message: 'Speak to Farmer Lawson'
+    goal-location: '&eWest of Azana, &6Silkwood Forest'
+  2:
+    requirement:
+      type: 'slay'
+      mob-names:
+      - 'BanditAzanaRookie'
+      - 'BanditAzanaTough'
+      - 'BanditAzanaElite'
+      amount: 10
+    goal-message: 'Slay 10 Bandits.'
+    completed-message: '&aYou''ve slain the bandits! Return to Farmer Lawson.'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Farmer Lawson'
+        npc-id: 322
+        speech:
+        - 'I have no words to express my gratitude.'
+        - 'This should buy me enough time to send food to the citizens.'
+        - 'However, what you have done, albeit extremely brave, will merely give us temporary peace.'
+    goal-message: 'Return to Farmer Lawson'
+    #location: 'Silkwood Forest'
+rewards:
+  quest-points: 1
+  exp: 1750
+  money: 16

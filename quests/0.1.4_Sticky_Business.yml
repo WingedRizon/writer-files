@@ -1,0 +1,97 @@
+name: 'Sticky Business'
+unique-id: 102
+repeatable: false
+side-quest: true
+requirements:
+  level: 5
+  level-not-met:
+  - 'I have an issue adventurer, but alas I don''t think you are strong enough as of yet! Come back at level 5.'
+first-npc:
+  npc-name: 'Innkeeper''s Wife'
+  npc-id: 726
+  speech:
+  - 'Hello, adventurer! Care for some food?'
+  - 'I wish I could offer you a drink but our ale supplies are running low...'
+  - 'However, it isn''t like our supply merchant to be running so late. I wonder what''s keeping her?'
+  - 'Adventurer, I know you have just arrived, but could I trouble you to find our supply merchant?'
+  - 'She normally takes the road from Koldore to here.'
+  - 'I have a bad feeling about this...'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Supply Merchant'
+        npc-id: 727
+        speech:
+        - 'Ahh, I asssume that the inn sent you?'
+        - 'Unfortunately I can''t actually reach my shipment. It is waiting in koldore but the path is infested with spiders!'
+        - 'I can usually deal with them but their numbers have recently gotten out of hand.'
+        - 'Could you please clear the path for me?'
+
+    goal-message: 'Locate the Supply Merchant'
+    goal-location: 'Along the path between Azana and Koldore'
+    #completed-message:
+    #- &7' Successfully located the supply merchant'
+  2:
+    requirement:
+      type: 'slay'
+      mob-names: 'ForestSpider'
+      amount: 20
+    goal-message: 'Slay 20 Forest Spiders'
+    goal-location: '&eWest end of &6Silkwood Forest'
+    completed-message:
+    - '&7Successfully cleared the path of spiders.'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Supply Merchant'
+        npc-id: 727
+        speech:
+        - 'Thank you, adventurer. I wasn''t there but I am sure you killed all of them.'
+        - 'However... the spiders seem to be replenishing their numbers!'
+        - 'This can only mean one thing!'
+        - 'I heard an old legend that talked about a terrifying spider known as the Cave Mother.'
+        - 'The legend stated the Cave Mother usually lies dormant.'
+        - 'However, if her lair is disturbed, the queen of spiders awakens!'
+        - 'If the legend is true, you will need to slay her or the spiders will never stop appearing.'
+    goal-message: 'Return to the Merchant'
+    #completed-message:
+    #- &7''
+  4:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 12
+      location: 'Alterra,-1361,20,103'
+    goal-message: 'Search for the Cave Mother''s lair.'
+    completed-message:
+    - '&7You discovered the lair!'
+  5:
+    requirement:
+      type: 'slay'
+      mob-names: 'CaveMother'
+      amount: 1
+    goal-message: 'Slay the Cave Mother'
+    completed-message:
+    - '&7You have slain the source of the spiders!'
+  6:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Innkeeper''s Wife'
+        npc-id: 726
+        speech:
+        - 'Thank you, adventurer! We just received our ale shipment.'
+        - 'Here, take this as a reward.'
+    execute: 'runicgive item %player% potion healing 200'
+    goal-message: 'Return to the Inkeepers wife'
+    goal-location: 'Azana Inn'
+    completed-message:
+    - '&7The Business returns to normal.'
+rewards:
+  quest-points: 1
+  exp: 1750
+  money: 24

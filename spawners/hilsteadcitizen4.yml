@@ -1,0 +1,26 @@
+hilsteadcitizen4:
+  SpawnerGroup: HilsteadCitizen
+  MobName: HilsteadCitizen2
+  World: Alterra
+  X: -1577
+  Y: 41
+  Z: -2028
+  Radius: 0
+  UseTimer: true
+  MaxMobs: '1'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 0
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 32
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

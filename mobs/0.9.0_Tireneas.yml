@@ -1,0 +1,42 @@
+TireneasCitizen:
+  Type: EVOKER
+  Display: '&e[&61&e] &aTireneas Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aTireneas Citizen<&co> &fOurs is the last homely home in the East.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: ImConnor_
+TireneasCitizen2:
+  Type: EVOKER
+  Display: '&e[&61&e] &aTireneas Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aTireneas Citizen<&co> &fOurs is the last homely home in the East.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: NeonicLily1

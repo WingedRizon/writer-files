@@ -1,0 +1,30 @@
+Hobgoblin:
+  Type: EVOKER
+  Display: '&e[&648&e] &cHobgoblin'
+  Health: 480
+  Damage: 60
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - OrcSword HAND
+  Drops:
+  - Coin 3-4 0.3
+  Options:
+    MovementSpeed: 0.34
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 320 <mob.l.x> <mob.l.y> <mob.l.z> 48"} @trigger ~onDeath 1.0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: _ElGoblino

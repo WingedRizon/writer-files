@@ -1,0 +1,55 @@
+name: 'Public Enemy'
+unique-id: 13
+repeatable: false
+side-quest: false
+requirements:
+  level: 25
+  level-not-met: '&cYou do not meet the level requirements!'
+  required-quests: 12
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Dispatched Captain'
+  npc-id: 243
+  speech:
+  - 'What business have you here?'
+  - 'Unfortunately, this area is currently being investigated.'
+  - 'If you attempt to interfere, you will be attacked on sight.'
+  - 'You may enter the city, but stay away from the cemetery and the pathway to The Great Library.'
+objectives:
+  1:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 30
+      location: 'Alterra,-153,29,-582'
+    goal-message: 'Reach the cemetery'
+    #location: 'By Dark Oak Grove in DMR'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Theia Ark'
+        npc-id: 651
+        speech:
+        - 'It''s you again! What in the world are you doing here?'
+        - 'Here to help out, huh? Well in that case, I have just the job for you!'
+        - 'The Azanian military has completely taken over the whole area.'
+        - 'They''re searching for The Ancient Tome and I, we HAVE to stop them.'
+        - 'Please, there is a good chance the book is buried here.'
+        - 'We don''t have much time...you have to do something.'
+    goal-message: 'Speak to Theia Ark'
+    #location: 'DMR cemetery'
+    #completed-message:
+  3:
+    requirement:
+      type: 'slay'
+      mob-names: 'AzanianSoldier'
+      amount: 12
+    goal-message: 'Defeat 12 Azanian Soldiers'
+    #location: 'DMR cemetery'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 5000
+  money: 12

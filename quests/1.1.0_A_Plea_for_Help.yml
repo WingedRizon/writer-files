@@ -1,0 +1,114 @@
+name: 'A Plea for Help'
+unique-id: 22
+repeatable: false
+side-quest: false
+requirements:
+  level: 40
+  level-not-met: '&cCome back when you are level 40'
+  required-quests: 21
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Shah of Naheen'
+  npc-id: 604
+  speech:
+  - 'Greetings %player%!'
+  - 'I have heard great things of your past deeds. You have overcome remarkable villains during your journey here.'
+  - 'Please, if there is anything we can do for you. Ask away.'
+  - 'Send troops to aid Isfodar? Why of course I can spare some men!'
+  - 'There is just one thing... You see, the past few months, those monsters from Zenyth have been attacking us relentlessy.'
+  - 'Feeding my people has become a real problem. I am afraid many will soon starve.'
+  - 'If only you could gather us some ingredients, our farming efficiency and irrigation would rise dramatically!'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'COCOA_BEANS'
+          item-name: 'Fertilizer'
+          item-count: 14
+        2:
+          item-type: 'FLINT'
+          item-name: 'Slimy Flint'
+          item-count: 14
+        3:
+          item-type: 'IRON_ORE'
+          item-name: 'Iron Ore'
+          item-count: 14
+      npc:
+        npc-name: 'Shah of Naheen'
+        npc-id: 604
+        speech:
+        - 'Incredible. You found the items!'
+        - 'Thank you. We will now be able to feed all of our people.'
+        - 'There are sad news, however.'
+        - 'In our recent battle, we had more injured than we can currently take care of.'
+        - 'If we do not get new cures, these helpless civilians will die.'
+        - 'Please. Bring us the following potion ingredients and save their lives!'
+    goal-message: 'Bring the Shah 14 Iron Ore, Fertilizer, and Slimy Flint'
+    #location: 'Naheen'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'Pufferfish'
+          item-name: 'Pufferfish'
+          item-count: 1
+        2:
+          item-type: 'redstone_ore'
+          item-name: 'Uncut Ruby'
+          item-count: 10
+      npc:
+        npc-name: 'Shah of Naheen'
+        npc-id: 604
+        speech:
+        - 'Oh my you are back! Just in time, I was getting worried about the citizens, those poor souls.'
+        - 'I will immediately give this to the doctor and have him distribute these.'
+        - 'I have but one more request for you and then you are free to set off with my soldiers.'
+        - 'Living in such a harsh environment is extremely difficult. You have seen what it is like out there.'
+        - 'We really need new houses and clothes to protect our people from the dreadful climate.'
+        - 'If you could bring us the following items, we could clothe more of our people and blow through these mountains to make new buildings.'
+    goal-message: 'Bring the Shah 1 Pufferfish and 10 Uncut Rubies.'
+    #location: 'Naheen'
+    #completed-message:
+  3:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'Leather'
+          item-name: 'Animal Hide'
+          item-count: 20
+        2:
+          item-type: 'Gunpowder'
+          item-name: 'Gunpowder'
+          item-count: 20
+      npc:
+        npc-name: 'Shah of Naheen'
+        npc-id: 604
+        speech:
+        - 'Incredible. You actually returned with all of these items!'
+        - 'Now we can finally challenge Zenyth on even footing. That senile sultan has disrespected me for far too long.'
+        - 'We shall flood his palace with the blood of his serfs!'
+    goal-message: 'Bring the Shah 20 Animal Hide and Gunpowder.'
+    #location: 'Naheen'
+    #completed-message:
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Shah of Naheen'
+        npc-id: 604
+        speech:
+        - 'Troops? I do not remember promising such a thing.'
+        - 'Why would I offer any of my men to a mere commoner?'
+        - 'Begone peasant! Before I have your head cut off.'
+    goal-message: 'Ask the Shah for some of his troops'
+    #location: 'Naheen'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 24000
+  money: 1

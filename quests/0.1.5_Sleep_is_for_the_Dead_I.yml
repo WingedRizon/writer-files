@@ -1,0 +1,88 @@
+name: 'Sleep is for the Dead I'
+unique-id: 103
+repeatable: false
+side-quest: true
+requirements:
+  level: 6
+  level-not-met:
+  - 'Come closer...'
+  - 'Hmm, Adventurer, I sense that you will play a great role in this world.'
+  - 'A great role indeed...'
+  - 'Mark my words.'
+first-npc:
+  npc-name: 'Cedric the Grave Keeper'
+  npc-id: 733
+  speech:
+  - 'Adventurer! Yes, you!'
+  - 'Yeess... you will do nicely. How would you like to help with a little....recovery mission?'
+  - 'You see, some corpses of mine went missing, indeed they did. Would you help me recover one of them?'
+  - 'You will? Thank you, Adventurer. Yes, thank you indeed.... I need some rubies first, yes I do. 20 will do. They are for my beauties grave stone.'
+  - 'In the Azana Mine will you find them. Now go! Go, I say! And do not come back until you have them!'
+  deniable: true
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'redstone_ore'
+          item-name: 'Uncut Ruby'
+          item-count: 20
+      npc:
+        npc-name: 'Cedric the Grave Keeper'
+        npc-id: 733
+        speech:
+        - 'You have the rubies! Good. Good...'
+        - 'Now... my corpse, Borun the berserker.'
+        - 'Some tough bandits have been seen wearing his bones around their necks near Lawson''s farm. Hunt them down...'
+        - 'Oh Borun, oh how brutish you once were... now you can''t event prevent your own abduction!'
+        - 'One of their elite bandits even seems to be using my corpse to grant him immense strength... that bastard!'
+        - 'Bring back that corpse! And do not come back until you have it!'
+        idle-messages:
+          1:
+            speech: 'You do not yet have the rubies, seek them in the Azana Mining Pit.'
+            condition:
+              quest:
+                started: true
+                completed: false
+              quest-items: false
+    goal-message: 'Bring Cedric 20 Uncut Rubies'
+    goal-location: '&eNorth-East &6Azana Mining Pit'
+    #completed-message:
+  2:
+    requirement:
+      type: 'slay'
+      mob-names: 'BanditAzanaTough'
+      amount: 10
+    goal-message: 'Slay 10 tough bandits'
+    goal-location: 'Lawson''s Farm in Silkwood Forest'
+    completed-message:
+    - '&7Continue Slaying Bandits until they are forced to send their elite!'
+  3:
+    requirement:
+      type: 'slay'
+      mob-names: 'BanditAzanaElite'
+      amount: 1
+    goal-message: 'Slay an Elite Bandit'
+    completed-message:
+    - '&7You have successfully retrieved the skeleton!'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Cedric the Grave Keeper'
+        npc-id: 733
+        speech:
+        - 'Good. Good, good. Yeess... You brought back what I needed.'
+        - 'Now, young Adventurer begone! Begone I say!'
+        - 'I will summon you once needed!'
+        - 'Oh very well, if you insist on getting a reward, here! Take this shrunken head. I found it while digging a grave for Borun.'
+        - 'Now, out! Out with you! Yeess.....'
+        - 'Why would someone pillage and destroy my beautiful home...'
+    goal-message: 'Return to the Grave Keeper'
+    completed-message:
+    - '&7You have successfully returned the corpse.'
+rewards:
+  quest-points: 1
+  exp: 2000
+  money: 8

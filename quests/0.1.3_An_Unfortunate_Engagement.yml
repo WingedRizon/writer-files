@@ -1,0 +1,143 @@
+name: 'An Unfortunate Engagement'
+unique-id: 101
+repeatable: false
+side-quest: true
+requirements:
+  level: 3
+  level-not-met: '&cWho are you? Go back and finish the tutorial!'
+first-npc:
+  npc-name: 'Harold'
+  npc-id: 728
+  speech:
+  - 'Oh, hello there... You are an adventurer, correct? Y-you see, I was on my way to finally propose to my beloved Elise.'
+  - 'However, I-I tripped and dropped my ring right into the lake here.'
+  - 'Would you please aid me? I need you to follow this stream down and search along its banks while I keep searching here.'
+  - 'I would be forever in your debt, adventurer.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Bloated Squid'
+        npc-id: 730
+        speech:
+        - 'The squid moves around sporadically before spitting an object out into the water. The ring!'
+    goal-message: 'Search downstream for signs of Harold''s ring'
+    execute: 'mm i give %player% InkedRing'
+    #completed-message:
+    #- &7''
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Harold'
+        npc-id: 728
+        speech:
+        - 'You found it! W-what what? Why is it covered in filth and reeking of entrails?'
+        - 'There''s no way I can propose now... '
+        - 'I know! Jerome the Jeweller, he is a friend of mine.'
+        - 'Could you please take this to him in the bank of Azana? He should be able to polish this... at least I hope he can.'
+        - 'I will stay here in the mean time and practice my speech.'
+    goal-message: 'Show the ring to Harold'
+    #completed-message:
+    #- &7'You succesfully showed the ring back to Harold!'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Jerome the Jeweller'
+        npc-id: 731
+        speech:
+        - 'Greetings adventur-- what in the world is that?!'
+        - 'A ring you say? That is one of the most disgusting pieces of jewellery I have ever seen! What in the world was Harold up to?'
+        - 'Yes, I can polish it, however, I require a very specific form of leather to do so.'
+        - 'I need leather from a bovine infected with the fungal plague.'
+        - 'Go slay at least 8 of those creatures and, more importantly, get that "thing" out of here.'
+    goal-message: 'Locate the Jeweller'
+    goal-location: '&eSouth &6Azana Bank'
+    #completed-message:
+    #- &7'Succesfully located the Jeweller.
+  4:
+    requirement:
+      type: 'slay'
+      mob-names: 'InfectedBovine'
+      amount: 8
+    goal-message: 'Slay 8 infected bovine'
+    goal-location: '&eEast &6Azana Graveyard'
+    completed-message:
+    - '&7Successfully hunted infected bovine.'
+  5:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'leather'
+          item-name: 'Animal Hide'
+          item-count: 5
+        2:
+          item-type: 'dark_oak_button'
+          item-name: 'Inked Ring'
+          item-count: 1
+      npc:
+        npc-name: 'Jerome the Jeweller'
+        npc-id: 731
+        speech:
+        - 'Greetings adventurer! Got that ring for me?'
+        - 'Well now, that looks much better!'
+        - 'You should take this ring back to that young man! And tell him his old friend Jerome wishes him luck!'
+    goal-message: 'Bring Jerome the Jeweller 5 Animal Hide'
+    execute: 'mm i give %player% PolishedRing'
+    #completed-message:
+    #- &7''
+  6:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Harold'
+        npc-id: 728
+        speech:
+        - 'Oh, you got the ring! But wait... what if- what if Elise doesn''t like it?'
+        - 'Please adventurer, you have helped me so much but I just don''t know if I can do this!'
+        - 'Please, go give her the ring!'
+        - 'Just tell her it''s from me, I''m sure she will understand.'
+        - 'She likes to window shop at the bakery, you should be able to find her there.'
+    goal-message: 'Return the polished ring to Harold'
+    #completed-message:
+    #- &7'You have returned the ring to Harold'
+  7:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'birch_button'
+          item-name: 'Polished Ring'
+          item-count: 1
+      npc:
+        npc-name: 'Elise'
+        npc-id: 732
+        speech:
+        - 'Mmmm, so much cake, hehe. Oh! Hello there!'
+        - 'What''s this, then? A ring from Harold, you say?'
+        - 'We''ve known each other for several years now, and he always finds ways to surprise me!'
+        - 'Oh, it''s so shiny and beautiful!'
+        - 'He is such an amazing friend!'
+        idle-messages:
+          1:
+            speech:
+            - 'Mmmm, how many cakes do you think someone could eat before becoming fed up?'
+            condition:
+              quest:
+                started: true
+                completed: false
+              quest-items: false
+              objectives:
+                6: false
+    goal-message: 'Give the ring to Elise.'
+    goal-location: 'Outside the bakery in the Azana market square'
+    #completed-message:
+    #- &7'You helped Harold "propose".'
+rewards:
+  quest-points: 1
+  exp: 800
+  money: 12

@@ -1,0 +1,26 @@
+barbarian3:
+  SpawnerGroup: barbarian
+  MobName: UndeadBarbarian
+  World: Alterra
+  X: -1788
+  Y: 46
+  Z: -2361
+  Radius: 10
+  UseTimer: true
+  MaxMobs: '3'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 10
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 32
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

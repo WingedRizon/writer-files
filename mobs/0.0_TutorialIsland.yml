@@ -1,52 +1,8 @@
-BrutishSoldier:
+TrainingSoldier:
   Type: EVOKER
-  Display: '&e[&650&e] &aResistance Soldier'
-  Health: 5000
-  Damage: 0
-  Equipment:
-  - IRON_AXE HAND
-  Options:
-    AlwaysShowName: false
-    MovementSpeed: 0.2
-    MaxCombatDistance: 12
-    PreventOtherDrops: true
-  AIGoalSelectors:
-  - 0 clear
-  - 1 randomstroll
-  - 2 lookatplayers
-  Skills:
-  - message{cooldown=4;m=&7[1/1] &aResistance Soldier<&co> &fHey! Watch it, recruit!} @NearestPlayer ~onDamaged
-  Disguise:
-    Type: player
-    Player: ''
-    Skin: Cosmin
-Cleric:
-  Type: EVOKER
-  Display: '&e[&650&e] &aCleric'
-  Health: 5000
-  Damage: 0
-  Equipment:
-  - IRON_SHOVEL HAND
-  Options:
-    AlwaysShowName: false
-    MovementSpeed: 0.2
-    MaxCombatDistance: 12
-    PreventOtherDrops: true
-  AIGoalSelectors:
-  - 0 clear
-  - 1 randomstroll
-  - 2 lookatplayers
-  Skills:
-  - message{cooldown=4;m=&7[1/1] &aCleric<&co> &fKindness is a virtue!} @NearestPlayer ~onDamaged
-  Disguise:
-    Type: player
-    Player: ''
-    Skin: JokePlay
-EnemyCaptain:
-  Type: EVOKER
-  Display: '&e[&61&e] &cCaptain'
+  Display: '&e[&61&e] &cTraining Soldier'
   Health: 50
-  Damage: 1
+  Damage: 5
   Equipment:
   - WOODEN_SWORD HAND
   Options:
@@ -54,18 +10,19 @@ EnemyCaptain:
     MovementSpeed: 0.2
     MaxCombatDistance: 12
     PreventOtherDrops: true
+    NoDamageTicks: 0
   AIGoalSelectors:
   - 0 clear
-  - 1 meleeattack
-  - 2 float
+  - 1 randomstroll
+  - 2 meleeattack
+  - 3 float
   AITargetSelectors:
   - 0 clear
-  - 1 players
-  - 2 hurtbytarget
+  - 1 hurtbytarget
   Disguise:
     Type: player
     Player: ''
-    Skin: msu957
+    Skin: DoubleDark
 Livestock:
   Type: Cow
   Display: '&e[&61&e] &aLivestock'
@@ -99,7 +56,7 @@ LivestockParrot:
     Color: RED
 VillageCitizenMale:
   Type: EVOKER
-  Display: '&e[&61&e] &aVillage Citizen'
+  Display: '&e[&61&e] &aAzana Citizen'
   Health: 100
   Damage: 0
   Options:
@@ -111,15 +68,14 @@ VillageCitizenMale:
   - 0 clear
   - 1 randomstroll
   - 2 lookatplayers
-  Skills:
-  - message{cooldown=4;m=&7[1/1] &aVillage Citizen<&co> &f<trigger.name>? You're back! What are you doing?} @NearestPlayer ~onDamaged
+  - 3 float
   Disguise:
     Type: player
     Player: ''
     Skin: Bato
 VillageCitizenFemale:
   Type: EVOKER
-  Display: '&e[&61&e] &aVillage Citizen'
+  Display: '&e[&61&e] &aAzana Citizen'
   Health: 100
   Damage: 0
   Options:
@@ -131,8 +87,7 @@ VillageCitizenFemale:
   - 0 clear
   - 1 randomstroll
   - 2 lookatplayers
-  Skills:
-  - message{cooldown=4;m=&7[1/1] &aVillage Citizen<&co> &f<trigger.name>? You're back! What are you doing?} @NearestPlayer ~onDamaged
+  - 3 float
   Disguise:
     Type: player
     Player: ''
@@ -147,3 +102,22 @@ VillageSheep:
     MovementSpeed: 0.2
     MaxCombatDistance: 12
     PreventOtherDrops: true
+VillageHawk:
+  Type: bat
+  Display: '&e[&61&e] &cHawk'
+  Health: 10
+  Disguise:
+   Type: babyzombie
+  Skills:
+  - potion{t=INVISIBILITY;d=2147483647;l=1} @self ~onSpawn
+  - equip{i=HawkHead:4} ~onSpawn
+  Options:
+    PreventRandomEquipment: true
+    PreventOtherDrops: true
+    Silent: true
+    PreventRenaming: false
+    MovementSpeed: 0.01
+#  AIGoalSelectors:
+#  - 0 clear
+#  AITargetSelectors:
+#  - 0 clear

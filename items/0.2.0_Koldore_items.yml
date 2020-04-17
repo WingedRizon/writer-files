@@ -1,0 +1,46 @@
+KoldorianPickaxe:
+  Id: GOLDEN_PICKAXE
+  Data: 0
+  Amount: 1
+  Display: '&6Koldorian Pickaxe'
+  Lore:
+  - ''
+  - '&7I am now a trusted ally of Koldore!'
+  - ''
+  - '&6Quest Item'
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:1
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+TNT:
+  Id: TNT
+  Amount: 1
+  Display: '&6Boomton''s Explosives'
+  Lore:
+  - ''
+  - '&7Time to wake Lundret!'
+  - ''
+  - '&6Quest Item'
+DwarvenBattleaxe:
+  Id: WOOD_AXE
+  Data: 1
+  Amount: 1
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+  Unbreakable: true
+EtherealFlux:
+  Id: END_ROD
+  Data: 1
+  Amount: 1
+  Display: '&6Ethereal Flux'
+  Lore:
+  - ''
+  - '&7Bring this to Morrowin!'
+  - ''
+  - '&6Quest Item'
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+  Unbreakable: true

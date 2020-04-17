@@ -1,0 +1,178 @@
+name: 'The Search for Truth'
+unique-id: 9
+repeatable: false
+side-quest: false
+requirements:
+  level: 15
+  level-not-met: '&cWhat are you doing here? Come back at level 15.'
+  required-quests: 8
+  required-quests-not-met: '&cYou have not proven yourself a worthy viking! Come back after you''ve completed the Whaletown tournament.'
+first-npc:
+  npc-name: 'The Chieftain'
+  npc-id: 536
+  speech:
+  - 'What''s this? A runeholder dares enter our village?'
+  - 'Now that is intriguing. A runeholder possessing the stamp of our ancestors.'
+  - 'You truly are an interesting fellow. What is your business here?'
+  - 'You want to know more about magic, huh? Too many of you young people get corrupted by it. My advice is to forget all about magic.'
+  - 'But since you came all the way here... I can''t exactly turn down a plea from a guest.'
+  - 'Fine, I shall tell you what you want to know at the banquet today.'
+  - 'But since you are a viking, after all, you must do your part in the preparations.'
+  - 'With an extra guest, we will be low on supplies. You will need to gather more salmon and carrots.'
+  - 'Firstly, bring me 10 salmon.'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'SALMON'
+          item-name: 'Salmon'
+          item-count: 10
+      npc:
+        npc-name: 'The Chieftain'
+        npc-id: 536
+        speech:
+        - 'Back so soon?'
+        - 'In any case...All we need now are the vegetables.'
+        - 'Bring me 15 carrots.'
+
+    goal-message: 'Deliver 10 Salmon to The Chieftain.'
+    #location: 'The lonoghouse in Hilstead'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'Carrot'
+          item-name: 'Carrot'
+          item-count: 15
+      npc:
+        npc-name: 'The Chieftain'
+        npc-id: 536
+        speech:
+        - 'Excellent.'
+        - 'Now we can start the banquet.'
+    goal-message: 'Deliver 15 Carrots to The Chieftain.'
+    #location: 'The longhouse in Hilstead'
+    #completed-message:
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'The Chieftain'
+        npc-id: 536
+        speech:
+        #The Chief talks about the history of Hilstead and magic
+        - 'Please, take a seat.'
+        - 'I am sure everyone else here does not need reminding of our past.'
+        - 'However, I shall educate our guest about what happened. Maybe then they will make the right decision.'
+        - 'Long ago, us vikings lived united. The place now known as Wintervale did not exist.'
+        - 'Everything changed when the runes were discovered. Suddenly, our bonds were tested unlike in any war before.'
+        - 'Many of our kin adopted this newfound magic and cowardly declared it as the future.'
+        - 'Our faction became split and disdain was growing. To avoid a civil war, those corrupted by magic left us and founded Wintervale.'
+        - 'They have not returned since.'
+    goal-message: 'Speak to the Chieftain to start the banquet.'
+    #location: 'The longhouse in Hilstead'
+    execute:
+    - 'mm m spawn HilsteadCitizen 1 Alterra,-1660,45,-1973'
+    - 'mm m spawn HilsteadCitizen 1 Alterra,-1661,45,-1977'
+    - 'mm m spawn HilsteadCitizen 1 Alterra,-1667,45,-1977'
+    - 'mm m spawn HilsteadCitizen 1 Alterra,-1667,45,-1973'
+    - 'setblock -1662 46 -1969 flower_pot keep'
+    - 'setblock -1662 46 -1973 flower_pot keep'
+    - 'setblock -1663 46 -1977 flower_pot keep'
+    - 'setblock -1666 46 -1977 flower_pot keep'
+    - 'setblock -1666 46 -1973 flower_pot keep'
+    - 'setblock -1666 46 -1969 flower_pot keep'
+    - 'setblock -1664 46 -1967 flower_pot keep'
+    - 'setblock -1663 46 -1970 cake keep'
+    - 'setblock -1663 46 -1976 cake keep'
+    - 'setblock -1665 46 -1977 cake keep'
+    - 'setblock -1665 46 -1970 cake keep'
+    #completed-message:
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'The Chieftain'
+        npc-id: 536
+        speech:
+        #The Chief warns the player that they can't always rely on magic. Tells them to speak to Uthger
+        - 'That is, in as few words as possible, our history.'
+        - 'However, you cannot rely solely on magic %player%. Coming here proves that you can still be saved.'
+        - 'Do not repeat the mistakes of our ancestors. Do not let magic manipulate you.'
+        - 'There are some things magic cannot overcome.'
+        - 'Perhaps it is best for you to see for yourself. Speak to Uthger after the banquet: he will show you.'
+    goal-message: 'Speak to the Chieftain to end the banquet.'
+    #location: 'The longhouse in Hilstead'
+    execute:
+    - 'mm m kill HilsteadCitizen'
+    - 'setblock -1662 46 -1969 air'
+    - 'setblock -1662 46 -1973 air'
+    - 'setblock -1663 46 -1977 air'
+    - 'setblock -1666 46 -1977 air'
+    - 'setblock -1666 46 -1973 air'
+    - 'setblock -1666 46 -1969 air'
+    - 'setblock -1664 46 -1967 air'
+    - 'setblock -1663 46 -1970 air'
+    - 'setblock -1663 46 -1976 air'
+    - 'setblock -1665 46 -1977 air'
+    - 'setblock -1665 46 -1970 air'
+    #completed-message:
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Uthger'
+        npc-id: 585
+        speech:
+        - 'So you''re the fella with the magic then?'
+        - 'Oh do I have a treat for you.'
+        - 'You can get a taste of what real vikings have to deal with.'
+        - 'Find my good friend Ulgrim, you will find him near the local marketplace.'
+    goal-message: 'Speak to Uthger behind the Hilstead marketplace'
+    #location: 'The longhouse in Hilstead'
+    #completed-message:
+  6:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Ulgrim'
+        npc-id: 584
+        speech:
+        - 'Ahh so you''re the one Uthger sent.'
+        - 'Perfect, travel to the top of this mountain and show us what you''re made of.'
+    goal-message: 'Speak to Ulgrim'
+    #location: 'Hilstead'
+    #completed-message:
+  7:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 15
+      location: 'Alterra,-1843,73,-1935'
+    goal-message: 'Travel to the top of the viking trail.'
+    #location: 'Top of the hil(stead)'
+    #completed-message:
+  8:
+    requirement:
+      type: 'slay'
+      mob-names: 'NorthernBear'
+      amount: 1
+    goal-message: 'Defeat a Northern Bear.'
+    #location: 'Top of the hil(stead)'
+  9:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 10
+      location: 'Alterra,-1687,43,-2083'
+    goal-message: 'Go to the north gate of Hilstead.'
+    #location: 'North Gate of Hilstead'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 6500
+  money: 24

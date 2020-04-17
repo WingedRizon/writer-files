@@ -1,0 +1,40 @@
+name: 'Set Sail'
+unique-id: 23573547354
+repeatable: false
+side-quest: false
+requirements:
+  level: 3
+  level-not-met: '&cYou must reach a higher level first. Come back at level 3!'
+  required-quests: 1
+  required-quests-not-met: '&cYou must learn about gathering first! Speak to the farmer.'
+  crafting-level: 0
+  crafting-level-not-met: '&cAye, stranger. You must choose a profession first!'
+first-npc:
+  npc-name: 'Captain Adams'
+  npc-id: 396
+  speech:
+  - 'Ready to set sail, %player%?'
+  - 'The realm is in dire turmoil. The discovery of magic has turned our cities to chaos.'
+  - 'Speak to me again if you''re ready to sail to the land of Alterra!'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Captain Adams'
+        npc-id: 396
+        speech:
+        - 'Ready to set sail, stranger?'
+        - 'The realm is in dire turmoil. The discovery of magic has turned our cities to chaos.'
+        - 'Safe travels, stranger.'
+    goal-message: 'Speak with Captain Adams'
+    completed-message:
+    - '&7Quest Complete: Set Sail'
+rewards:
+  quest-points: 1
+  exp: 0
+  money: 32
+  execute:
+  - 'travel fast %player% boat -795.5 27 -5.5 0 0'
+  - 'set hearthstone %player% Azana'

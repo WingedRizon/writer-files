@@ -1,0 +1,53 @@
+passiveSkill_cinders:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - heal{amount=50} @self
+ - damage{a=0;ia=true} @self
+ - effect:sound{s=entity.experience_orb.pickup;volume=0.1;pitch=0.5} @PlayersInRadius{r=180}
+ - effect:particles{p=HAPPY_VILLAGER;amount=3;vSpread=1;hSpread=.5;Speed=0;yOffset=0} @self
+
+startCinderStorm:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - sendtitle{title="&4&kooo&r&l&cCinder Storm&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cCinder Storm&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cCinder Storm&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cCinder Storm&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cCinder Storm&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=50}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - skill{s=cinderStorm}
+
+cinderStorm:
+ Skills:
+ - summon{type=FireElemental;amount=5;yr=0;os=true;radius=4}
+ - effect:sound{s=entity.blaze.death;volume=0.25;p=0.5} @PlayersInRadius{r=50}
+
+############################################################################################################
+
+SummonElite_InfernalGrunt:
+  Cooldown: 60
+  Skills:
+  - message{cooldown=60;m="§6§l✸ &c&lInfernal Captain &e&lhas spawned!"} @PlayersInRadius{r=50}
+  - summon{mob=InfernalGruntElite;amount=1;noise=5;os=true} @Self
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+FireArrow:
+  Skills:
+  - projectile{onTick=FireArrow-Tick;onHit=FireArrow-Hit;mr=20;v=10;i=1;hR=1;vR=1;sfo=1.5}
+  - sound{s=entity.blaze.shoot} @self
+FireArrow-Tick:
+  Skills:
+  - effect:particles{p=flame;amount=3;speed=0;hS=0.1;vS=0.1} @origin
+FireArrow-Hit:
+  Skills:
+  - damage{a=60}

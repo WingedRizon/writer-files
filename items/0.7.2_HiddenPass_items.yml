@@ -1,0 +1,9 @@
+ElvenBow:
+  Id: BOW
+  Data: 3
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS

@@ -1,0 +1,48 @@
+SummonElite_HauntingGhoul:
+  Cooldown: 60
+  Skills:
+  - message{cooldown=60;m="§6§l✸ &c&lElite Haunting Ghoul &e&lhas spawned!"} @PlayersInRadius{r=50}
+  - summon{mob=HauntingGhoulElite;amount=1;noise=5;os=true} @Self
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+SummonElite_RisenCorpse:
+  Cooldown: 60
+  Skills:
+  - message{cooldown=60;m="§6§l✸ &c&lElite Risen Corpse &e&lhas spawned!"} @PlayersInRadius{r=50}
+  - summon{mob=RisenCorpseElite;amount=1;noise=5;os=true} @Self
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
+
+HealSoldier:
+  Conditions:
+  - playernotwithin{d=15} true
+  Skills:
+  - effect:particlering{particle=happy_villager;radius=30;points=32;amount=1;hS=1;vS=0} @self
+  - effect:particles{particle=happy_villager;amount=50;hS=1;vS=1;speed=0} @MIR{r=30;t=AzanianSoldier} 
+  - healpercent{m=0.35} @MIR{r=30;t=AzanianSoldier}
+
+startConsume:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - sendtitle{title="&4&kooo&r&l&cConsume&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=150}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=150}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cConsume&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=150}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=150}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cConsume&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=150}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=150}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cConsume&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=150}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=150}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cConsume&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=150}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=150}
+ - delay 20
+ - skill{s=Consume}
+
+Consume:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - feed{amount=-20} @PlayersInRadius{r=50}
+ - effect:sound{s=entity.wither.ambient;volume=0.5;pitch=0.5} @PlayersInRadius{r=50}

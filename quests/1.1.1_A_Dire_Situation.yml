@@ -1,0 +1,85 @@
+name: 'A Dire Situation'
+unique-id: 112
+repeatable: false
+side-quest: true
+requirements:
+ level: 41
+ level-not-met:
+ - 'Yar should maybe come back once yar less weak...'
+first-npc:
+ npc-name: 'Neil the Buccaneer'
+ npc-id: 828
+ speech:
+ - 'Aye! Bartender, give me ''nother one! Oh, what do we have ''ere?'
+ - 'Adventurer! I can give you a task for a quick coin, what do yar say?'
+ - 'Recently, some pesky things have been really annoying with our resources, I need yar to investigate it.'
+ - 'Yar should start by investigating the cart just outside Naheen.'
+ - 'After you investigate that, kill whatever destroyed our carts!'
+ - 'I''ll be waiting for ye arrival, adventurer!'
+ deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 10
+      location: 'Alterra,1882,40,413'
+    goal-message: 'Investigate the destroyed cart outside Naheen!'
+    goal-location: 'At the south exit of Naheen.'
+    completed-message:
+    - '&7Looks like a swarm attacked. The cart is in complete ruins!'
+  2:
+    requirement:
+      requirement:
+      type: 'slay'
+      mob-names: 'Bug'
+      amount: 35
+    goal-message: 'Slay 35 Toxic Wasps!'
+    goal-location: 'Near the south exit of Naheen.'
+    #completed-message:
+    # - '&7Slayed the Toxic Wasps!'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Neil the Buccaneer'
+        npc-id: 828
+        speech:
+        - 'Aye! Yar back! How did the hunt go?'
+        - 'I still got another task for yar.'
+        - 'This land''s quite deadly, a lot of bandits have been raiding our resource carts.'
+        - 'They think they can get away with everything, and getting anything the easy way.'
+        - 'I need ye to go teach them a lesson, I''ll pay you well!'
+
+    goal-message: 'Talk to Neil the Buccaneer'
+    goal-location: 'Inn of Naheen'
+    #completed-message:
+    #- '&7Reported back to Neil'
+  4:
+    requirement:
+      requirement:
+      type: 'slay'
+      mob-names: 'SaltBandit'
+      amount: 35
+    goal-message: 'Slay 35 Salt Bandits!'
+    goal-location: 'East of Naheen, in a little tomb.'
+    #completed-message:
+    #- '&7Slayed the Salt Bandits!'
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Neil the Buccaneer'
+        npc-id: 828
+        speech:
+        - 'The adventurer is back! Haha! I knew I could count on yar.'
+        - 'Now, now let me thank you for the service you''ve done to Naheen.'
+        - 'Here''s your reward! Good luck on yar future hunts, %player%!'
+    goal-message: 'Talk to Neil the Buccaneer'
+    goal-location: 'Inn of Naheen'
+    #completed-message:
+    #- '&7Finished helping Neil the Buccaneer''
+rewards:
+  quest-points: 1
+  exp: 16000
+  money: 14

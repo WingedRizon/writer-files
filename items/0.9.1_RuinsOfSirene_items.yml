@@ -1,0 +1,26 @@
+WraithHead:
+  Id: 397
+  Data: 3
+  Display: '&fScrying Orb'
+  Lore:
+  - '&7'
+  - '&6&lRIGHT CLICK &aFarsight'
+  - '&7After specifying a player, learn'
+  - '&7all their combat stats!'
+  - '&7'
+  - '&7Consumable'
+  Options:
+    SkinTexture: eyJ0aW1lc3RhbXAiOjE1ODQxNDU3MzE1ODIsInByb2ZpbGVJZCI6ImVjZjkzODk5MTRjNDRmYzc4YzZhMzQ5Njg1YzMwNDk5IiwicHJvZmlsZU5hbWUiOiIyYW5nZWwiLCJzaWduYXR1cmVSZXF1aXJlZCI6dHJ1ZSwidGV4dHVyZXMiOnsiU0tJTiI6eyJ1cmwiOiJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzc2MzA3OGE4YTMxMGJkZDk0NGZmYTA3YzNjNjcyOTE0ZDE0NzQ2YzQzZjBmYzZhNDc0YzczOTEyYTQ5OTE5ZTcifX19
+WraithChest:
+  Id: leather_chestplate
+  Options:
+    Color: 68,49,68
+ElvenStaff:
+  Id: WOOD_HOE
+  Data: 3
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS

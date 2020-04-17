@@ -1,0 +1,79 @@
+name: 'Enter the Realm'
+unique-id: 0
+repeatable: false
+side-quest: false
+requirements:
+  level: 0
+  level-not-met: '&cOops, something went wrong.'
+first-npc:
+  npc-name: 'Recruiter'
+  npc-id: 598
+  speech:
+  - 'Good fortune, soldier! What''s that? You have no weapon? We''ll get you sorted.'
+  - 'Speak with the dwarven smith ahead, and we''ll forge you an artifact.'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Rhalik Redbeard'
+        npc-id: 272
+        speech:
+        - 'Hail, stranger. Welcome to my artifact forge!'
+        - 'Artifacts are rare weapons, scattered throughout the realm.'
+        - 'Imbued with runic magic, artifacts have the power to cast spells!'
+        - 'These are perilous times, stranger-- you''d do best to arm yourself.'
+        - 'Now, off with you! Speak to the warden to train.'
+    goal-message: 'Speak with Rhalik to Receive an Artifact'
+    execute: 'set artifact %player%'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Warden'
+        npc-id: 192
+        speech:
+        - 'Well met, soldier. I see the dwarf has given you an artifact.'
+        - 'Time to use it. Let''s see if you can defeat our training soldier.'
+    goal-message: 'Speak with the Warden'
+  3:
+    requirement:
+      type: 'slay'
+      mob-names:
+      - 'TrainingSoldier'
+      amount: 1
+    goal-message: 'Defeat the Training Soldier'
+    completed-message:
+    - '&aYou''ve defeated the training soldier! Return to the Warden.'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Warden'
+        npc-id: 192
+        speech:
+        - 'Excellent work, soldier. Now you''ll need a runic spell.'
+        - 'Speak to our mage inside.'
+    goal-message: 'Return to the Warden'
+  5:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Runic Mage'
+        npc-id: 529
+        speech:
+        - 'Greetings, stranger. Artifacts aren''t the only source of magic in the realm.'
+        - 'I see you''ve been given a rune. Try adding this spell to it!'
+        - 'Now be off. You''re needed in the village.'
+    goal-message: 'Speak with the Mage'
+    completed-message:
+    - '&7Quest Complete: Enter the Realm'
+    execute:
+    - 'givescroll %player% fire runic_missile'
+rewards:
+  quest-points: 1
+  exp: 2500
+  money: 0
+  execute:
+  - 'travel fast %player% wagon -1971.5 40 1940.5 270 0'
+  - 'set hearthstone %player% Tutorial_Village'

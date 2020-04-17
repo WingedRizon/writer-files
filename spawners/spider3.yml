@@ -1,0 +1,26 @@
+spider3:
+  SpawnerGroup: spider
+  MobName: CaveCrawler
+  World: Alterra
+  X: -1358
+  Y: 27
+  Z: 120
+  Radius: 10
+  UseTimer: true
+  MaxMobs: '3'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 10
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 15
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

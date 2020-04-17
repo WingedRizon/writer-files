@@ -2,21 +2,13 @@ Derabeam:
  Conditions:
  - stance aggro
  Skills:
- - projectile{onTick=Derabeam-Tick;onHit=Derabeam-Hit;v=20;i=1;hR=1;vR=1;mr=100;sE=false} @PlayersInRadius{r=85;limit=1;sort=RANDOM}
+ - projectile{onTick=Derabeam-Tick;onHit=Derabeam-Hit;v=20;i=1;hR=1;vR=1;mr=100;sE=false;sB=false} @PlayersInRadius{r=85}
 Derabeam-Tick:
  Skills:
  - effect:particles{p=flame;amount=1;speed=0;hS=0.1;vS=0.1} @origin
 Derabeam-Hit:
  Skills:
- - damage{a=8;ia=true}
- - ignite{ticks=60}
-
-setAggro:
- Conditions:
- - varEquals{var=caster.oneOrZero;value=0}
- Skills:
- - signal{s=aggro} @MIR{r=100;t=DeraPharaoh_beam}
- - setvariable{var=caster.oneOrZero;value=1} @self
+ - damage{a=5;ia=true}
 
 chooseSkill_crypt:
  Conditions:
@@ -153,9 +145,11 @@ Derabeam_upgrade:
  Conditions:
  - stance upgrade
  Skills:
- - projectile{onTick=Derabeam-Tick;onHit=Derabeam-Hit_upgrade;v=20;i=1;hR=1;vR=1;mr=100;sE=false} @PlayersInRadius{r=85;limit=1;sort=RANDOM}
- - projectile{onTick=Derabeam-Tick;onHit=Derabeam-Hit_upgrade;v=20;i=1;hR=1;vR=1;mr=100;sE=false} @PlayersInRadius{r=85;limit=1;sort=RANDOM}
+ - projectile{onTick=Derabeam-Tick;onHit=Derabeam-Hit_upgrade;v=20;i=1;hR=1;vR=1;mr=100;sE=false;sB=false} @PlayersInRadius{r=85}
 Derabeam-Hit_upgrade:
  Skills:
- - damage{a=6;ia=true}
- - ignite{ticks=60}
+ - damage{a=12;ia=true}
+
+Deraboss_hungerPassive:
+ Skills:
+ - feed{amount=-2;overfeed=false} @PIR{r=185}

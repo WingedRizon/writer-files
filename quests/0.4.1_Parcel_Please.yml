@@ -1,0 +1,40 @@
+name: 'Parcel, Please'
+unique-id: 10
+repeatable: false
+side-quest: false
+requirements:
+  level: 15
+  level-not-met: '&cYou must be a higher level to deliver my message. Come back at level 15.'
+  required-quests: 9
+  required-quests-not-met: '&cYou must speak to the chieftain first.'
+first-npc:
+  npc-name: 'Astrid'
+  npc-id: 591
+  speech:
+  - 'Thank you for meeting with me.'
+  - 'I have a request for you, but I plead that you do not speak of it to anyone.'
+  - 'You see, there are actually people in Hilstead that support magic.'
+  - 'However, our voices are silenced by the majority who are adamantly against it.'
+  - 'Our clan used to be greater in number, too. But the majority of those that supported magic split long ago.'
+  - 'They left here to start a new city. Wintervale.'
+  - 'This included my relatives, whom I have not contacted in years.'
+  - 'I beg you, deliver this letter to my cousin Aster.'
+  - 'I just pray that she will listen to me.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Asger'
+        npc-id: 606
+        speech:
+        - 'A letter from Astrid?'
+        - 'This must be important...I have not spoken to her in years!'
+    goal-message: 'Speak to Asger near the fishing spot in Wintervale'
+    #completed-message:
+    #location: 'Near the fishing spot in Wintervale'
+rewards:
+  quest-points: 1
+  exp: 1000
+  money: 10

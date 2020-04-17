@@ -1,0 +1,213 @@
+Exile:
+  Type: EVOKER
+  Display: '&e[&641&e] &cExiled Orc'
+  Health: 410
+  Damage: 60
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - OrcSword HAND
+  Drops:
+  - Coin 3-4 0.3
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 300 <mob.l.x> <mob.l.y> <mob.l.z> 41"} @trigger ~onDeath 1.0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Goblin
+BloodOrc:
+  Type: EVOKER
+  Display: '&e[&645&e] &cBlood Orc'
+  Health: 425
+  Damage: 55
+  Drops:
+  - Coin 4-6 0.3
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - OrcBow HAND
+  Options:
+    MovementSpeed: 0.26
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - skill{s=Arrow} @NearestPlayer{r=40} ~onTimer:40
+  - command{c="runicgive exp <trigger.name> 320 <mob.l.x> <mob.l.y> <mob.l.z> 45"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  - command{c="giveweapon <trigger.name> epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  - skill{s=SummonElite_BloodOrc} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers	
+  - 2 randomlookaround
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: DeadVoxel
+BloodOrcElite:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cBlood Orc Captain'
+  Health: 500
+  Modules:
+    ThreatTable: true
+  Damage: 65
+  Drops:
+  - Coin 4-8 0.3
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 525 <mob.l.x> <mob.l.y> <mob.l.z> 42"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.5
+  - command{c="giveweapon <trigger.name> epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.35
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Cardiac6b2
+LizardSoldier:
+  Type: EVOKER
+  Display: '&e[&647&e] &cLizard Soldier'
+  Health: 425
+  Modules:
+    ThreatTable: true
+  Damage: 50
+  Drops:
+  - Coin 4-6 0.3
+  Faction: Bandit
+  Equipment:
+  - OrcAxe HAND
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 340 <mob.l.x> <mob.l.y> <mob.l.z> 47"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  - command{c="giveweapon <trigger.name> epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  - skill{s=SummonElite_Lizard} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: ElectricRyan
+    ModifyBoundingBox: true
+LizardArcher:
+  Type: EVOKER
+  Display: '&e[&648&e] &cLizard Archer'
+  Health: 375
+  Damage: 30
+  Drops:
+  - Coin 4-6 0.3
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - OrcBow HAND
+  Options:
+    MovementSpeed: 0.26
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - skill{s=Arrow} @NearestPlayer{r=40} ~onTimer:40
+  - command{c="runicgive exp <trigger.name> 340 <mob.l.x> <mob.l.y> <mob.l.z> 48"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  - command{c="giveweapon <trigger.name> epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.03
+  - skill{s=SummonElite_Lizard} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 lookatplayers	
+  - 2 randomlookaround
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: ElectricRyan
+LizardElite:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cLizard Elder'
+  Health: 450
+  Modules:
+    ThreatTable: true
+  Damage: 55
+  Drops:
+  - Coin 4-8 0.3
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 550 <mob.l.x> <mob.l.y> <mob.l.z> 48"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.5
+  - command{c="giveweapon <trigger.name> epic <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.35
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: bedek
+
+MeaniePiggy:
+  MobType: PIG
+  Display: 'Homicidally Inclined Porcine'
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 lookatplayers
+  - 3 randomstroll
+  - 3 randomlookaround
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 attackers
+  - 3 hurtbytarget
+  Skills:
+  - setstance{s=Null} @Self ~onSpawn
+  - skill{s=PassiveHostility} ~onTimer:1

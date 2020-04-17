@@ -1,0 +1,88 @@
+name: 'Sleep is for the Dead II'
+unique-id: 104
+repeatable: false
+side-quest: true
+requirements:
+  level: 10
+  level-not-met:
+  - 'Thank you for helping me earlier.'
+  - 'If I locate any more corpses I will inform you.'
+  required-quests: 103
+first-npc:
+  npc-name: 'Cedric the Grave Keeper'
+  npc-id: 733
+  speech:
+  - 'Adventurer. Back I see. Yes, you are back. Yeess....'
+  - 'Found another corpse, yes I did. To Koldore you must go.'
+  - 'The first Dwarven King, Kodin... The armies you once rallied, just like you, they are no more.'
+  - 'Talk to Valus. A friend of mine, he is, he is quite fond of drink so seek him in the tavern.'
+  - 'After your business there is done, bring me 20 Sapphires from the mine within Koldore for my lovelies gravestone.'
+  - 'Now go! Go, I say!'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Valus'
+        npc-id: 361
+        speech:
+        - 'Ah! Why, hello there young adventurer! How fare ye this fine day?'
+        - 'Cedric sent ya, did he? Said I was his friend, eh? Codswallop!'
+        - 'No, he and I are not friends! He don'' got no friends, the wee lad. Probably on his account of being so creepy and all.'
+        - 'Ach, but I go on! Knowing Cedric I assume he sent ya out on macabre matters?'
+        - 'And perhaps it has somein'' to do with the cursed caves. Yea, a tragedy really, a horrid plague turned the old Blackrail Burrows into a mass grave.'
+        - 'Wasn''t long before the dead began to rise... however, it seems that some very powerful remains have been added to the grave.'
+        - 'When enough undead are slain, parts of said remains fuse with those ones around them producing a more powerful undead! Slay them to retrieve the corpse you seek.'
+    goal-message: 'Find Cedric''s friend in Koldore'
+    goal-location: 'Within the village tavern of Koldore'
+    #completed-message:
+    #- &7'You found Cedric''s "Friend".'
+  2:
+    requirement:
+      type: 'slay'
+      mob-names: 'UndeadMiner'
+      amount: 15
+    goal-message: 'Slay 15 Undead Miners.'
+    goal-location: '&eNorth-West Koldore, Blackrail Burrow'
+    #completed-message:
+    #- &7''
+  3:
+    requirement:
+      type: 'slay'
+      mob-names: 'UndeadMinerElite'
+      amount: 1
+    goal-message: 'Slay an Elite Undead Miner.'
+    completed-message:
+    - '&7You have successfully retrieved the skeleton!'
+  4:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'lapis_ore'
+          item-name: 'Uncut Sapphire'
+          item-count: 20
+      npc:
+        npc-name: 'Cedric the Grave Keeper'
+        npc-id: 733
+        speech:
+        - 'Ah, you brought me the Sapphires. Yes... and my precious Kodin'
+        - 'Cursed cave you say? Hmm, and the bandits. This seems all too... intentional.'
+        - 'Here, take this reward. There may be more for you to do, indeed.'
+        - 'Now, go! Away with you!'
+        #idle-messages:
+         #1:
+          #speech: 'You do not yet have the sapphires, seek them in the Koldore Mines, within the hidden forge.'
+          #conditions:
+            #quest:
+              #started: true
+              #completed: false
+            #quest-items: false
+    goal-message: 'Bring Cedric 20 Uncut Sapphires'
+    goal-location: 'True Koldore Mines'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 4000
+  money: 10

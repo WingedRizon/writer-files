@@ -1,0 +1,9 @@
+DeraStaff:
+  Id: WOOD_HOE
+  Data: 4
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS

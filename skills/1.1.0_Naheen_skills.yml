@@ -1,0 +1,91 @@
+boomerExplosion: #make the trigger a "~onTimer:20" or something (because the ability is passive)
+ Conditions:
+ - playerwithin{d=6} true
+ - incombat{} true
+ Skills:
+ - remove @self
+ - effect:explosion @self
+ - damage{amount=80;ignoreArmor=true} @LivingEntitiesInRadius{r=8} #use "@LivingEntitiesInRadius{r=6}" if you want ALL entities (including all mobs)
+
+unstableSlimePoison: #make the trigger a "~onTimer:10" or something (because the ability is passive and should have faster response)
+ Skills:
+ - effect:particles{particle=happy_villager;amount=3;hS=.5;vS=1;speed=1} @self
+ - potion{type=POISON;duration=60;level=4} @PIR{r=5}
+
+unstableSlimeDeath: #make the trigger a "~onDeath"
+ Skills:
+ - effect:explosion @self
+ - damage{amount=30} @LivingEntitiesInRadius{r=4} #use "@LivingEntitiesInRadius{r=4}" if you want ALL entities (including all mobs)
+
+chooseSkill_sidequestWallace:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - randomskill{skills=WallaceSpin,UppercutCast,Assassinate} @self
+
+reinforcements:
+ Conditions:
+ - incombat{} true
+ #- mobsinchunk{a<=10} true
+ Skills:
+ - sendtitle{title="&4&kooo&r&l&cReinforcements&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=20}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cReinforcements&r&4&kooo";subtitle="&e&l2";d=20} @PlayersInRadius{r=20}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - sendtitle{title="&4&kooo&r&l&cReinforcements&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=20}
+ - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+ - delay 20
+ - remove @MIR{r=60;t=wallaceLackey}
+ - summon{type=wallaceLackey;amount=3;yr=0;os=true;radius=4} @self
+ - effect:sound{s=block.fire.extinguish;volume=1.0;pitch=0.5} @PlayersInRadius{r=50} #custom sound for when the minions spawn
+
+ WallaceSpin:
+  Skills:
+  - orbital{onTick=WallaceSpinTick;onHit=WallaceSpinHit;p=12;i=2;d=24;r=3;oy=1} @self
+
+ WallaceSpinTick:
+  Skills:
+  - effect:particles{p=reddust;a=10;hS=0.1;vS=0.1} @origin
+
+ WallaceSpinHit:
+  Skills:
+  - damage{a=100}
+  - throw{velocity=10;velocityY=2} @trigger
+
+UppercutCast:
+  Skills:
+  - cast{skillName="Uppercut";duration=30;onCast=UppercutPlayer;onStart=Uppercut-Start;onInterrupted=Uppercut-Start}
+
+UppercutPlayer:
+  Skills:
+  - leap{v=200} @target
+  - delay 5
+  - damage{a=50;i=true} @PIR{r=3;sort=NEAREST}
+  - throw{velocity=1;velocityY=10} @PIR{r=3;sort=nearest}
+  - effect:sound{s=block.bamboo.break} @PIR{r=5}
+
+Uppercut-Start:
+  Skills:
+  - effect:smokeswirl{d=3;i=5} @self
+  - effect:sound{s=mob.endermen.scream} @PIR{r=50}
+
+Assassinate:
+  Skills:
+  - sendtitle{title="&4&kooo&r&l&cAssassinate&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=10}
+  - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=10}
+  - delay 20
+  - skill{s=AssassinateTarget}
+
+AssassinateTarget:
+  Conditions:
+  - targetwithin{d=3} castinstead CompleteAssassination
+  Skills:
+  - leap{v=200} @target
+
+CompleteAssassination:
+  Skills:
+  - teleport{sh=0;sv=0} @PIR{r=3;sort=nearest}
+  - delay 1
+  - damage{a=80} @PIR{r=2;sort=nearest}

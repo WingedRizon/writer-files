@@ -1,0 +1,319 @@
+ZenythCitizen:
+  Type: EVOKER
+  Display: '&e[&61&e] &aZenyth Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aZenyth Citizen<&co> &fThe sun shines brightly.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: plavic
+ZenythCitizen2:
+  Type: EVOKER
+  Display: '&e[&61&e] &aZenyth Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aZenyth Citizen<&co> &fThe sun shines brightly.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Baysonqor
+ZenythCitizen3:
+  Type: EVOKER
+  Display: '&e[&61&e] &aZenyth Citizen'
+  Health: 100
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+  - 1 randomstroll
+  - 2 lookatplayers
+  - 3 float
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aZenyth Citizen<&co> &fThe sun shines brightly.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Sevennemesis
+ZenythCat:
+  Type: OCELOT
+  Display: '&e[&61&e] &aDesert Cat'
+  Health: 50
+  Damage: 0
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+ZenythGuard1:
+  Type: EVOKER
+  Display: '&e[&650&e] &aZenyth Guard'
+  Health: 5000
+  Damage: 0
+  Equipment:
+  - GOLDEN_SWORD HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+#  - 1 gotolocation 1610,38,-57
+  - 2 lookatplayers
+  - 3 randomlookaround
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aZenyth Guard<&co> &fWelcome to the jewel of the desert.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Diarrhoea
+ZenythGuard2:
+  Type: EVOKER
+  Display: '&e[&650&e] &aZenyth Guard'
+  Health: 5000
+  Damage: 0
+  Equipment:
+  - GOLDEN_SWORD HAND
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.2
+    MaxCombatDistance: 12
+    PreventOtherDrops: true
+  AIGoalSelectors:
+  - 0 clear
+#  - 1 gotolocation 1617,38,-64
+  - 2 lookatplayers
+  - 3 randomlookaround
+  Skills:
+  - message{cooldown=4;m=&7[1/1] &aZenyth Guard<&co> &fWelcome to the jewel of the desert.} @NearestPlayer ~onDamaged
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Diarrhoea
+
+SaltBandit:
+  Type: EVOKER
+  Display: '&e[&638&e] &cSalt Bandit'
+  Health: 400
+  Damage: 35
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - GOLDEN_SWORD HAND
+  Drops:
+  - Coin 3-5 0.3
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 200 <mob.l.x> <mob.l.y> <mob.l.z> 38"} @trigger ~onDeath 1.0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Krxlion
+
+TheShaman:
+  Type: EVOKER
+  Display: '&e[&6☠&e] &cThe Shaman'
+  Health: 4500
+  Faction: Boss
+  Modules:
+    ThreatTable: true
+  Damage: 20
+  BossBar:
+    Enabled: true
+    Title: '&c&lThe Shaman'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+  Equipment:
+  - AIR HAND
+  Options:
+    MovementSpeed: 0.27
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 5
+    Silent: true
+  Skills:
+  - command{c="runicgive exp <trigger.name> 750 <caster.l.x> <caster.l.y> <caster.l.z> 38"} @trigger ~onDeath 1.0 #amount of exp placeholder
+  - setstance{stance=normal} @self ~onSpawn
+  - skill{s=summonFollower} @self ~onTimer:100
+  - skill{s=startMutate} @self ~onTimer:400
+  - remove @MIR{r=85;t=ShamanFollower} ~onDeath
+  - remove @MIR{r=85;t=ShamanFollower} ~onDespawn
+  - remove @MIR{r=85;t=ShamanAmalgamation} ~onDeath
+  - remove @MIR{r=85;t=ShamanAmalgamation} ~onDespawn
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: 0ar
+
+ShamanFollower:
+  MobType: EVOKER
+  Display: '&e[&6✸&e] &cShaman Follower'
+  Health: 250
+  Damage: 25
+  Drops:
+  - PixieTear 1 1.0
+  Options:
+    MovementSpeed: 0.29
+    PreventOtherDrops: true
+    Silent: true
+    NoDamageTicks: 0
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - AIR HAND
+  Skills:
+  - command{c="runicgive exp <trigger.name> 50 <caster.l.x> <caster.l.y> <caster.l.z> 38"} @trigger ~onDeath 1.0 #amount of exp placeholder
+  - skill{s=mutateCounter} @self ~onSignal:mutate
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: BoBoBalloon #Good
+
+ShamanAmalgamation:
+  MobType: EVOKER
+  Display: '&e[&6✸&e] &cAmalgamation'
+  Health: 350
+  Damage: 20
+  Options:
+    MovementSpeed: 0.31
+    PreventOtherDrops: true
+    Silent: true
+    NoDamageTicks: 0
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - AIR HAND
+  Skills:
+  - command{c="runicgive exp <trigger.name> 200 <caster.l.x> <caster.l.y> <caster.l.z> 38"} @trigger ~onDeath 1.0 #amount of exp placeholder
+  - setlevel{a=set;l=0} @self ~onSpawn
+  - setlevel{a=add;l=1} @self ~onSignal:lvlUp
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: BoBoBalloon #Good?
+  LevelModifiers:
+    Health: 50
+    Damage: 8
+
+GuardianOfTheFruit:
+  MobType: EVOKER
+  Display: '&e[&6✸&e] &cGuardian Of The Fruit'
+  Health: 6575
+  Damage: 55
+  Drops:
+  - FruitOfMetamorphosis 1 1.0
+  BossBar:
+    Enabled: true
+    Title: '&c&lGuardian Of The Fruit'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    Silent: true
+    NoDamageTicks: 0
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - AIR HAND
+  Skills:
+  - command{c="runicgive exp <trigger.name> 900 <caster.l.x> <caster.l.y> <caster.l.z> 38"} @trigger ~onDeath 1.0 #amount of exp placeholder
+  - skill{s=startSolarBlessing} @self ~onTimer:400
+  - remove @MIR{r=85;t=solarBlessingAura} ~onDeath
+  - remove @MIR{r=85;t=solarBlessingAura} ~onDespawn
+  - skill{s=GOFHeal} @self ~onSignal:heal
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: 0hbxmba
+  LevelModifiers:
+    Health: 50
+    Damage: 8
+
+solarBlessingAura:
+  Type: armor_stand
+  Display: '&0'
+  Health: 0
+  Damage: 0
+  Skills:
+  - skill{s=SolarBlessingAffect} @self ~onTimer:20
+  - effect:particlering{p=reddust;color=#fff68f;radius=5;points=32;amount=1;hS=1;vS=0} @self ~onTimer:10
+  - effect:particlering{p=reddust;color=#fff68f;radius=5.1;points=32;amount=1;hS=1;vS=0} @self ~onTimer:10
+  - effect:particlering{p=reddust;color=#fff68f;radius=4.9;points=32;amount=1;hS=1;vS=0} @self ~onTimer:10
+  - remove @self ~onSignal:despawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true

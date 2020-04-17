@@ -1,0 +1,96 @@
+JackalPirate:
+  Type: EVOKER
+  Display: '&e[&610&e] &cJackal Pirate'
+  Health: 115
+  Damage: 20
+  Equipment:
+  - IRON_SWORD HAND
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 2-4 0.3
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 135 <mob.l.x> <mob.l.y> <mob.l.z> 10"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
+  - command{c="giveweapon <trigger.name> uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
+  - skill{s=SummonElite_JackalPirate} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: antonin2003_
+
+JackalArcher:
+  Type: SKELETON
+  Display: '&e[&610&e] &cJackal Archer'
+  Health: 115
+  Damage: 10
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 2-4 0.3
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 135 <mob.l.x> <mob.l.y> <mob.l.z> 10"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
+  - command{c="giveweapon <trigger.name> uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
+  - skill{s=SummonElite_JackalPirate} @Self ~onDeath 0.05
+  AIGoalSelectors:
+  - 0 clear
+  - 1 bowshoot
+  - 2 meleeattack
+  - 3 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Dreadword
+
+JackalPirateElite:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cCursed Jackal Pirate'
+  Health: 140
+  Damage: 25
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - IRON_SWORD HAND
+  Drops:
+  - Coin 2-6 1.0
+  Options:
+    MovementSpeed: 0.28
+    PreventOtherDrops: true
+    FollowRange: 35
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <trigger.name> 255 <mob.l.x> <mob.l.y> <mob.l.z> 10"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.75
+  - command{c="giveweapon <trigger.name> uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.5
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: zinotaurus3

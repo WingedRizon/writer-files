@@ -1,0 +1,26 @@
+infernalarcher1:
+  SpawnerGroup: infernal
+  MobName: InfernalArcher
+  World: Alterra
+  X: 1784
+  Y: 29
+  Z: 2002
+  Radius: 25
+  UseTimer: true
+  MaxMobs: '2'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 20
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 32
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

@@ -1,0 +1,44 @@
+SpearAttack:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - effect:particleline{particle=crit;amount=1;fromOrigin=true} @Forward{f=3;y=1}
+ - damage{a=30;pk=true} @Line{r=3;fo=true}
+
+Lunge:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - lunge{v=15;vy=0} @target
+ - delay 20
+ - skill{s=LungeHit} @self
+
+LungeHit:
+ Conditions:
+ - playerwithin{d=1} true
+ Skills:
+ - damage{a=100} @PIR{r=1}
+ - velocity{x=0;y=0;z=0} @self
+
+Spin:
+ Skills:
+ - orbital{onTick=SpinTick;onHit=SpinHit;p=12;i=2;d=24;r=3;oy=1} @self
+
+SpinTick:
+ Skills:
+ - effect:particles{p=crit;a=10;hS=0.1;vS=0.1} @origin
+
+SpinHit:
+ Skills:
+ - damage{a=100}
+ - throw{velocity=10;velocityY=2} @trigger
+
+ChooseSpearSkill:
+ Conditions:
+ - incombat{} true
+ Skills:
+ - randomskill{s=Lunge,Spin} @self
+
+CastingEffect:
+ Skills:
+ - effect:particles{p=damageIndicator;a=10;hS=0.2;vS=0.2;y=1} @self

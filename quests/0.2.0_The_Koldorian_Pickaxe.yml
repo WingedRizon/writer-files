@@ -1,0 +1,81 @@
+name: 'The Koldorian Pickaxe'
+unique-id: 5
+repeatable: false
+side-quest: false
+requirements:
+  level: 8
+  level-not-met: '&cYou must be a higher level to assist me. Come back at level 8.'
+  required-quests: 4
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Orsig'
+  npc-id: 219
+  speech:
+  - 'What do ye want, Azanian?'
+  - '--aah! Damn stone golems want me ores!'
+  - 'Get it away from me!'
+objectives:
+  1:
+    requirement:
+      type: 'slay'
+      mob-names: 'StoneGolem'
+      amount: 1
+    goal-message: 'Defeat the Stone Golem.'
+    #location: 'Near Orsig'
+    completed-message: '&aYou''ve defeated the golem!'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Orsig'
+        npc-id: 219
+        speech:
+        - 'State ye name, kid. Ye don''t seem like a typical Azanian.'
+        - 'Ye slayed the Black Rider yerself?'
+        - 'Maybe ye really aren''t working with the Azanians. They would do anything to keep the chaos.'
+        - 'For that, I''ll tell ye a secret.'
+        - 'The Koldore ye see ahead is not the real Koldore. Tis a show for the Azanian mutts.'
+        - 'If ye want to see the real Koldore, speak to Rhalik Redbeard.'
+        - 'He might be able to help ye out.'
+    goal-message: 'Speak to Orsig at the gates of Koldore.'
+    #location: 'At the gates of Koldore'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Rhalik Redbeard'
+        npc-id: 666
+        speech:
+        - 'Hey, if it isn''t %player%!'
+        - 'I remember you from the fortress. It really is a small world.'
+        - 'What brings you out here to Koldore?'
+        - 'Ah, I see you spoke to Orsig. You want to see the Hidden Koldore?'
+        - 'Well it''ll be tricky for a non-dwarf to get inside!'
+        - 'Your best bet is to get a Koldorian Pickaxe.'
+        - 'Bring me 5 True Iron from the Blackrail Burrow Mine and 15 Spruce Wood, and I''ll help you out.'
+    goal-message: 'Speak to Rhalik the blacksmith in Koldore.'
+    #location: 'At the blacksmith''s in Koldore'
+  4:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'iron_block'
+          item-name: 'True Iron'
+          item-count: 5
+        2:
+          item-type: 'spruce_log'
+          item-name: 'Spruce Log'
+          item-count: 15
+      npc:
+        npc-name: 'Rhalik Redbeard'
+        npc-id: 666
+        speech:
+        - 'Thank you. This is all we need.'
+        - 'Speak to me again when you''re ready to progress further.'
+    goal-message: 'Deliver 5 True Iron and 15 Spruce Wood to Rhalik'
+    #location: 'Koldore'
+rewards:
+  quest-points: 1
+  exp: 3000
+  money: 25

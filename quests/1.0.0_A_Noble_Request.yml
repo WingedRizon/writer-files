@@ -1,0 +1,108 @@
+name: 'A Noble Request'
+unique-id: 19
+repeatable: false
+side-quest: false
+requirements:
+  level: 35
+  level-not-met: '&cThe sultan sees no one! Let alone one as weak as yourself. Come back when you are stronger, level 35 will do!'
+  required-quests: 18
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Zenyth Guard'
+  npc-id: 632
+  speech:
+  - 'Halt! State your business.'
+  - 'You wish to meet with the sultan?'
+  - 'Did you hear that Amsu? This stranger wishes an audience with our ruler!'
+  - 'Pft! Be gone. The sultan only meets with those on official business.'
+  - 'And unless I see a permit, you are not getting through.'
+  - 'Now move along. I have a gate that needs guarding.'
+objectives:
+  1:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 10
+      location: 'Alterra,1486,39,-182'
+    goal-message: 'Make your way to Zenyth city hall near the trade market'
+    #location: 'Near the trade market in Zenyth'
+    #completed-message:
+    #- &7'You have reached the city hall.'
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Information Clerk'
+        npc-id: 635
+        speech:
+        - 'How may I help you?'
+        - 'A permit? Why of course! We can have one processed for you right away. Shall I start the paperwork?'
+        - 'That''s all sorted. Please come back in 410 days to collect your permit. Thank you.'
+        - '...'
+        - 'You''re still here? Is there anything else you require?'
+        - 'Too long? Do you know how much paperwork our admin team has to go through? And don''t even get me started on the new magic sanctions...'
+        - 'If you''re really that desperate, there is one way to speed up the process.'
+        - 'A friend of mine, a noble named Ebo, is in urgent need of assistance.'
+        - 'It is best he explains the situation to you in person. Here is his address. It is close to the inn.'
+        - 'Upon his request, we can push your application right up to the top of our priority list!'
+    goal-message: 'Speak to the Information Clerk'
+    #location: 'Zenyth City Hall'
+    #completed-message:
+    #- &7' You have successfully enquired about an official permit.'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Ebo'
+        npc-id: 636
+        speech:
+        - 'Yes? What is it?!'
+        - 'Ah, another adventurer sent to aid me. They keep coming but nothing changes...'
+        - 'Fine, let''s take it from the top.'
+        - 'One of those cursed magic users... a shaman! He has been plaguing this household!'
+        - 'How? What do you mean how! Do you not see the swine which are currently trampling over my beautiful floor!'
+        - 'That blasted shaman showed up one night and began transforming my servants into... these filthy animals!'
+        - 'Your order is to slay that bother of a being!'
+        - 'What! A permit request?! Yes, yes, consider it done the moment my household has returned to normal.'
+    goal-message: 'Speak with Ebo the noble at his house near the Zenyth Inn.'
+    #location: ''
+    #completed-message:
+    #- &7'You have successfully spoken to Ebo the Nobleman.'
+  4:
+    requirement:
+      type: 'slay'
+      mob-names: 'ShamanFollower'
+      amount: 3
+    goal-message: 'Slay the shaman''s followers to lure it out!'
+    goal-location: 'Behind the Melon Node near the Trade Market'
+    #execute: 'mm m spawn Shaman 1 %player%'
+    #completed-message:
+    #- '&7He approaches, brace yourself.'
+    #summon Shaman command
+  5:
+    requirement:
+      type: 'slay'
+      mob-names: 'TheShaman'
+      amount: 1
+    goal-message: 'The shaman has emerged, defeat it!'
+    #location: ''
+    #completed-message:
+    #- &7'You have successfully slain the shaman.'
+  6:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Ebo'
+        npc-id: 636
+        speech:
+        - 'What do you mean you''ve killed the shaman?'
+        - 'Can''t you see my servants are still pigs?! Perhaps that shaman has taken your eyes as well.'
+        - 'You can forget about that permit!'
+    goal-message: 'Return to Ebo.'
+    #location: 'Zenyth'
+    #completed-message:
+    #- &7'You have successfully? spoken to Ebo.'
+rewards:
+  quest-points: 1
+  exp: 10500
+  money: 20

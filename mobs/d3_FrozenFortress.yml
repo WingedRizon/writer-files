@@ -1,0 +1,287 @@
+# ----------------------------------------------
+# FIRST SEMIBOSS
+# ----------------------------------------------
+Holmgeir:
+  Type: EVOKER
+  Display: '&e[&6☠&e] &cHolmgeir the Oathbreaker'
+  Health: 25000
+  Faction: Boss
+  Modules:
+    ThreatTable: true
+  Damage: 250
+  Drops:
+  - HolmgeirKey 1 1.0
+  - AmbrosiaRoot 1-3 1.0
+  BossBar:
+    Enabled: true
+    Title: '&c&lHolmgeir'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+  Equipment:
+  - IceAxe HAND
+  Options:
+    MovementSpeed: 0.335
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+    Silent: true
+  Skills:
+  - effect:sound{s=entity.player.hurt;volume=1.0;pitch=0.5} @PlayersInRadius{r=50}
+  - skill{s=chooseSkill_Holmgeir} @self ~onTimer:600
+  - skill{s=chooseSkill_HolmgeirCoolAsIce} @self ~onTimer:600
+  - setstance{stance=normal} @self ~onSpawn
+  - setstance{stance=coolAsIce} @self ~onDamaged =1%-50% #"cool as ice" stage
+  - skill{s=coolAsIcePassive} @self ~onTimer:10
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: ImLeoOo
+
+# ----------------------------------------------
+# SECOND SEMIBOSS
+# ----------------------------------------------
+Alkyr:
+  Type: EVOKER
+  Display: '&e[&6☠&e] &cAlkyr the Cunning'
+  Health: 35000
+  Faction: Boss
+  Modules:
+    ThreatTable: true
+  Damage: 150
+  Drops:
+  - AlkyrKey 1 1.0
+  - AmbrosiaRoot 1-3 1.0
+  BossBar:
+    Enabled: true
+    Title: '&c&lAlkyr'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+  Equipment:
+  - IceSword HAND
+  Options:
+    MovementSpeed: 0.315
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+    Silent: true
+  Skills:
+  - skill{s=chooseSkill_Alkyr} @self ~onTimer:600
+  - skill{s=summonTrick} @self ~onTimer:65
+  - setstance{stance=normal} @self ~onSpawn
+  - skill{s=voraciousHit} @self ~onAttack
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: lLight
+
+AlkyrTrick:
+  Type: EVOKER
+  Display: '&e[&6☠&e] &cAlkyr the Cunning'
+  Health: 25000
+  Faction: Boss
+  Modules:
+    ThreatTable: true
+  Damage: 70
+  Equipment:
+  - AIR HAND
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+    Silent: true
+  Skills:
+  - skill{s=TrickImmune} @self ~onDamaged
+  - skill{s=TrickDespawn} @self ~onSpawn
+  - teleport{spreadh=3;spreadv=0} @Parent ~onSignal:teleport
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: lLight
+
+# ----------------------------------------------
+# FINAL BOSS
+# ----------------------------------------------
+Eldrid:
+  Type: EVOKER
+  Display: '&e[&6☠&e] &cEldrid the Betrayer'
+  Health: 50000
+  Faction: Boss
+  Modules:
+    ThreatTable: true
+  Damage: 215
+  Drops:
+  - AmbrosiaRoot 2-5 1.0
+  - TokenOfValor 2-4 1.0
+  BossBar:
+    Enabled: true
+    Title: '&c&lEldrid'
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_10
+  Equipment:
+  - IceMace HAND
+  Options:
+    MovementSpeed: 0.34
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+    RepeatAllSkills: false
+  Skills:
+  - skill{s=chooseSkill_Eldrid} @self ~onTimer:600
+  - skill{s=EldridPassive} @self ~onTimer:120
+  - skill{s=EldridPassiveBuff} @self ~onSignal:runeSpawn
+  - setstance{stance=normal} @self ~onSpawn
+  # DROPS BELOW HERE
+  - command{c="runicgive item <target.name> armor epic"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor epic"} @trigger ~onDeath 1.0
+  - command{c="runicgive item <target.name> armor epic"} @trigger ~onDeath 1.0
+  - command{c="giveartifact <trigger.name> winter's_howl <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.1
+  - command{c="giveartifact <trigger.name> chillrend <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.1
+  - command{c="giveartifact <trigger.name> permafrost <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.1
+  - command{c="giveartifact <trigger.name> blade_of_the_betrayer <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.1
+  - command{c="giveartifact <trigger.name> frost's_edge <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.1
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: adaydremer
+
+# ----------------------------------------------
+# ELDRID SKILL MOBS
+# ----------------------------------------------
+FrozenGround:
+  Type: armor_stand
+  Display: '&0' 
+  Health: 0
+  Damage: 0
+  Skills:
+  - skill{s=FrozenGroundStart} @Self ~onSpawn
+  Options:
+    Invisible: true
+    HasGravity: false
+    Marker: true
+
+HealingRune:
+  Type: ZOMBIE
+  Display: '&e[&6☠&e] &cHealing Rune'
+  Health: 250
+  Equipment:
+  - healingrunehead HEAD
+  - AIR HAND
+  Skills:
+  - skill{s=HealEldrid} @self ~onTimer:20
+  - potion{t=INVISIBILITY;d=2147483647;l=0;hasParticles=true} @self ~onSpawn
+  - velocity{m=set;x=0;y=0;z=0} @self ~onDamaged
+  - signal{s=runeSpawn} @Parent ~onSpawn
+  - potion{t=SPEED;d=2147483647;l=1;force=true;hasParticles=true} @self ~onSignal:runeBuff
+  - equip{item=air:0} @self ~onTimer:10
+  Options:
+    PreventRandomEquipment: true
+    PreventOtherDrops: true
+    Silent: true
+    MovementSpeed: 0.215
+    FollowRange: 75
+    NoDamageTicks: 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 gotolocation -9,68,763
+  AITargetSelectors:
+  - 0 clear
+##########################################################################################################################
+
+ExiledFrostLord:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cExiled Frost Lord'
+  Health: 1000
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 2-4 0.3
+  - SilverKey 1 1.0
+  Damage: 50
+  Faction: Bandit
+  Equipment:
+  - IRON_SWORD HAND
+  Options:
+    MovementSpeed: 0.32
+    PreventOtherDrops: true
+    FollowRange: 30
+    NoDamageTicks: 5
+    Silent: true
+  Skills:
+  - skill{s=IceArrow} @NearestPlayer{r=40} ~onTimer:100
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: RAMBAXX
+FrozenSoldier:
+  Type: EVOKER
+  Display: '&e[&6✸&e] &cFrozen Soldier'
+  Health: 1500
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 2-4 0.3
+  - GoldKey 1 1.0
+  Damage: 55
+  Equipment:
+  - IRON_SWORD HAND
+  Options:
+    MovementSpeed: 0.34
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 5
+    Silent: true
+  Skills:
+  - skill{s=IceArrow} @NearestPlayer{r=40} ~onTimer:100
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
+  Disguise:
+    Type: player
+    Player: ''
+    Skin: Giss

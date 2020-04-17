@@ -1,0 +1,18 @@
+InkedRing:
+  Id: DARK_OAK_BUTTON
+  Amount: 1
+  Display: '&6Inked Ring'
+  Lore:
+  - ''
+  - '&7Is this even valuable?'
+  - ''
+  - '&6Quest Item'
+PolishedRing:
+  Id: BIRCH_BUTTON
+  Amount: 1
+  Display: '&6Polished Ring'
+  Lore:
+  - ''
+  - '&7An item to be treasured!'
+  - ''
+  - '&6Quest Item'

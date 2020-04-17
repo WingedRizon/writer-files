@@ -1,9 +1,0 @@
-FeldruidScepter:
-  Id: WOODEN_HOE
-  Data: 6
-  Amount: 1
-  Options:
-    Unbreakable: true
-  Hide:
-  - ATTRIBUTES
-  - ENCHANTS

@@ -1,0 +1,104 @@
+name: 'A Looming Threat'
+unique-id: 15
+repeatable: false
+side-quest: false
+requirements:
+  level: 30
+  level-not-met: '&cCome back when you are level 30.'
+  required-quests: 14
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Elder Aria'
+  npc-id: 619
+  speech:
+  - 'You must be %player%! Pleasure to meet you.'
+  - 'What? You were not aware that us elves have psychic powers?'
+  - 'I jest. I have spoken to Allaster in detail. He made me aware of your imminent arrival.'
+  - 'I see. So that is why the Azanian dogs have been sniffing around Dead Man''s Rest. Their greed for power never ceases to amaze me.'
+  - 'I do not know how you managed to snag the Ancient Tome from them, but I am very impressed that you did. It seems that Allaster was right.'
+  - 'Unfortunately, that book contains archaic elven secrets. Sharing them with you would be contensious.'
+  - 'However, if you can provide a service to the elves, I should be able to persuade the others that you are friend not foe.'
+  - 'You might have seen some druids around the area. They possess memory fragments that are invaluable to our kind.'
+  - 'By defeating them and recovering some of these fragments; you would gain immense favour.'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'ghast_tear'
+          item-name: 'Memory Fragment'
+          item-count: 10
+      npc:
+        npc-name: 'Elder Aria'
+        npc-id: 619
+        speech:
+        - 'Thank you. These memory fragments contain small chunks of elves'' memories. Before they became corrupted.'
+        - 'Their souls can now rest in peace.'
+        - 'There should be no further dispute that you are a friend of Isfodar. Now let me see that book.'
+        - '...'
+        - 'This confirms it. The Pyromancer might indeed be alive.'
+        - 'You see, the mages of Wintervale and us elves of Isfodar have known about this threat for some time.'
+        - 'We have been preparing for battle for years, praying that the time would never come.'
+        - 'But now it has.'
+        - 'We must run one further test; by summoning a fire elemental.'
+        - 'First, bring me one phoenix feather.'
+    goal-message: 'Recover 10 Memory Fragments and return to the elder.'
+    #location: 'The highest building in Isfodar'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'Feather'
+          item-name: 'Phoenix Feather'
+          item-count: 1
+      npc:
+        npc-name: 'Elder Aria'
+        npc-id: 619
+        speech:
+        - 'Thank you.'
+        - 'The next stage will require a soulstone.'
+        - 'You should be able to get one from a Feldruid.'
+    goal-message: 'Deliver a Phoenix Feather to the Elder'
+    #location: 'The highest building in Isfodar'
+    #completed-message:
+  3:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'ender_pearl'
+          item-name: 'Soulstone'
+          item-count: 1
+      npc:
+        npc-name: 'Elder Aria'
+        npc-id: 619
+        speech:
+        - 'Perfect. Last on our list are uncut sapphires.'
+        - 'Five should suffice. You can find them in the mines.'
+    goal-message: 'Deliver a Soulstone to the Elder'
+    #location: 'The highest building in Isfodar'
+    #completed-message:
+  4:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'lapis_ore'
+          item-name: 'Uncut Sapphire'
+          item-count: 5
+      npc:
+        npc-name: 'Elder Aria'
+        npc-id: 619
+        speech:
+        - 'That concludes our list of items.'
+        - 'Speak to me again when you are ready to see the Fire Elemental.'
+    goal-message: 'Deliver 5 Uncut Sapphires to the Elder'
+    #location: 'The highest building in Isfodar'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 9000
+  money: 10

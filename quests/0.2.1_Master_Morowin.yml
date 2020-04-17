@@ -1,0 +1,93 @@
+name: 'Master Morowin'
+unique-id: 6
+repeatable: false
+side-quest: false
+requirements:
+  level: 10
+  level-not-met: '&cYou need to get stronger before we continue. Come back at level 10.'
+  required-quests: 5
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Rhalik Redbeard'
+  npc-id: 666
+  speech:
+  - 'Great. Now I need you to bring these materials to Morowin.'
+  - 'Last I heard, he bought a cabin somewhere in Jackal''s Cove. A real steal for the price he got.'
+  - 'What do you mean I said I''d make it? I never. I just said I would help you...'
+  - 'I appreciate that you think I have the skills for such a feat, but only a master blacksmith could forge a Koldorian Pickaxe!'
+  - 'Good luck! I know you will be able to find him. Exit the city and head for the cove.'
+objectives:
+  1:
+    requirement:
+      type: 'location'
+      location-type: 'radius'
+      radius: 20
+      location: 'Alterra,-1964,25,-26'
+    goal-message: 'Find Morowin''s Cabin in Jackal Cove'
+    #location: 'Jackal Cove between Koldore and Whaletown'
+  2:
+    requirement:
+      type: 'slay'
+      mob-names: 'JackalPirate'
+      amount: 5
+    goal-message: 'Defeat 5 Jackal Pirates'
+    #location: 'Jackal Cove'
+    completed-message: '&aYou''ve defeated the pirates!'
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Morowin'
+        npc-id: 667
+        speech:
+        - 'Thank you for getting rid of those pests. That should give me peace-- for a time at least.'
+        - 'I have some advice for you, kid. Make sure you do your due diligence when buying a house!'
+        - 'And if a house seems cheap, like really, really cheap... then there''s probably something wrong with it.'
+        - 'Maybe it gets a little too cold in the winter. Maybe there is no bathroom. Or maybe THE ENTIRE AREA IS A PIRATE HIDEOUT...'
+        - 'Anyways, what can I do for you?'
+        - 'A Koldorian Pickaxe? Sure, those things are child''s play to make!'
+        - 'However, to make one, you require an Ethereal Flux...'
+        - 'Luckily for you, I possess one!'
+        - 'Well... possessed. In the midst of the pirate attack, some chicken ran off with it.'
+        - 'Crazy, I know. But that''s how things are around here. Bring me the flux and I will make your pickaxe.'
+    goal-message: 'Find Morowin'
+    execute:
+    - 'npc select 668'
+    - 'npc spawn'
+    #location: 'Jackal Cove'
+  4:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Chicken'
+        npc-id: 668
+        speech:
+        - 'Quack! Ummm I mean cluck cluck...'
+    goal-message: 'Find the Thieving "Chicken"'
+    #location: 'Jackal Cove'
+    execute: 'mm i give %player% EtherealFlux'
+  5:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+          item-type: 'end_rod'
+          item-name: 'Ethereal Flux'
+          item-count: 1
+      npc:
+        npc-name: 'Morowin'
+        npc-id: 667
+        speech:
+        - 'Great, you found it!'
+        - '...What did you bring me those materials for?'
+        - 'I''m a blacksmith, of course I have iron and wood laying around!'
+        - 'Here you go-- one Koldorian Pickaxe!'
+        - 'I told you it was easy to make. Unlike relationships - those are hard. Treasure them.'
+    goal-message: 'Bring Morowin the Ethereal Flux'
+    #location: 'Jackal Cove'
+rewards:
+  quest-points: 1
+  exp: 3200
+  money: 16
+  execute:
+  - 'mm items give -s %player% KoldorianPickaxe 1'

@@ -1,0 +1,111 @@
+name: 'Blight of the Barbarians'
+unique-id: 109
+repeatable: false
+side-quest: true
+requirements:
+  level: 16
+  level-not-met: '&cYou look a bit too weak. Come back when you''re stronger.'
+first-npc:
+  npc-name: 'Barbarian Nomad'
+  npc-id: 817
+  speech:
+  - 'This place here was built by Togrund. A haven where we could practice magic in peace.'
+  - 'Togrund, he''s always been headstrong, blunt even. Didn''t go well in Hilstead.'
+  - 'Togrund fancied magic, you see, and the folk of Hilsted didn''t. So he left and took plenty of us with him.'
+  - 'Why didn''t we join Wintervale? I asked him that same question. He called the people in Wintervale prejudiced snobs that only care about themselves.'
+  - 'Things were peaceful here, though. We all did our part to make the best of our lives. Even on the darkest days, Togrund''s experiments never failed to excite!'
+  - 'However, one day, I was coming back from a hunting trip... when I saw the smoke. Rushing back, I was too late... They had all turned undead.'
+  - 'Please, find out what happened and set their souls at peace.'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'slay'
+      mob-names: 'UndeadBarbarian'
+      amount: 5
+    goal-message: '[1/4] Slay 5 Undead Barbarians'
+    completed-message:
+    - '&2Ah, Togrund! I see you''re back from your trip!'
+  2:
+    requirement:
+      type: 'slay'
+      mob-names: 'UndeadBarbarian'
+      amount: 5
+    goal-message: '[2/4] Slay 5 Undead Barbarians'
+    completed-message:
+    - '&2I swear Togrund, your alchemy will be the death of us.'
+  3:
+    requirement:
+      type: 'slay'
+      mob-names: 'UndeadBarbarian'
+      amount: 5
+    goal-message: '[3/4] Slay 5 Undead Barbarians'
+    completed-message:
+    - '&2Hey, what''s that green smoke coming out of Togrund''s chambers?'
+  4:
+    requirement:
+      type: 'slay'
+      mob-names: 'UndeadBarbarian'
+      amount: 5
+    goal-message: '[4/4] Slay 5 Undead Barbarians'
+    completed-message:
+    - '&2Togrund! What have you done?!'
+  5:
+    requirement:
+      type: 'slay'
+      mob-names: 'BarbarianElite'
+      amount: 1
+    goal-message: 'Defeat an Elite Barbarian'
+    completed-message:
+    - '&2Togrund, about that plant... I hear it''s called Adder''s Smock.'
+  6:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Barbarian Nomad'
+        npc-id: 817
+        speech:
+        - 'Adder''s Smock?'
+        - 'I''m afraid I don''t know much about that. Perhaps an alchemist would know more.'
+        - 'There is a Wandering Alchemist around here. You must find her before it''s too late.'
+        - 'The alchemist should be able to tell you the effects of the plant, or at the very least, what to do.'
+        - 'Follow this road towards Wintervale. I think she''s staying in a small hut on the way there.'
+    goal-message: 'Return to the nomad and tell him of your progress'
+    completed-message: '&7You have pieced together what happened.'
+  7:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Wandering Alchemist'
+        npc-id: 825
+        speech:
+        - 'Yes? How can I help you today?'
+        - 'Adder''s Smock! Oh heavens. Alchemy books prohibit its use!'
+        - 'Listen to me carefully. That foolish Togrund must be slain, else he will be too powerful to subdue!'
+        - 'Quickly, go back and defeat him!'
+    goal-message: 'Go to the Hilstead alchemist and ask her about Adder''s Smock'
+    completed-message: '&7You have gone to the alchemist and asked her about Adder''s Smock. Sadly, Togrund must be slain'
+  8:
+    requirement:
+      type: 'slay'
+      mob-nams: 'Togrund'
+      amount: 1
+    goal-message: 'Slay Togrund'
+    completed-message: '&7You have slain Togrund. The nomad must be made aware of this.'
+  9:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Barbarian Nomad'
+        npc-id: 817
+        speech:
+        - 'You were forced to slay him? I see...'
+        - 'I will remember him as he was. Strong and brave.'
+        - 'Here, take this alchemical item. I don''t rightly know what it is, but I was planning on bringing it to Togrund.'
+        - 'If those spirits can rest in peace, so can I. Goodbye, adventurer.' #Perhaps we make the Nomad disappear into smoke here
+    goal-message: 'Return to the Barbarian Nomad'
+    completed-message: '&7You have uncovered the tragic tale of the Barbarians.'
+rewards:
+  quest-points: 1
+  exp: 4000
+  money: 26

@@ -1,5 +1,5 @@
 BaneFrostLords:
-  Id: WOODEN_SWORD
+  Id: WOOD_SWORD
   Data: 5
   Amount: 1
   Options:
@@ -11,7 +11,7 @@ healingrunehead:
   Id: 397
   Data: 3
   Options:
-    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDVlZDVjNzMyNGMxNjNiZGI4NWQ1ZmVmNWNiYjMzODZkOTM0NzI3YTU0MWViYzExMDFkNDljZDg5NjAzNDhlYiJ9fX0===
+    SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjFhMTExZWMxMTAyYzQwYzAyZDFkNDBmNDdlNjA5Mzg1MTIzOTNlOWRkYWZlZmQ1MDI4ZDJkM2EyMmJmNTE4ZSJ9fX0====
 HolmgeirKey:
   Id: PRISMARINE_CRYSTALS
   Data: 0
@@ -57,3 +57,39 @@ TokenOfValor:
   - '&7A badge of honor and pride!'
   - ''
   - '&6Legendary'
+FlagOfHonor:
+  Id: PHANTOM_MEMBRANE
+  Amount: 1
+  Display: '&eFlag of Honor'
+  Lore:
+  - ''
+  - '&7Granted to those of great courage!'
+  - ''
+  - '&eUnique'
+IceAxe:
+  Id: WOOD_AXE
+  Data: 6
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+IceSword:
+  Id: WOOD_SWORD
+  Data: 6
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+IceMace:
+  Id: WOOD_SPADE
+  Data: 6
+  Amount: 1
+  Options:
+    Unbreakable: true
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS

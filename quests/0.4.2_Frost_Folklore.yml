@@ -1,0 +1,131 @@
+name: 'Frost Folklore'
+unique-id: 110
+repeatable: false
+side-quest: true
+requirements:
+  level: 15
+  level-not-met: '&cAncient tales are only for an experienced audience. Come back when you reach level 15.'
+first-npc:
+  npc-name: 'Lorekeeper Bjon'
+  npc-id: 823
+  speech:
+  - 'Oh, hello traveller. Seeking some adventures?'
+  - 'My name is Bjon, I am the lorekeeper here in Hilstead. Did you came across some igloos lately?'
+  - 'I could tell you an ancient tale, if you are willing to do a few things in return.'
+  - 'Of course, you will get a worthy reward! Knowledge is so undervalued by young people...'
+  - 'This story is about a rejected folk, forced to survive in the harsh wilderness of a frozen land..'
+  deniable: false
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Lorekeeper Bjon'
+        npc-id: 823
+        speech:
+        - 'It all began long ago, when magic cursed our land. All people rightly feared this new source of might. So many of them declined it.'
+        - 'But some found great joy and, with practice, learned to control it.'
+        - 'The Frost Lords were one of the greater groups that used these supernatural powers, and oh they became so powerful.'
+        - 'You know what makes them so special? They were able to create and duplicate artefacts. I see you are an aritifact bearer yourself.'
+        - 'Wielding magic is especially dangerous in some cities... I needed to learn that lesson myself.'
+        - 'Some day the Frost Lords were forced to leave their homeland. Their use of magic was seen as dangerous and unpredictable.'
+        - 'However, they were not all united. Some of them, now the Frostfolk, feared the manipulation of magic into artefacts.'
+        - 'Torn between their kin and their beliefs, the Frostfolk ended up exiled from Hilstead and left behind by the Frost Lords.'
+        - 'They were lost, cold, and slowly starving to death.'
+        - 'Their Leader Varaya led them to the riverbank, promising they would all survive...'
+        - 'I want you to feel that bitterness, feel the hunger, and embrace the frozen nights.'
+        - 'To understand what they felt, what they saw, I want you to bring me 10 Uncut Emeralds and 10 Elder Logs. Much like the Frostlords, half are ahead and half are behind.'
+    goal-message: 'Listen to the story of the Lorekeeper.'
+  2:
+    requirement:
+      requires:
+        1:
+          item-type: 'birch_log'
+          item-name: 'Elder Log'
+          item-count: 10
+        2:
+          item-type: 'emerald_ore'
+          item-name: 'Uncut Emerald'
+          item-count: 10
+      type: 'talk'
+      npc:
+        npc-name: 'Lorekeeper Bjon'
+        npc-id: 823
+        speech:
+        - 'Ah, you are back, traveller.'
+        - 'Did you feel the cold out there, slowly sneaking into you? Did your body begin to shiver?'
+        - 'The Emeralds stand for the stars, glistening brightly during such dark nights.'
+        - 'The Elder Logs stand for family, forever there, where they once were.'
+        - 'The Frostfolk looked up into the stars, convinced that there was no turning back.'
+        - 'Their family was always waiting, but stubbornness is as unwavering as the trees themselves.'
+        - 'Using the wood nearby, they withstood the cold, warming themselves at the blazing fires of their new camp.'
+        - 'There is only one thing missing to understand the life of the Frostfolk.'
+        - 'Up here in the north there is not much variety in terms of food.'
+        - 'The Frostfolk were good at fishing. They had to be. To survive. Out there...'
+        - 'To understand the full meaning of their life, I need you to bring me 6 Cod.'
+        - 'Come back to me and I will tell you the sad end of this ancient tale.'
+    goal-message: 'Bring Bjon 10 Uncut Emeralds and 10 Elder Logs.'
+  3:
+    requirement:
+      requires:
+        1:
+          item-type: 'Cod'
+          item-name: 'Cod'
+          item-count: 6
+      type: 'talk'
+      npc:
+        npc-name: 'Lorekeeper Bjon'
+        npc-id: 823
+        speech:
+        - 'Thank you, a meal always tastes better with company.'
+        - 'Now, let me explain why the Frostfolk aren''t guiltless in this tale.'
+        - 'I know, it sounds odd, but here is what happened.'
+        - 'While sitting all together at the campfire, sharing the warmth and the cooked fish, Varaya wasn''t with them.'
+        - 'She was hiding an artefact and trying to figure out how to use it. Alone and hidden from the eyes of the others.'
+        - 'Not long ago, Varaya discovered a way to empower herself with strength.'
+        - 'Without noticing it, Varaya began consuming the artefact''s magic and corrupting the hearts and minds of them all.'
+        - 'One day her human body couldn''t cope. She turned into something... a spirit.'
+        - 'Now, the ending of this chapter lies with you.'
+        - 'Once and for all, traveller, I need you to erase the Frostfolk Spirit along with her followers!'
+    goal-message: 'Return to Bjon with 6 Cod.'
+  4:
+    requirement:
+      type: 'slay'
+      mob-names: 'FrostfolkMaiden'
+      amount: 3
+    goal-message: 'Slay 3 Frostfolk Maidens'
+  5:
+    requirement:
+      type: 'slay'
+      mob-names: 'FrostfolkFisherman'
+      amount: 3
+    goal-message: 'Slay 3 Frostfolk Fishermen'
+  6:
+    requirement:
+      type: 'slay'
+      mob-names: 'FrostfolkElite'
+      amount: 1
+    goal-message: 'Slay the Frostfolk Spirit'
+  7:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Lorekeeper Bjon'
+        npc-id: 823
+        speech:
+        - 'Tell me - is it over?'
+        - 'I see. So this is how the story ends.'
+        - 'I feel...'
+        - 'Nothing.'
+        - 'Thank you. You did what I could not do... I was too weak to kill her, after all I felt for her!'
+        - 'I suppose I should share a bit about myself now.'
+        - 'Long ago, I grew up right here in Hilstead. I was a fool, travelling for years, trying to find the right place for me.'
+        - 'But Varaya, she showed me that my rightful home was here all along.'
+        - 'She taught me magic and so much more.'
+        - 'It should have been me that was consumed. Me that was left behind, not her.'
+        - 'At least now she is free. Thank you.'
+    goal-message: 'Return to Bjon'
+rewards:
+  quest-points: 1
+  exp: 5000
+  money: 14

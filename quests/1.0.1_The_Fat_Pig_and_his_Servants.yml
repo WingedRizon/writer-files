@@ -1,0 +1,83 @@
+name: 'The Fat Pig and His Servants'
+unique-id: 20
+repeatable: false
+side-quest: false
+requirements:
+  level: 36
+  level-not-met: '&cNothing has happened yet, go off and slay monsters or whatever you adventurers do in the meantime.'
+  required-quests: 19
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Ebo'
+  npc-id: 636
+  speech:
+  - 'What are you still here for?'
+  - 'Until my servants are back to normal, you''re not getting a thing from me.'
+  - 'Well don''t just stand there. Go find an alchemist or something!'
+objectives:
+  1:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Enoc the Alchemist'
+        npc-id: 640
+        speech:
+        - 'Hello, adventurer! You look as though you are in need of assistance.'
+        - 'Hmm, looks like old Ebo got what was coming to him. Well, I have good news and bad news.'
+        - 'The good news is that I know how to make a potion which can dispell the curse.'
+        - 'The bad news is that I lack the magic ingredients. It has been hard to purchase any recently.'
+        - 'Firstly, I need 7 slices of watermelon. You should be able to gather those from the surrounding farm patches.'
+        - 'Secondly, 6 pixie tears. Shaman followers usually carry them around to fuel their magic.'
+        - 'Finally, 1 fruit of metamorphosis. Beware, in his anti-magic escapades, the sultan sent many men to fell its tree.'
+        - 'None have returned.'
+        - 'You will find it past the Opal Mine, south of the city.'
+        - 'Good luck! I am sure you will return mostly intact.'
+    goal-message: 'Find the town Alchemist'
+    #location: 'Zenyth'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      requires:
+        1:
+           item-type: 'melon_slice'
+           item-name: 'Melon Slice'
+           item-count: 7
+        2:
+          item-type: 'ghast_tear'
+          item-name: 'Pixie Tear'
+          item-count: 6
+        3:
+          item-type: 'apple'
+          item-name: 'Fruit of Metamorphosis'
+          item-count: 1
+      npc:
+        npc-name: 'Enoc the Alchemist'
+        npc-id: 640
+        speech:
+        - 'I can''t believe you were able to get everything we needed! I shall get started right away.'
+        - 'Just gotta add some of this... A drop of that... A couple of those...'
+        - 'Done! Here you go.'
+        - 'And no I''m not doing this for free. I have attached the bill to the bottom of the vial for Ebo.'
+        - 'Come again!'
+    goal-message: 'Gather 7 Melon Slices, 6 Pixie Tears, and 1 Fruit of Metamorphosis.'
+    execute: 'mm i give %player% PotionOfMetamorphosis 3'
+    #location: 'Zenyth Alchemist'
+        #completed-message:
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Ebo'
+        npc-id: 636
+        speech:
+        - 'A potion from Enoc? Couldn''t you have used anybody else?! That overpriced old man is-'
+        - 'Fine. It doesn''t matter. This will do.'
+        #- 'Come on then! Give the potion to those animals. I"m not getting anywhere near them.'
+    goal-message: 'Return to Ebo.'
+    #location: 'Near the Zenyth Inn'
+      #completed-message:
+rewards:
+  quest-points: 1
+  exp: 14000
+  money: 32

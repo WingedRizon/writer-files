@@ -1,0 +1,26 @@
+isfodarcitizen1:
+  SpawnerGroup: isfodarcitizen
+  MobName: IsfodarCitizen
+  World: Alterra
+  X: 585
+  Y: 87
+  Z: -30
+  Radius: 25
+  UseTimer: true
+  MaxMobs: '3'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 0
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 32
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0

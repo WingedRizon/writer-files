@@ -1,0 +1,72 @@
+name: 'The Flames of War'
+unique-id: 16
+repeatable: false
+side-quest: false
+requirements:
+  level: 32
+  level-not-met: '&cCome back when you are level 32.'
+  required-quests: 15
+  required-quests-not-met: 'I feel like you should do something else before coming here...'
+first-npc:
+  npc-name: 'Elder Aria'
+  npc-id: 619
+  speech:
+  - 'Behold the Fire Elemental.'
+  - 'The flames it burns will grant us answers.'
+  execute: 'mm m spawn FireElemental 1 Alterra,780,134,-152'
+objectives:
+  1:
+    requirement:
+      type: 'slay'
+      mob-names: 'FireElemental'
+      amount: 1
+    goal-message: 'Defeat the Fire Elemental.'
+    #location: 'The highest building in Isfodar'
+    #completed-message:
+  2:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Elder Aria'
+        npc-id: 619
+        speech:
+        - 'Our worst fears have come to life. Yet in a sense this was always inevitable.'
+        - 'The flames it burnt are stronger than we anticipated. The Pyromancer is well and truly alive.'
+        - 'Perhaps the time for secrets is over. We must look to other nations for aid.'
+        - 'I have to stay here to make preparations. Please, spread the word of the Pyromancer.'
+        - 'The closest power to us is Zenyth. Though that sultan is stubborn.'
+        - 'I wish you well and I pray that the other leaders will listen.'
+        - 'Until we meet again.'
+        idle-messages:
+          1:
+            speech: 'Defeat the Fire Elemental, then return to me. //mm m spawn FireElemental 1 Alterra,780,134,-152'
+            condition:
+              quest:
+                started: true
+                completed: false
+              objectives:
+                1: false
+                2: false
+                3: false
+    goal-message: 'Speak to the elder.'
+    #location: 'The highest building in Isfodar'
+    #completed-message:
+  3:
+    requirement:
+      type: 'talk'
+      npc:
+        npc-name: 'Allaster Farseer'
+        npc-id: 617
+        speech:
+        - 'It is as the elder says. The world as you know it is about to change.'
+        - 'I suggest we inform the sultan, there is a chance he will listen.'
+        - 'However, we need to meet up with Rhalik first. I spoke to him before coming to Isfodar.'
+        - 'He has agreed to join us on this journey.'
+        - 'Let us make haste to Tireneas, for he is waiting there.'
+    goal-message: 'Speak with Allaster to decide the next destination.'
+    #location: 'The highest building in Isfodar'
+    #completed-message:
+rewards:
+  quest-points: 1
+  exp: 3000
+  money: 10

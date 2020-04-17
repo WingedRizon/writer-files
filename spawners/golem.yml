@@ -1,0 +1,25 @@
+golem:
+  MobName: GolemLord
+  World: Alterra
+  X: 632
+  Y: 4
+  Z: 291
+  Radius: 15
+  UseTimer: true
+  MaxMobs: '1'
+  MobLevel: '1'
+  MobsPerSpawn: 1
+  Cooldown: 0
+  CooldownTimer: 0
+  Warmup: 10
+  WarmupTimer: 0
+  CheckForPlayers: true
+  ActivationRange: 40
+  ScalingRange: 25.0
+  LeashRange: 32
+  HealOnLeash: false
+  ResetThreatOnLeash: false
+  ShowFlames: false
+  Breakable: false
+  Conditions: []
+  ActiveMobs: 0
