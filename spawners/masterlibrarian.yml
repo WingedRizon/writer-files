@@ -17,7 +17,7 @@ masterlibrarian:
   ActivationRange: 40
   ScalingRange: 25.0
   LeashRange: 32
-  HealOnLeash: false
+  HealOnLeash: true
   ResetThreatOnLeash: false
   ShowFlames: false
   Breakable: false

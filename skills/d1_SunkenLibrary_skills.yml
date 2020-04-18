@@ -291,7 +291,7 @@ removePools:
 
 lavaPoolPassiveAffect:
  Skills:
- - effect:particlering{particle=flame;radius=2;points=16;amount=1;hS=1;vS=0} @self
+ - effect:particlering{particle=flame;radius=2;points=16;amount=10;hS=1;vS=0} @self
  #- effect:particlering{particle=flame;radius=3.1;points=32;amount=1;hS=1;vS=0} @self
  #- effect:particlering{particle=flame;radius=2.9;points=32;amount=1;hS=1;vS=0} @self
  - damage{a=22;i=true;pk=true} @PIR{r=3}
@@ -644,3 +644,10 @@ ChargePlayer-Start:
   - effect:sound{s=mob.endermen.scream} @PIR{r=50}
   - delay 10
   - sendtitle{title="&4&kooo&r&l&cJUMP!&r&4&kooo";subtitle="&e&l";d=10} @target
+
+HealUp:
+  Conditions:
+  - playerwithin{d=15} false
+  Skills:
+  - effect:particlering{p=HAPPY_VILLAGER;r=15;a=32;y=0.2}
+  - heal{a=1000}

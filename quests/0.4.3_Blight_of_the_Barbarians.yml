@@ -83,12 +83,12 @@ objectives:
         - 'Adder''s Smock! Oh heavens. Alchemy books prohibit its use!'
         - 'Listen to me carefully. That foolish Togrund must be slain, else he will be too powerful to subdue!'
         - 'Quickly, go back and defeat him!'
-    goal-message: 'Go to the Hilstead alchemist and ask her about Adder''s Smock'
+    goal-message: 'Go to the Wandering alchemist and ask her about Adder''s Smock'
     completed-message: '&7You have gone to the alchemist and asked her about Adder''s Smock. Sadly, Togrund must be slain'
   8:
     requirement:
       type: 'slay'
-      mob-nams: 'Togrund'
+      mob-names: 'TogrundTheBlighted'
       amount: 1
     goal-message: 'Slay Togrund'
     completed-message: '&7You have slain Togrund. The nomad must be made aware of this.'

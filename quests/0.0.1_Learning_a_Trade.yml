@@ -9,7 +9,7 @@ first-npc:
   npc-name: 'Farmer'
   npc-id: 79
   speech:
-  - 'Hail, friend. Here to learn a trade? Let''s begin!'
+  - 'Hail, friend. I heard about the battle at the fortress. Need supplies?'
   - 'There are two kinds of professions in our world: gathering and crafting.'
   - 'You must choose one crafting profession, but you can gather any material!'
   - 'Let''s start with gathering. Take this tool and gather §f[3 Wheat] §6in the farm.'

@@ -6,10 +6,10 @@ requirements:
   level: 0
   level-not-met: '&cOops, something went wrong.'
 first-npc:
-  npc-name: 'Recruiter'
+  npc-name: 'Resistance Recruiter'
   npc-id: 598
   speech:
-  - 'Good fortune, soldier! What''s that? You have no weapon? We''ll get you sorted.'
+  - 'Good fortune, soldier! What''s that? You''ve no idea what''s going on? We''ll get you sorted.'
   - 'Speak with the dwarven smith ahead, and we''ll forge you an artifact.'
 objectives:
   1:
@@ -30,12 +30,12 @@ objectives:
     requirement:
       type: 'talk'
       npc:
-        npc-name: 'Warden'
+        npc-name: 'Resistance Archer'
         npc-id: 192
         speech:
         - 'Well met, soldier. I see the dwarf has given you an artifact.'
         - 'Time to use it. Let''s see if you can defeat our training soldier.'
-    goal-message: 'Speak with the Warden'
+    goal-message: 'Speak with the Resistance Archer'
   3:
     requirement:
       type: 'slay'
@@ -44,28 +44,31 @@ objectives:
       amount: 1
     goal-message: 'Defeat the Training Soldier'
     completed-message:
-    - '&aYou''ve defeated the training soldier! Return to the Warden.'
+    - '&aYou''ve defeated the training soldier! Return to the Resistance Archer.'
   4:
     requirement:
       type: 'talk'
       npc:
-        npc-name: 'Warden'
+        npc-name: 'Resistance Archer'
         npc-id: 192
         speech:
-        - 'Excellent work, soldier. Now you''ll need a runic spell.'
-        - 'Speak to our mage inside.'
-    goal-message: 'Return to the Warden'
+        - 'Excellent work, soldier. But do not relax!'
+        - 'The resistance is losing this battle, soldier. You must escape!'
+        - 'Hidden in the throneroom is a secret tunnel! Our leader, Theia Ark, is waiting for you.'
+        - 'Follow the tunnel to safety! Find Theia Ark! Go, now! GO!!'
+    goal-message: 'Return to the Resistance Archer'
   5:
     requirement:
       type: 'talk'
       npc:
-        npc-name: 'Runic Mage'
-        npc-id: 529
+        npc-name: 'Theia Ark'
+        npc-id: 802
+#529
         speech:
-        - 'Greetings, stranger. Artifacts aren''t the only source of magic in the realm.'
-        - 'I see you''ve been given a rune. Try adding this spell to it!'
-        - 'Now be off. You''re needed in the village.'
-    goal-message: 'Speak with the Mage'
+        - 'Welcome, soldier. Are you the last of the survivors?'
+        - 'This battle has been lost, and our outpost is taken. But fear no darkness!'
+        - 'We will escape to the village and collect supplies for our survivors.'
+    goal-message: 'Escape in the Throneroom Tunnel and speak with Theia Ark'
     completed-message:
     - '&7Quest Complete: Enter the Realm'
     execute:

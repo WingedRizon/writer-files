@@ -1,4 +1,5 @@
 disciplelibrarian1:
+  SpawnerGroup: Disciples
   MobName: DiscipleLibrarian1
   World: dungeons
   X: 175

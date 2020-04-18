@@ -31,6 +31,7 @@ AdeptLibrarian:
   - skill{s=GravityAura} @self ~onTimer:300
   - skill{s=MeteorShower} @self ~onTimer:100
   - skill{s=FlamingMissile} ~onTimer:30
+  - skill{s=HealUp} @self ~onDropCombat
   AIGoalSelectors:
   - 0 clear
   - 1 meleeattack
@@ -120,6 +121,7 @@ OracleLibrarian:
   - skill{s=ChargePlayerCast} @target ~onTimer:300
   - sendtitle{title="";subtitle="&e&lTargeted";d=10} @target ~onChangeTarget
   - sendtitle{title="";subtitle="&e&lTargeted";d=10} @target ~onEnterCombat
+  - skill{s=HealUp} @self ~onDropCombat
   #- setvariable{var=chainNumber;scope=caster;type=integer;value=0} ~onSpawn
   AIGoalSelectors:
   - 0 clear
@@ -134,7 +136,7 @@ OracleLibrarian:
     Skin: Haku
 
 InitiateLibrarian:
-  Type: EVOKER
+  Type: ZOMBIE
   Display: '&e[&6✸&e] &cInitiate Librarian'
   Health: 300
   Damage: 5
@@ -163,7 +165,7 @@ InitiateLibrarian:
     ModifyBoundingBox: true
 
 ApprenticeLibrarian:
-  Type: Vindicator
+  Type: ZOMBIE
   Display: '&e[&6✸&e] &cApprentice Librarian'
   Health: 350
   Damage: 10

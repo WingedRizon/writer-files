@@ -9,11 +9,12 @@ first-npc:
   npc-name: 'Theia Ark'
   npc-id: 193
   speech:
-  - '%player% - I heard you fought at the fortress!'
-  - 'We could use someone like you around these parts.'
+  - '%player% - I''m glad to see you found your way!'
+  - 'Welcome to Azana, capital of the realm and a plague to our people.'
   - 'The Azanian citizens have been abandoned by our corrupt ruler.'
   - 'Supplies are draining and people are starving.'
   - 'If you want to become a hero of Azana, find a way to feed the starving citizens.'
+  - 'Enter Azana ahead. Beyond the tavern you''ll find a marketplace, and a farm.'
   deniable: false
 objectives:
   1:
@@ -47,7 +48,7 @@ objectives:
         - 'I knew your skills at the fortress were genuine, but I could never expect such a kind heart to go alongside them.'
         - 'Although we have saved the citizens for another day, unfortunately, things cannot go on like this.'
         - 'Unless we can find a way to restore our food supply, our people will eventually perish.'
-        - 'Luckily, I have a mole within the Azanian military! He might know what to do.'
+        - 'Luckily, I have a mole within the Azanian military-- Captain Henry! He might know what to do.'
         - 'If you could assist him, we might be able to restore order to Azana.'
         - 'Seek him out at the inn.'
     goal-message: 'Return to Theia'

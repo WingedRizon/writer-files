@@ -10,7 +10,7 @@ requirements:
   crafting-level: 0
   crafting-level-not-met: '&cAye, stranger. You must choose a profession first!'
 first-npc:
-  npc-name: 'Captain Adams'
+  npc-name: 'Captain Henry'
   npc-id: 396
   speech:
   - 'Ready to set sail, %player%?'
@@ -22,13 +22,14 @@ objectives:
     requirement:
       type: 'talk'
       npc:
-        npc-name: 'Captain Adams'
+        npc-name: 'Captain Henry'
         npc-id: 396
         speech:
         - 'Ready to set sail, stranger?'
         - 'The realm is in dire turmoil. The discovery of magic has turned our cities to chaos.'
+        - 'Theia Ark will meet you in the mainland.'
         - 'Safe travels, stranger.'
-    goal-message: 'Speak with Captain Adams'
+    goal-message: 'Speak with Captain Henry'
     completed-message:
     - '&7Quest Complete: Set Sail'
 rewards:
@@ -36,5 +37,5 @@ rewards:
   exp: 0
   money: 32
   execute:
-  - 'travel fast %player% boat -795.5 27 -5.5 0 0'
+  - 'travel fast %player% boat -1043.5 25 108.5 0 0'
   - 'set hearthstone %player% Azana'

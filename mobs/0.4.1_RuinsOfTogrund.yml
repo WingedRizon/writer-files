@@ -71,7 +71,7 @@ TogrundTheBlighted:
   Faction: Boss
   Modules:
     ThreatTable: true
-  Damage: 30
+  Damage: 40
   BossBar:
     Enabled: true
     Title: '&c&lTogrund'
@@ -87,8 +87,12 @@ TogrundTheBlighted:
     FollowRange: 50
     NoDamageTicks: 0
   Skills:
-  - skill{s=startSmite} ~onTimer:300
-  - command{c="runicgive exp <trigger.name> 750 <mob.l.x> <mob.l.y> <mob.l.z> 17"} @trigger ~onDeath 1.0
+  #- skill{s=startSmite} ~onTimer:300
+  #- skill{s=BlightCast} ~onTimer:300
+  #- skill{s=ToxicWastelandTrigger} ~onTimer:300
+  - skill{s=TogrundTimer} ~onTimer:300
+  - skill{s=TogrundStart} ~onEnterCombat
+  - command{c="runicgive exp <trigger.name> 1500 <mob.l.x> <mob.l.y> <mob.l.z> 17"} @trigger ~onDeath 1.0
   - command{c="givescroll <trigger.name> fire bolt <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.1
   - command{c="givescroll <trigger.name> water siphon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.1
   AIGoalSelectors:

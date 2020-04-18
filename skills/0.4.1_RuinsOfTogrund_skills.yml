@@ -9,12 +9,6 @@ startSmite:
  Conditions:
  - incombat{} true
  Skills:
- - sendtitle{title="&4&kooo&r&l&cSmite&r&4&kooo";subtitle="&e&l5";d=20} @PlayersInRadius{r=15}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=15}
- - delay 20
- - sendtitle{title="&4&kooo&r&l&cSmite&r&4&kooo";subtitle="&e&l4";d=20} @PlayersInRadius{r=15}
- - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=15}
- - delay 20
  - sendtitle{title="&4&kooo&r&l&cSmite&r&4&kooo";subtitle="&e&l3";d=20} @PlayersInRadius{r=15}
  - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=15}
  - delay 20
@@ -32,4 +26,84 @@ Smite:
  Skills:
  - effect:sound{s=entity.lightning_bolt.impact;volume=0.2;pitch=0.5} @PlayersInRadius{r=150}
  - effect:lightning{localized=true;localizedradius=75} @PlayersInRadius{r=15}
- - damage{a=15} @PlayersInRadius{r=10}
+ - damage{a=25} @PlayersInRadius{r=5}
+
+BlightCast:
+  Conditions:
+  - incombat{} true
+  Skills:
+  - cast{skillName="Blight";duration=30;onCast=Blight;onStart=Blight-Start;onInterrupted=Blight-Start} @self
+
+Blight:
+  Skills:
+  - projectile{ot=Blight-Tick;oh=Blight-Hit;v=10;i=1;hr=1;vr=1} @target
+
+Blight-Tick:
+  Skills:
+  - effect:particles{p=reddust;a=1;c=#00FF00} @origin
+
+Blight-Hit:
+  Skills:
+  - damage{a=30;pk=true}
+  - pull{v=10}
+  - delay 10
+  - stun{d=30}
+
+Blight-Start:
+  Skills:
+  - effect:particlesphere{p=dragon_breath;r=2;a=50}
+
+ToxicWastelandTrigger:
+  Conditions:
+  - incombat{} true
+  Skills:
+  - sendtitle{title="&4&kooo&r&l&2Toxic Wasteland&r&4&kooo";subtitle="&e&l1";d=20} @PlayersInRadius{r=20}
+  - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5} @PlayersInRadius{r=20}
+  - delay 20
+  - skill{s=ToxicWasteland} @self
+
+ToxicWasteland:
+  Conditions:
+  - incombat{} true
+  Skills:
+  - skill{s=ToxicWastelandTick}
+  - delay 20
+  - skill{s=ToxicWastelandTick}
+  - delay 20
+  - skill{s=ToxicWastelandTick}
+  - delay 20
+  - skill{s=ToxicWastelandTick}
+  - delay 20
+  - skill{s=ToxicWastelandTick}
+  - delay 20
+  - skill{s=ToxicWastelandTick}
+  - delay 20
+  - skill{s=ToxicWastelandTick}
+  - delay 20
+  - skill{s=ToxicWastelandTick}
+  - delay 20
+  - skill{s=ToxicWastelandTick}
+  - delay 20
+  - skill{s=ToxicWastelandTick}
+  - delay 20
+  - skill{s=ToxicWastelandTick}
+
+ToxicWastelandTick:
+  Skills:
+  - effect:particlesphere{p=dragon_breath;r=4;a=100}
+  - effect:particlering{p=dragon_breath;r=20;a=200;hs=1;vs=1}
+  - effect:particlering{p=dragon_breath;r=10;a=100;hs=1;vs=1}
+  - damage{a=40;pk=true} @PlayersInRing{min=4;max=20}
+
+TogrundTimer:
+  Skills:
+  - skill{s=BlightCast} #Stuns on +2s
+  - skill{s=startSmite} #Fires on +3s
+  - delay 80
+  - skill{s=ToxicWastelandTrigger} #Fires on +5s
+
+TogrundStart:
+  Skills:
+  - delay 100
+  - skill{s=BlightCast} #Stuns on +2s
+  - skill{s=startSmite} #Fires on +3s
