@@ -44,3 +44,31 @@ EtherealFlux:
   - ATTRIBUTES
   - ENCHANTS
   Unbreakable: true
+KoldorianApple:
+  Id: APPLE
+  Data: 1
+  Amount: 1
+  Display: '&6Koldorian Apple'
+  Lore:
+  - ''
+  - '&7A strange apple, it seems to be more plump and healthy than any apple you have ever seen!'
+  - ''
+  - '&6Quest Item'
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+  Unbreakable: true
+KoldorianApple:
+  Id: APPLE
+  Data: 1
+  Amount: 1
+  Display: '&6Koldorian Apple'
+  Lore:
+  - ''
+  - '&7A strange apple, it seems to be more plump and healthy than any apple you have ever seen!'
+  - ''
+  - '&6Quest Item'
+  Hide:
+  - ATTRIBUTES
+  - ENCHANTS
+  Unbreakable: true
