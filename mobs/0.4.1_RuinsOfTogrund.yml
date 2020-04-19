@@ -52,6 +52,7 @@ BarbarianElite:
   - command{c="runicgive exp <trigger.name> 300 <mob.l.x> <mob.l.y> <mob.l.z> 17"} @trigger ~onDeath 1.0
   - command{c="runicgive item <trigger.name> armor uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.75
   - command{c="giveweapon <trigger.name> uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.5
+  - skill{s=BlightCast} ~onTimer:200
   AIGoalSelectors:
   - 0 clear
   - 1 meleeattack

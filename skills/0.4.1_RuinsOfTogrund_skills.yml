@@ -26,7 +26,8 @@ Smite:
  Skills:
  - effect:sound{s=entity.lightning_bolt.impact;volume=0.2;pitch=0.5} @PlayersInRadius{r=150}
  - effect:lightning{localized=true;localizedradius=75} @PlayersInRadius{r=15}
- - damage{a=25} @PlayersInRadius{r=5}
+ - damage{a=50} @PlayersInRadius{r=5}
+ - throw{v=3;vy=3} @PIR{r=5}
 
 BlightCast:
   Conditions:
@@ -36,7 +37,7 @@ BlightCast:
 
 Blight:
   Skills:
-  - projectile{ot=Blight-Tick;oh=Blight-Hit;v=10;i=1;hr=1;vr=1} @target
+  - projectile{ot=Blight-Tick;oh=Blight-Hit;v=10;i=1;hr=1;vr=1;syo=2.5} @target
 
 Blight-Tick:
   Skills:
@@ -66,6 +67,7 @@ ToxicWasteland:
   Conditions:
   - incombat{} true
   Skills:
+  - message{m="&2Come close or perish!"} @PIR{r=20}
   - skill{s=ToxicWastelandTick}
   - delay 20
   - skill{s=ToxicWastelandTick}
@@ -86,14 +88,14 @@ ToxicWasteland:
   - delay 20
   - skill{s=ToxicWastelandTick}
   - delay 20
-  - skill{s=ToxicWastelandTick}
+  - damage{a=30;pk=true} @PlayersInRing{min=5;max=20}
 
 ToxicWastelandTick:
   Skills:
-  - effect:particlesphere{p=dragon_breath;r=4;a=100}
-  - effect:particlering{p=dragon_breath;r=20;a=200;hs=1;vs=1}
+  - effect:particlesphere{p=dragon_breath;r=5;a=100}
+  - effect:particlering{p=dragon_breath;p=20;r=20;a=200;hs=1;vs=1}
   - effect:particlering{p=dragon_breath;r=10;a=100;hs=1;vs=1}
-  - damage{a=40;pk=true} @PlayersInRing{min=4;max=20}
+  - damage{a=30;pk=true} @PlayersInRing{min=5;max=20}
 
 TogrundTimer:
   Skills:

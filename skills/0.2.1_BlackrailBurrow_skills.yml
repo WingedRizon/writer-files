@@ -31,3 +31,33 @@ bashHit:
   - effect:particles{p=crit;amount=20;hSpread=1;vSpread=1;speed=0;so=0} @Self
   - damage{amount=30} @PIR{r=5}
   - throw{velocity=3;velocityY=0} @PIR{r=5}
+
+SoldierSummonsElites:
+  Skills:
+  - message{m="&cARISE AND DEFEND ME!"} @PIR{r=25}
+  - summon{mob=UndeadMinerElite;amount=2;noise=5;os=true;r=4}
+  - effect:particles{p=spell_witch;amount=20;hSpread=1;vSpread=1;speed=0;so=0}
+
+CorruptVermin:
+  Skills:
+  Conditions:
+  - incombat{} true
+  Skills:
+  - sendtitle{title="&4&kooo&r&l&cCorruption&r&4&kooo";subtitle="&e&l3";d=20}
+  - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5}
+  - delay 20
+  - sendtitle{title="&4&kooo&r&l&cCorruption&r&4&kooo";subtitle="&e&l2";d=20}
+  - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5}
+  - delay 20
+  - sendtitle{title="&4&kooo&r&l&cCorruption&r&4&kooo";subtitle="&e&l1";d=20}
+  - effect:sound{s=block.comparator.click;volume=1.0;pitch=0.5}
+  - delay 20
+  #- effect:particlering{p=spell_instant;c=#FF5554;r=8;a=300;p=20;hs=7;vs=2;y=-1} @self -> goes sideways
+  #- effect:particlering{p=reddust;c=#00AA00;r=8;a=300;p=20;hs=7;vs=2;y=-1} @self -> goes up
+  - effect:particlering{p=reddust;c=#00AA00;r=8;a=300;hs=7;vs=2} @self
+  - summon{mob=UndeadVermin;a=1;noise=5;os=true} @MIR{t=Vermin;r=15}
+  - delay 1
+  - damage{a=10} @MIR{type=Vermin;r=16}
+  - effect:particlering{p=reddust;c=#00AA00;r=8;a=300;hs=7;vs=2} @self
+  - effect:sound{s=entity.witch.death}
+  - effect:sound{s=entity.zombie_villager.converted}

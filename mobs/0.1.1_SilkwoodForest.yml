@@ -32,6 +32,7 @@ TheBlackRider:
   - command{c="runicgive exp <trigger.name> 30 <mob.l.x> <mob.l.y> <mob.l.z> 5"} @trigger ~onDeath 1.0
   - command{c="givescroll <trigger.name> earth taunt <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.4
   - command{c="givescroll <trigger.name> air parry <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.4
+  - damage{a=150} @MIR{t=BlackHorse} ~onDeath
   AIGoalSelectors:
   - 0 clear
   - 1 meleeattack
@@ -145,7 +146,7 @@ ForestSpider:
   Skills:
   - command{c="runicgive exp <trigger.name> 50 <mob.l.x> <mob.l.y> <mob.l.z> 6"} @trigger ~onDeath 1.0
   - command{c="runicgive item <trigger.name> armor common <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
-  - command{c="giveweapon <trigger.name> common <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04  
+  - command{c="giveweapon <trigger.name> common <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.04
   AIGoalSelectors:
   - 0 clear
   - 1 meleeattack
@@ -237,6 +238,7 @@ CaveMother:
   - command{c="runicgive exp <trigger.name> 225 <mob.l.x> <mob.l.y> <mob.l.z> 7"} @trigger ~onDeath 1.0
   - command{c="givescroll <trigger.name> air lunge <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.1
   - command{c="givescroll <trigger.name> air agility <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.1
+  - skill{s=CocoonCast} @self ~onTimer:260
   AIGoalSelectors:
   - 0 clear
   - 1 meleeattack
@@ -244,3 +246,23 @@ CaveMother:
   AITargetSelectors:
   - 0 clear
   - 1 attacker
+
+BlackHorse:
+  Type: Horse
+  #Display: '&cBlack Horse'
+  Health: 150
+  Modules:
+    ThreatTable: true
+  Damage: 1
+  Modules:
+    ThreatTable: true
+  Drops:
+  - Coin 1-3 1.0
+  Options:
+    MovementSpeed: 0.4
+    PreventOtherDrops: true
+    FollowRange: 12
+    NoDamageTicks: 0
+    HorseColor: black
+  Skills:
+  - effect:smoke{c=#000000;d=4} @self ~onDeath

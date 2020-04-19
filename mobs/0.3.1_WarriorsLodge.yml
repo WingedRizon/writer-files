@@ -1,8 +1,9 @@
 Valoran:
   Type: EVOKER
-  Display: '&e[&6✸&e] &cChallenger Valoran'
+  Display: '&e[&6✸&e] &6Rogue &cValoran'
   Health: 300
   Damage: 16
+  Faction: Boss
   Modules:
     ThreatTable: true
   Equipment:
@@ -14,8 +15,6 @@ Valoran:
     PreventOtherDrops: true
     FollowRange: 35
     NoDamageTicks: 0
-  Skills:
-  - summon{type=Gorm;amount=1;radius=1} ~onDeath
   AIGoalSelectors:
   - 0 clear
   - 1 meleeattack
@@ -28,28 +27,32 @@ Valoran:
     Type: player
     Player: ''
     Skin: atomicmat
+  Skills:
+  - summon{type=Gorm;amount=1;radius=1} ~onDeath
+  #- skill{s=SmokeCloud} @selflocation ~onTimer:160
+  #- skill{s=Poof} @target ~onTimer:200
+  - skill{s=SpeedBoost} @self ~onTimer:140
 
 Gorm:
-  Type: EVOKER
-  Display: '&e[&6✸&e] &cChallenger Gorm'
+  Type: SKELETON
+  Display: '&e[&6✸&e] &6Archer &cGorm'
   Health: 400
   Damage: 18
+  Faction: Boss
   Modules:
     ThreatTable: true
   Equipment:
-  - IRON_SWORD HAND
+  - BOW HAND
   Drops:
   - Coin 2-6 1.0
   Options:
-    MovementSpeed: 0.32
+    MovementSpeed: 0.24
     PreventOtherDrops: true
     FollowRange: 35
     NoDamageTicks: 0
-  Skills:
-  - summon{type=Bjorn;amount=1;radius=1} ~onDeath
   AIGoalSelectors:
   - 0 clear
-  - 1 meleeattack
+  - 1 bowshoot
   - 2 float
   AITargetSelectors:
   - 0 clear
@@ -59,16 +62,23 @@ Gorm:
     Type: player
     Player: ''
     Skin: Raidon_OG
+  Skills:
+  #- skill{s=ArrowBomb} @target ~onTimer:100
+  - skill{s=GormTimer} @target ~onTimer:200
+  - summon{type=Bjorn;amount=1;radius=1} ~onDeath
+  #- skill{s=Volley} @target ~onTimer:200
+  #- skill{s=AntiStrafe} @target ~onTimer:100
 
 Bjorn:
   Type: EVOKER
-  Display: '&e[&6✸&e] &cChallenger Bjorn'
+  Display: '&e[&6✸&e] &6Warrior &cBjorn'
   Health: 500
   Damage: 20
+  Faction: Boss
   Modules:
     ThreatTable: true
   Equipment:
-  - IRON_SWORD HAND
+  - IRON_AXE HAND
   Drops:
   - Coin 2-6 1.0
   Options:
@@ -88,3 +98,5 @@ Bjorn:
     Type: player
     Player: ''
     Skin: DemonLuke
+  Skills:
+  - skill{s=SeismicLeap} @target ~onTimer:140

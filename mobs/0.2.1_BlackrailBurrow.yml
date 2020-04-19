@@ -93,10 +93,10 @@ UndeadMinerElite:
 Vermin:
   Type: SILVERFISH
   Display: '&e[&66&e] &cRat'
-  Health: 35
+  Health: 10
   Modules:
     ThreatTable: true
-  Damage: 12
+  Damage: 10
   Faction: Vermin
   Options:
     MovementSpeed: 0.2
@@ -104,7 +104,7 @@ Vermin:
     FollowRange: 50
     NoDamageTicks: 0
   Skills:
-  - command{c="runicgive exp <target.name> 25 <mob.l.x> <mob.l.y> <mob.l.z> 6"} @target ~onDeath 1.0
+  - command{c="runicgive exp <target.name> 10 <mob.l.x> <mob.l.y> <mob.l.z> 6"} @target ~onDeath 1.0
   - command{c="runicgive item <trigger.name> armor uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.02
   - command{c="giveweapon <trigger.name> uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.02
   AIGoalSelectors:
@@ -138,13 +138,16 @@ IronSoldier:
     FollowRange: 50
     NoDamageTicks: 0
   Skills:
-  - command{c="runicgive exp <trigger.name> 250 <mob.l.x> <mob.l.y> <mob.l.z> 8"} @trigger ~onDeath 1.0
+  - command{c="runicgive exp <trigger.name> 300 <mob.l.x> <mob.l.y> <mob.l.z> 8"} @trigger ~onDeath 1.0
   - command{c="giveartifact <trigger.name> orsig's_favor <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.15
   - command{c="giveartifact <trigger.name> iron_hammer <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.15
   - command{c="giveartifact <trigger.name> maelstrom <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.15
   - command{c="giveartifact <trigger.name> dwarven_shortsword <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.15
   - command{c="giveartifact <trigger.name> dwarven_battleaxe <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.15
   - skill{s=bashWarn} ~onTimer:300
+  - skill{s=CorruptVermin} @PIR{r=15} ~onDamaged =50%
+  - damage{a=30} @MIR{t=UndeadVermin;r=20} ~onDeath
+  #- skill{s=SoldierSummonsElites} @self ~onTimer:400
   AIGoalSelectors:
   - 0 clear
   - 1 meleeattack
@@ -156,3 +159,29 @@ IronSoldier:
     Type: player
     Player: ''
     Skin: DoubleDark
+
+UndeadVermin:
+  Type: SILVERFISH
+  Display: '&e[&68&e] &cUndead Rat'
+  Health: 30
+  Modules:
+    ThreatTable: true
+  Damage: 20
+  Faction: Vermin
+  Options:
+    MovementSpeed: 0.3
+    PreventOtherDrops: true
+    FollowRange: 50
+    NoDamageTicks: 0
+  Skills:
+  - command{c="runicgive exp <target.name> 25 <mob.l.x> <mob.l.y> <mob.l.z> 6"} @target ~onDeath 1.0
+  - command{c="runicgive item <trigger.name> armor uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.02
+  - command{c="giveweapon <trigger.name> uncommon <mob.l.x> <mob.l.y> <mob.l.z> <mob.uuid>"} @trigger ~onDeath 0.02
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 float
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 hurtbytarget
